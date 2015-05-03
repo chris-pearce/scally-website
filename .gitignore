@@ -1,6 +1,8 @@
 # Specific files #
 ###################
 /bower_components
+/_deploy
+.jekyll-metadata
 
 # Compiled source #
 ###################

@@ -1,0 +1,49 @@
+# Site settings for Jekyll
+
+
+# Meta
+title: Scally CSS framework website
+email: hi@chris-pearce.me
+description: > # this means to ignore newlines until "baseurl:"
+  A website for the Scally CSS framework featuring docs &amp; demos.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://scally.chris-pearce.me" # the base hostname & protocol for your site
+
+
+# Usernames
+twitter_username: chris__pearce
+github_username:  chris-pearce
+
+
+# Build settings
+markdown: kramdown
+
+
+# Build folder
+destination: "_deploy"
+
+
+# Include and exclude from the build
+include:
+- .htaccess
+
+exclude:
+- bower_components
+- bower.json
+- LICENSE
+- README.md
+- css/settings.scss
+
+
+# Timezone
+timezone: Australia/Sydney
+
+
+# Sass compilation settings
+sass:
+  sass_dir: bower_components
+  style:    :compressed
+
+
+# GA id
+google_analytics_id: UA-3769691-19
