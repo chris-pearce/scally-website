@@ -1,0 +1,55 @@
+/* ============================================================================
+   @COMPONENTS -> HERO
+   ========================================================================= */
+
+
+/**
+ * Hero banner that is featured on the home page.
+ */
+
+
+.c-hero {
+  @include to-rem(padding-top padding-bottom, $spacing-double);
+  background-image: $color-gradient-tropical;
+  text-shadow: 0 1px 1px rgba($color-black, 0.2);
+
+
+  /**
+   * Base + link colour.
+   */
+
+  &,
+  a {color: $color-white;}
+}
+
+
+/**
+ * Actions.
+ */
+
+.c-hero__actions {
+  text-align: center;
+
+  a {
+    display: inline-block;
+    @include to-rem(margin-right, $spacing-half);
+  }
+}
+
+
+/**
+ * Main actions.
+ */
+
+.c-hero__actions__main {
+  @include to-rem(margin-bottom, $spacing-third);
+}
+
+
+/**
+ * Sub actions.
+ */
+
+.c-hero__actions__sub {
+  @include font-size($font-size-small);
+}

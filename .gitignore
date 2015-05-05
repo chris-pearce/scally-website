@@ -1,6 +1,7 @@
 # Specific files #
 ###################
 /bower_components
+/node_modules
 /_deploy
 .jekyll-metadata
 

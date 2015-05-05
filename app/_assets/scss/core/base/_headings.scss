@@ -1,0 +1,86 @@
+/* ============================================================================
+   @CORE -> BASE -> HEADINGS
+   ========================================================================= */
+
+
+/**
+ * Double stranded for greater reuse.
+ *
+ * N.B. this builds on top of the Scally headings component.
+ */
+
+
+/**
+ * Apply font weight.
+ */
+
+@include headings(1, 6, true) {
+  font-weight: 300;
+}
+
+
+/**
+ * Set margins but make optional.
+ */
+
+@if $apply-heading-margins {
+
+  // Base
+  @include headings(1, 3, true) {
+    @extend %bottom-spacing;
+  }
+
+  // Half
+  @include headings(4, 6, true) {
+    @extend %bottom-spacing-half;
+  }
+
+}// endif
+
+
+/**
+ * H1.
+ */
+
+h1,
+.h1 {}
+
+
+/**
+ * H2.
+ */
+
+h2,
+.h2 {}
+
+
+/**
+ * H3.
+ */
+
+h3,
+.h3 {font-weight: $font-weight-bold;}
+
+
+/**
+ * H4.
+ */
+
+h4,
+.h4 {}
+
+
+/**
+ * H5.
+ */
+
+h5,
+.h5 {}
+
+
+/**
+ * H6.
+ */
+
+h6,
+.h6 {}
