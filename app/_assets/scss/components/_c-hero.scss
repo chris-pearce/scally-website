@@ -9,9 +9,9 @@
 
 
 .c-hero {
+  @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
   background-image: $color-gradient-tropical;
-  text-shadow: 0 1px 1px rgba($color-black, 0.2);
 
 
   /**
@@ -19,7 +19,33 @@
    */
 
   &,
-  a {color: $color-white;}
+  a {
+    color: $color-white;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+  }
+}
+
+
+/**
+ * Logo.
+ */
+
+.c-hero__logo {
+  @include to-rem(margin-bottom, $spacing-double);
+  text-align: center;
+}
+
+
+/**
+ * Description.
+ */
+
+.c-hero__desc {
+  @include font-size($font-size-x-large, 1.55);
 }
 
 
@@ -29,11 +55,6 @@
 
 .c-hero__actions {
   text-align: center;
-
-  a {
-    display: inline-block;
-    @include to-rem(margin-right, $spacing-half);
-  }
 }
 
 
@@ -42,7 +63,30 @@
  */
 
 .c-hero__actions__main {
+  @include to-rem(margin-bottom, $spacing-half);
+  @include to-rem(margin-top, $spacing-double);
+}
+
+/**
+ * Main action buttons are full bleed up until the viewport hits 400px wide at
+ * which point they become as wide as the button text and horizontally align.
+ */
+
+.c-hero__actions__main__button {
   @include to-rem(margin-bottom, $spacing-third);
+  @include to-rem(padding-top padding-bottom, $spacing-half + $spacing-micro);
+  @include font-size($font-size-large, normal);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include respond-to(400) {
+    @include to-rem(margin-right, $spacing-half);
+    display: inline-block;
+    margin-bottom: 0;
+    width: auto;
+  }
 }
 
 
@@ -52,4 +96,9 @@
 
 .c-hero__actions__sub {
   @include font-size($font-size-small);
+
+  a {
+    @include to-rem(margin-right, $spacing-half);
+    display: inline-block;
+  }
 }

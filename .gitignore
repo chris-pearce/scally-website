@@ -1,9 +1,9 @@
 # Specific files #
 ###################
-/bower_components
-/node_modules
-/_deploy
+/.jekyll
+/.tmp
 .jekyll-metadata
+
 
 # Compiled source #
 ###################
