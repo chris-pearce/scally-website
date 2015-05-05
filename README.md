@@ -1,10 +1,8 @@
-# Scally CSS framework website
-
-A website for the [Scally CSS framework](https://github.com/chris-pearce/scally).
-
 <img src="https://dl.dropboxusercontent.com/s/anlzedtpekcnla7/logo.png" width="211">
 
-Uses [Jekyll](http://jekyllrb.com/) and [Grunt](http://gruntjs.com/).
+# Scally CSS framework website
+
+A website for the [Scally CSS framework](https://github.com/chris-pearce/scally). Built on [Jekyll](http://jekyllrb.com/) and uses [Grunt](http://gruntjs.com/) for a number of tasks.
 
 ## To run
 
@@ -15,3 +13,7 @@ grunt serve
 ```
 grunt deploy
 ```
+
+## Credit
+
+<http://o.zasadnyy.com/blog/optimized-jekyll-site-with-grunt/>.
