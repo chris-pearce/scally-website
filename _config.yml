@@ -1,0 +1,47 @@
+# Meta
+title:        Scally CSS framework website
+email:        hi@chris-pearce.me
+description: "A website for the Scally CSS framework featuring docs &amp; demos."
+baseurl:      ""
+url:          "http://scally.chris-pearce.me"
+sitename:     "Scally CSS framework website"
+
+
+# Usernames
+twitter_username: chris__pearce
+github_username:  chris-pearce
+
+
+# Timezone
+timezone: Australia/Sydney
+
+
+# Grunt handles images and assets.
+exclude: [
+  'img',
+  'css',
+  'js',
+  'fonts',
+  '**.png',
+  '**.jpg',
+  '**.jpeg',
+  '**.gif',
+  '**.webp',
+  '**.svg',
+  '**.ico'
+]
+
+
+# _config.build.yml sets future and show_drafts to false on `grunt build`
+future:       true
+show_drafts:  true
+
+
+# Permalink and pagination
+permalink:      '/blog/:title'
+paginate:       5
+paginate_path: '/page:num'
+
+
+# Markdown library
+markdown: kramdown

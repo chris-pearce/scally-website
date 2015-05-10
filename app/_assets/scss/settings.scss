@@ -1,0 +1,91 @@
+/* ============================================================================
+   @SETTINGS
+   ========================================================================= */
+
+
+/**
+ * All project specific settings
+ */
+
+
+/* Typography
+   ========================================================================= */
+
+
+/**
+ * Font families.
+ */
+
+$font-family-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light",
+                          "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+                          sans-serif;
+
+
+/**
+ * Weights for custom font: Merriweather.
+ */
+
+$font-weight-normal:  400;
+
+$font-weight-light:   300;
+
+$font-weight-bold:    700;
+
+
+/* Colours
+   ========================================================================= */
+
+
+/**
+ * Brand.
+ *
+ * http://chir.ag/projects/name-that-color/#BF2F44
+ */
+
+$color-brick-red: #bf2f44;
+
+
+/**
+ * Wild watermelon.
+ *
+ * http://chir.ag/projects/name-that-color/#FD536F
+ */
+
+$color-wild-watermelon: #fd536f;
+
+
+/**
+ * Sun.
+ *
+ * http://chir.ag/projects/name-that-color/#F9AC0A
+ */
+
+$color-sun: #f9ac0a;
+
+
+/**
+ * Greys.
+ */
+
+// Concrete
+// http://chir.ag/projects/name-that-color/#F2F2F2
+$color-grey-concrete: #f2f2f2;
+
+
+/**
+ * Gradients.
+ */
+
+$color-gradient-tropical: linear-gradient(
+  -90deg,
+  $color-sun 0%,
+  $color-wild-watermelon 50%,
+  $color-brick-red 100%
+);
+
+$color-gradient-tropical-reversed: linear-gradient(
+  -90deg,
+  $color-brick-red 0%,
+  $color-wild-watermelon 50%,
+  $color-sun 100%
+);

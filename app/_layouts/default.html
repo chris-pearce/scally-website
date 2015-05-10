@@ -1,0 +1,28 @@
+{% include html-head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    {% if home-page %}
+      {% include home/hero.html %}
+    {% endif %}
+
+    <main role="main" class="c-site-main-content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <!-- Scripts -->
+    <script src="{{ "js/scripts.js" | prepend: site.baseurl }}"></script>
+    <!-- //Scripts -->
+
+    <script>
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   animateHeroGradient();
+    // });
+    </script>
+  </body>
+
+</html>
