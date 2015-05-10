@@ -1,6 +1,8 @@
 # Specific files #
 ###################
+.jekyll
 /.jekyll
+.tmp
 /.tmp
 .jekyll-metadata
 /dist
