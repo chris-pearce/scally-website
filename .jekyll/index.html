@@ -34,9 +34,9 @@
 <!-- //Header -->
 
 
-
-    <!-- Hero -->
-<section class="c-hero">
+    <main role="main" class="c-site-main-content">
+      <!-- Hero -->
+<section class="c-hero  js-animate-hero-gradient">
   <div class="l-container">
 
     <!-- Logo -->
@@ -56,63 +56,49 @@
     <div class="c-hero__actions">
       <div class="c-hero__actions__main">
         <a href="#" class="c-hero__actions__main__button  c-button c-button--full-bleed">Getting started</a><!--
-        --><a href="#" class="c-hero__actions__main__button  c-button c-button--full-bleed">Demos</a>
+        --><a href="#" class="c-hero__actions__main__button  c-button c-button--full-bleed">Demos</a><!--
+        --><a href="#" class="c-hero__actions__main__button  c-button c-button--full-bleed">Docs</a>
       </div>
       <div class="c-hero__actions__sub">
-        <a href="#">Documentation</a><!--
-        --><a href="#">CHANGELOG</a><!--
+        v2.0.2—<a href="#">CHANGELOG</a><!--
         --><a href="https://github.com/chris-pearce/scally" rel="external">GitHub</a>
       </div>
     </div>
     <!-- //Actions -->
 
   </div>
+  <div class="c-hero__gradient"></div>
+  <div class="c-hero__gradient-after"></div>
 </section>
 <!-- //Hero -->
 
 <!-- Intro -->
-<div class="l-container   u-s-pt-huge">
-  <h1 class="u-text-align-center">Building UI is easy with Scally</h1>
-  <p>The Scally framework helps you construct UI really easily by providing you with a suite of powerful utilities and layout modules, just like <a href="">Lego&trade;</a>.</p>
-  <p>These utilities and layout modules can form a wide variety of UI patterns from simple principles meaning as CSS authors you don't have to keep writing the same styles over and over again, instead you can abstract those common styles into nice reusable chunks of code letting you crack on with actually building your project-specific UI.</p>
-  <p>Scally also comes with&mdash;in it's <strong>Core</strong> section&mdash;sensible base styles that most projects need, handy Sass mixins and functions, a bunch of Sass settings to keep your most common styles managed in one place, a sensible reset, and <a href="">normalize.css</a>.</p>
-</div>
+<section class="l-container   u-s-pt-huge">
+  <h1>Scally Architecture</h1>
+  <p>Scally is broken down into five main sections, with each section getting its own level of specificity. This means each one builds on top of the other in terms of inheritance and CSS' first C: the cascade. Think of these sections as layers:</p>
+  <h1>Open Source</h1>
+  <p>Scally is on GitHub for downloading, forking, or contributing.</p>
+</section>
 <!-- //Intro -->
+    </main>
 
-
-
-
-
-<div class="features  l-container l-container--full-bleed  u-s-pb-huge u-hide">
+    <footer role="contentinfo" class="c-site-footer">
   <div class="l-container">
-    <h2 class="u-text-align-center">Features</h2>
-    <div class="l-grid">
-      <div class="l-grid__item  u-one-third">
-        <h3 class="u-s-mb-small">Sass-based</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nemo ipsum neque dolorum autem dolor doloremque totam sequi sed quo architecto aliquid, veritatis quam similique. Optio accusamus ut dignissimos pariatur!</p>
-      </div>
-      <div class="l-grid__item  u-one-third">
-        <h3 class="u-s-mb-small">BEM</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nemo ipsum neque dolorum autem dolor doloremque totam sequi sed quo architecto aliquid, veritatis quam similique. Optio accusamus ut dignissimos pariatur!</p>
-      </div>
-      <div class="l-grid__item  u-one-third">
-        <h3 class="u-s-mb-small">Responsive &amp; lightweight</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nemo ipsum neque dolorum autem dolor doloremque totam sequi sed quo architecto aliquid, veritatis quam similique. Optio accusamus ut dignissimos pariatur!</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-    <footer role="contentinfo" class="footer  u-background-black  l-container l-container--full-bleed  u-s-pe-base">
-  <div class="l-container  u-text-align-center u-text-size-small u-text-300">
-    <p class="u-s-mb-none">The Scally framework is a project by <a href="#">Chris Pearce</a>.</p>
-    <small class="u-text-size-base">&copy; Chris Pearce 2015. <a href="#">See the license</a>.</small>
+    <p>Scally is an open source project by <a href="http://chris-pearce.me" rel="external">Chris Pearce</a> and some other <a href="#">fine fellows</a>.</p>
+    <small class="c-site-footer__copyright">&copy; Chris Pearce 2015. <a href="https://github.com/chris-pearce/scally/blob/master/LICENSE" rel="external">License</a>.</small>
   </div>
 </footer>
 
 
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
+    <!-- //Scripts -->
+
+    <script>
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   animateHeroGradient();
+    // });
+    </script>
   </body>
 
 </html>

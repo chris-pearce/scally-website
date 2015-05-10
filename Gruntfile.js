@@ -37,7 +37,7 @@ module.exports = function(grunt) {
               '.jekyll/**/*.{html,yml,md,mkd,markdown}',
               '.tmp/<%= app.baseurl %>/css/*.css',
               '.tmp/<%= app.baseurl %>/js/*.js',
-              '<%= app.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
+              '<%= app.app %>/_assets/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
             ]
           }
         },
@@ -168,7 +168,7 @@ module.exports = function(grunt) {
             },
             dist: {
               src: '<%= app.dist %>/<%= app.baseurl %>/**/*.html',
-              dest: '.tmp/<%= app.baseurl %>/css/blog.css'
+              dest: '.tmp/<%= app.baseurl %>/css/style.css'
             }
           },
           autoprefixer: {
@@ -188,7 +188,7 @@ module.exports = function(grunt) {
             dist: {
               options: {
                 base: './',
-                css: ['.tmp/<%= app.baseurl %>/css/blog.css'],
+                css: ['.tmp/<%= app.baseurl %>/css/style.css'],
                 minify: true,
                 width: 320,
                 height: 480
@@ -222,9 +222,9 @@ module.exports = function(grunt) {
             dist: {
               files: [{
                 expand: true,
-                cwd: '<%= app.dist %>/<%= app.baseurl %>/img',
+                cwd: '<%= app.dist %>/<%= app.baseurl %>/_assets/img',
                 src: '**/*.{jpg,jpeg,png,gif}',
-                dest: '<%= app.dist %>/<%= app.baseurl %>/img'
+                dest: '<%= app.dist %>/<%= app.baseurl %>/_assets/img'
               }]
             }
           },
@@ -232,9 +232,9 @@ module.exports = function(grunt) {
             dist: {
               files: [{
                 expand: true,
-                cwd: '<%= app.dist %>/<%= app.baseurl %>/img',
+                cwd: '<%= app.dist %>/<%= app.baseurl %>/_assets/img',
                 src: '**/*.svg',
-                dest: '<%= app.dist %>/<%= app.baseurl %>/img'
+                dest: '<%= app.dist %>/<%= app.baseurl %>/_assets/img'
               }]
             }
           },
@@ -256,7 +256,7 @@ module.exports = function(grunt) {
             dist: {
               options: {
                 dir: '<%= app.dist %>/<%= app.baseurl %>',
-                remote: 'git@github.com:user/repo.git',
+                remote: 'git@github.com:chris-pearce/scally-website.git',
                 branch: 'gh-pages',
                 commit: true,
                 push: true,

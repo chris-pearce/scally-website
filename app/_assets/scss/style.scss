@@ -149,6 +149,7 @@ $color-text-base:  $color-black;
 @import "../../../node_modules/scally/core/reset";
 
 // Base
+$html-element-background-color: $color-grey-concrete;
 @import "../../../node_modules/scally/core/base/root";
 
 @import "../../../node_modules/scally/core/base/abbreviation";
@@ -158,6 +159,7 @@ $color-text-base:  $color-black;
 $details-marker: true;
 @import "../../../node_modules/scally/core/base/details";
 
+$font-size-heading-1: 40;
 @import "../../../node_modules/scally/core/base/headings";
 
 @import "../../../node_modules/scally/core/base/horizontal-rule";
@@ -304,6 +306,10 @@ $c-button-rounded-corners-size:   6px;
  */
 
 @import "components/c-site-header";
+
+@import "components/c-site-main-content";
+
+@import "components/c-site-footer";
 
 @import "components/c-hero";
 

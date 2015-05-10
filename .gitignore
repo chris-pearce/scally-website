@@ -3,6 +3,7 @@
 /.jekyll
 /.tmp
 .jekyll-metadata
+/dist
 
 
 # Compiled source #

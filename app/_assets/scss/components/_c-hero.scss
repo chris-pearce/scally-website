@@ -5,13 +5,29 @@
 
 /**
  * Hero banner that is featured on the home page.
+ *
+ * http://codepen.io/DominicFrancois/pen/zxdXmr?editors=110
  */
 
 
 .c-hero {
   @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
-  background-image: $color-gradient-tropical;
+  position: relative;
+  overflow: hidden;
+  background: $color-gradient-tropical;
+  // background: linear-gradient(to right,
+  //   $color-sun 0%,
+  //   $color-wild-watermelon 16%,
+  //   $color-brick-red 32%,
+  //   $color-wild-watermelon 48%,
+  //   $color-sun 64%,
+  //   $color-wild-watermelon 80%,
+  //   $color-brick-red 100%);
+  // background-size: 300% 300%;
+  // animation: scroll-gradient infinite 60s linear;
+  // background-repeat: no-repeat;
+  // background-position: top left;
 
 
   /**
@@ -27,6 +43,43 @@
   a:focus {
     text-decoration: none;
   }
+}
+
+@keyframes scroll-gradient {
+  from {background-position: top left;}
+  to {background-position: top right;}
+}
+
+.c-hero__gradient {
+  animation: scroll-forever 4s linear;
+  background-image: $color-gradient-tropical;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.c-hero__gradient-after {
+  animation: scroll-forever-reverse 4s linear;
+  background-image: $color-gradient-tropical-reversed;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes scroll-forever {
+  from {transform: translateX(0);}
+  to {transform: translateX(-100%);}
+}
+
+@keyframes scroll-forever-reverse {
+  from {transform: translateX(100%);}
+  to {transform: translateX(0%);}
 }
 
 
@@ -82,7 +135,7 @@
   }
 
   @include respond-to(400) {
-    @include to-rem(margin-right, $spacing-half);
+    @include to-rem(margin-right, $spacing-quarter);
     display: inline-block;
     margin-bottom: 0;
     width: auto;

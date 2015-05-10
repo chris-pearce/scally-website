@@ -55,7 +55,37 @@ $color-wild-watermelon: #fd536f;
 
 
 /**
+ * Sun.
+ *
+ * http://chir.ag/projects/name-that-color/#F9AC0A
+ */
+
+$color-sun: #f9ac0a;
+
+
+/**
+ * Greys.
+ */
+
+// Concrete
+// http://chir.ag/projects/name-that-color/#F2F2F2
+$color-grey-concrete: #f2f2f2;
+
+
+/**
  * Gradients.
  */
 
-$color-gradient-tropical: linear-gradient(-90deg, #f9ac0a 0%, #fd536f 50%, #bf2f44 100%);
+$color-gradient-tropical: linear-gradient(
+  -90deg,
+  $color-sun 0%,
+  $color-wild-watermelon 50%,
+  $color-brick-red 100%
+);
+
+$color-gradient-tropical-reversed: linear-gradient(
+  -90deg,
+  $color-brick-red 0%,
+  $color-wild-watermelon 50%,
+  $color-sun 100%
+);

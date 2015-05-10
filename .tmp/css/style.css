@@ -50,6 +50,14 @@
  * http://chir.ag/projects/name-that-color/#FD536F
  */
 /**
+ * Sun.
+ *
+ * http://chir.ag/projects/name-that-color/#F9AC0A
+ */
+/**
+ * Greys.
+ */
+/**
  * Gradients.
  */
 /* Scally framework
@@ -1231,7 +1239,7 @@ html {
   line-height: 1.625;
   font-family: Merriweather, "Times New Roman", Georgia, Palatino, "Hoefler Text", Baskerville, serif;
   color: #000;
-  background: #fff; }
+  background: #f2f2f2; }
 
 /* ============================================================================
    @CORE -> BASE -> ABBREVIATION
@@ -1411,8 +1419,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
  */
 h1,
 .h1 {
-  font-size: 2.125rem;
-  line-height: 1.52941;
+  font-size: 2.5rem;
+  line-height: 1.3;
   margin-top: 0; }
 
 /**
@@ -5655,31 +5663,6 @@ strong {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 300; }
 
-/**
- * Set margins but make optional.
- */
-/**
- * H1.
- */
-/**
- * H2.
- */
-/**
- * H3.
- */
-h3,
-.h3 {
-  font-weight: 700; }
-
-/**
- * H4.
- */
-/**
- * H5.
- */
-/**
- * H6.
- */
 /* ============================================================================
    @CORE -> PLACEHOLDERS -> TYPOGRAPHY
    ========================================================================= */
@@ -5690,7 +5673,7 @@ h3,
 /**
  * San-serif font.
  */
-.c-hero {
+.c-site-footer, .c-hero {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300; }
 
@@ -5707,15 +5690,51 @@ h3,
   color: #fff; }
 
 /* ============================================================================
+   @COMPONENTS -> SITE MAIN CONTENT
+   ========================================================================= */
+/**
+ * The main content area of the site.
+ */
+.c-site-main-content {
+  padding-bottom: 3.25rem;
+  background-color: #fff; }
+
+/* ============================================================================
+   @COMPONENTS -> SITE FOOTER
+   ========================================================================= */
+/**
+ * The site footer.
+ */
+.c-site-footer {
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.73333;
+  background-color: #f2f2f2;
+  color: #595959; }
+  .c-site-footer p {
+    margin-bottom: 0; }
+
+.c-site-footer__copyright {
+  font-size: 0.875rem;
+  line-height: 1.85714;
+  margin-top: 0.54167rem;
+  display: block; }
+
+/* ============================================================================
    @COMPONENTS -> HERO
    ========================================================================= */
 /**
  * Hero banner that is featured on the home page.
+ *
+ * http://codepen.io/DominicFrancois/pen/zxdXmr?editors=110
  */
 .c-hero {
   padding-top: 3.25rem;
   padding-bottom: 3.25rem;
-  background-image: linear-gradient(-90deg, #f9ac0a 0%, #fd536f 50%, #bf2f44 100%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-90deg, #f9ac0a 0%, #fd536f 50%, #bf2f44 100%);
   /**
    * Base + link colour.
    */ }
@@ -5726,6 +5745,68 @@ h3,
   .c-hero a:focus {
     text-decoration: none; }
 
+@-webkit-keyframes scroll-gradient {
+  from {
+    background-position: top left; }
+  to {
+    background-position: top right; } }
+
+@keyframes scroll-gradient {
+  from {
+    background-position: top left; }
+  to {
+    background-position: top right; } }
+.c-hero__gradient {
+  -webkit-animation: scroll-forever 4s linear;
+          animation: scroll-forever 4s linear;
+  background-image: linear-gradient(-90deg, #f9ac0a 0%, #fd536f 50%, #bf2f44 100%);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.c-hero__gradient-after {
+  -webkit-animation: scroll-forever-reverse 4s linear;
+          animation: scroll-forever-reverse 4s linear;
+  background-image: linear-gradient(-90deg, #bf2f44 0%, #fd536f 50%, #f9ac0a 100%);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+@-webkit-keyframes scroll-forever {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); } }
+
+@keyframes scroll-forever {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%); } }
+@-webkit-keyframes scroll-forever-reverse {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); } }
+@keyframes scroll-forever-reverse {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); } }
 /**
  * Logo.
  */
@@ -5767,7 +5848,7 @@ h3,
     margin-bottom: 0; }
   @media (min-width: 25em) {
     .c-hero__actions__main__button {
-      margin-right: 0.8125rem;
+      margin-right: 0.40625rem;
       display: inline-block;
       margin-bottom: 0;
       width: auto; } }
