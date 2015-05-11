@@ -5,17 +5,18 @@
 
 /**
  * Hero banner that is featured on the home page.
- *
- * http://codepen.io/DominicFrancois/pen/zxdXmr?editors=110
  */
 
 
 .c-hero {
   @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
-  position: relative;
+  //background-image: $color-gradient-tropical;
+  // These 2 rules are needs for the animating gradient
   overflow: hidden;
-  background: $color-gradient-tropical;
+  position: relative;
+
+
   // background: linear-gradient(to right,
   //   $color-sun 0%,
   //   $color-wild-watermelon 16%,
@@ -31,7 +32,7 @@
 
 
   /**
-   * Base + link colour.
+   * Base + link colours.
    */
 
   &,
@@ -45,42 +46,10 @@
   }
 }
 
-@keyframes scroll-gradient {
-  from {background-position: top left;}
-  to {background-position: top right;}
-}
-
-.c-hero__gradient {
-  animation: scroll-forever 4s linear;
-  background-image: $color-gradient-tropical;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.c-hero__gradient-after {
-  animation: scroll-forever-reverse 4s linear;
-  background-image: $color-gradient-tropical-reversed;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-@keyframes scroll-forever {
-  from {transform: translateX(0);}
-  to {transform: translateX(-100%);}
-}
-
-@keyframes scroll-forever-reverse {
-  from {transform: translateX(100%);}
-  to {transform: translateX(0%);}
-}
+// @keyframes scroll-gradient {
+//   from {background-position: top left;}
+//   to {background-position: top right;}
+// }
 
 
 /**
@@ -154,4 +123,56 @@
     @include to-rem(margin-right, $spacing-half);
     display: inline-block;
   }
+}
+
+
+/**
+ * Animating the gradient. We have 2 elements each containing ½ of the
+ * gradient so the gradient is seamless. The 2nd half of the gradient joins to
+ * the 1st half from behind with parts scrolling horizontally for an infinite
+ * number of times.
+ */
+
+.c-hero__gradient {
+  @extend %u-position-pin-all;
+  background-image: $color-gradient-tropical;
+  background-color: $color-sun;
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-delay: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  //animation-fill-mode: backwards;
+  z-index: -1;
+}
+
+/**
+ * Modifier: 1st half.
+ */
+
+.c-hero__gradient--lead {
+  animation-name: hero-scroll;
+}
+
+/**
+ * Modifier: 2nd half.
+ */
+
+.c-hero__gradient--follow {
+  animation-name: hero-scroll-reverse;
+  margin-left: -2px;
+}
+
+/**
+ * The animations.
+ */
+
+@keyframes hero-scroll {
+  from {transform: translateX(0);}
+  to {transform: translateX(-100%);}
+}
+
+@keyframes hero-scroll-reverse {
+  from {transform: translateX(100%) scaleX(-1);}
+  to {transform: translateX(0) scaleX(-1);}
 }

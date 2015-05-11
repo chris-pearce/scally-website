@@ -1,3 +1,12 @@
+/**
+ * Grunt tasks:
+ *
+ * - "clean" — Clear files and folders
+ * - "jekyll" — Straightforward grunt.js Jekyll plugin.
+ * - "uncss" — Removing unused CSS from your projects
+ */
+
+
 'use strict';
 
 module.exports = function(grunt) {
@@ -81,7 +90,7 @@ module.exports = function(grunt) {
             files: [{
               dot: true,
               src: [
-                '.tmp',
+                //'.tmp',
                 '<%= app.dist %>/*',
                 '!<%= app.dist %>/.git*'
               ]
@@ -137,9 +146,9 @@ module.exports = function(grunt) {
           },
           sass: {
             server: {
-              //options: {
-                //sourceMap: true
-              //},
+              options: {
+                sourceMap: false
+              },
               files: [{
                 expand: true,
                 cwd: '<%= app.app %>/_assets/scss',
@@ -150,7 +159,7 @@ module.exports = function(grunt) {
             },
             dist: {
               options: {
-                outputStyle: 'compressed'
+                style: 'compressed'
               },
               files: [{
                 expand: true,
