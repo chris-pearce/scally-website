@@ -13,7 +13,3 @@ grunt serve
 ```
 grunt deploy
 ```
-
-## Credit
-
-<http://o.zasadnyy.com/blog/optimized-jekyll-site-with-grunt/>.

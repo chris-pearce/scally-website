@@ -19,9 +19,9 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
       app: {
-        app: 'app',
-        dist: 'dist',
-        baseurl: ''
+        app:      'app',
+        dist:     'dist',
+        baseurl:  '/scally-website'
       },
       watch: {
         sass: {
