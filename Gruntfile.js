@@ -1,12 +1,3 @@
-/**
- * Grunt tasks:
- *
- * - "clean" — Clear files and folders
- * - "jekyll" — Straightforward grunt.js Jekyll plugin.
- * - "uncss" — Removing unused CSS from your projects
- */
-
-
 'use strict';
 
 module.exports = function(grunt) {
@@ -18,24 +9,39 @@ module.exports = function(grunt) {
   require('jit-grunt')(grunt);
 
     grunt.initConfig({
+
       app: {
         app:      'app',
         dist:     'dist',
         baseurl:  '/scally-website'
       },
+
       watch: {
+
+
+        // ***************************************************************** //
+        // SASS COMPILATION & AUTOPREFIXER
+        // ***************************************************************** //
         sass: {
           files: ['<%= app.app %>/_assets/scss/**/*.{scss,sass}'],
           tasks: ['sass:server', 'autoprefixer']
         },
+
+
+        // ***************************************************************** //
+        // MINIFY JS
+        // ***************************************************************** //
         scripts: {
           files: ['<%= app.app %>/_assets/js/**/*.{js}'],
           tasks: ['uglify']
         },
+
+
+        // ***************************************************************** //
+        // JEKYLL TASKS WITH LIVE-RELOAD
+        // ***************************************************************** //
         jekyll: {
-          files: [
-          '<%= app.app %>/**/*.{html,yml,md,mkd,markdown}'
-          ],
+          files: ['<%= app.app %>/**/*.{html,yml,md,mkd,markdown}'],
           tasks: ['jekyll:server']
           },
           livereload: {
@@ -50,11 +56,16 @@ module.exports = function(grunt) {
             ]
           }
         },
+
+
+        // ***************************************************************** //
+        // CONNECT: LOCAL SERVER SETUP INC. LIVE-RELOAD
+        // ***************************************************************** //
         connect: {
           options: {
             port: 9000,
             livereload: 35729,
-            // change this to '0.0.0.0' to access the server from outside
+            // Change this to '0.0.0.0' to access the server from outside
             hostname: 'localhost'
           },
           livereload: {
@@ -81,6 +92,11 @@ module.exports = function(grunt) {
             }
           }
         },
+
+
+        // ***************************************************************** //
+        // CLEAN FILES & FOLDERS
+        // ***************************************************************** //
         clean: {
           server: [
             '.jekyll',
@@ -90,13 +106,18 @@ module.exports = function(grunt) {
             files: [{
               dot: true,
               src: [
-                //'.tmp',
+                '.tmp',
                 '<%= app.dist %>/*',
                 '!<%= app.dist %>/.git*'
               ]
             }]
           }
         },
+
+
+        // ***************************************************************** //
+        // JEKYLL TASKS
+        // ***************************************************************** //
         jekyll: {
           options: {
             config: '_config.yml,_config.build.yml',
@@ -114,6 +135,11 @@ module.exports = function(grunt) {
               }
             }
           },
+
+
+          // *************************************************************** //
+          // MINIFY HTML
+          // *************************************************************** //
           htmlmin: {
             dist: {
               options: {
@@ -134,6 +160,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // MINIFY JS
+          // *************************************************************** //
           uglify: {
             options: {
               preserveComments: false
@@ -144,6 +175,11 @@ module.exports = function(grunt) {
               }
             }
           },
+
+
+          // *************************************************************** //
+          // SASS COMPILATION
+          // *************************************************************** //
           sass: {
             server: {
               options: {
@@ -151,7 +187,7 @@ module.exports = function(grunt) {
               },
               files: [{
                 expand: true,
-                cwd: '<%= app.app %>/_assets/scss',
+                cwd: '<%= app.app %>/_assets/scss/',
                 src: '**/*.{scss,sass}',
                 dest: '.tmp/<%= app.baseurl %>/css',
                 ext: '.css'
@@ -170,6 +206,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // REMOVE UNUSED CSS
+          // *************************************************************** //
           uncss: {
             options: {
               htmlroot: '<%= app.dist %>/<%= app.baseurl %>',
@@ -180,6 +221,11 @@ module.exports = function(grunt) {
               dest: '.tmp/<%= app.baseurl %>/css/style.css'
             }
           },
+
+
+          // *************************************************************** //
+          // AUTOPREFIXER
+          // *************************************************************** //
           autoprefixer: {
             options: {
                browsers: ['last 2 versions']
@@ -193,6 +239,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // LOAD CRITICAL CSS
+          // *************************************************************** //
           critical: {
             dist: {
               options: {
@@ -210,6 +261,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // MINIFY CSS
+          // *************************************************************** //
           cssmin: {
             dist: {
               options: {
@@ -224,6 +280,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // OPTIMISE IMAGES
+          // *************************************************************** //
           imagemin: {
             options: {
               progressive: true
@@ -237,6 +298,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // MINIFY SVG
+          // *************************************************************** //
           svgmin: {
             dist: {
               files: [{
@@ -247,6 +313,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // COPY FILES AND FOLDERS
+          // *************************************************************** //
           copy: {
             dist: {
               files: [{
@@ -261,6 +332,11 @@ module.exports = function(grunt) {
               }]
             }
           },
+
+
+          // *************************************************************** //
+          // GIT COMMIT AND PUSH TO GH-PAGES
+          // *************************************************************** //
           buildcontrol: {
             dist: {
               options: {
@@ -275,11 +351,14 @@ module.exports = function(grunt) {
           }
         });
 
-        // Define Tasks
-        grunt.registerTask('serve', function(target) {
-          if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
-          }
+
+      // ***************************************************************** //
+      // DEFINE TASKS
+      // ***************************************************************** //
+      grunt.registerTask('serve', function(target) {
+        if (target === 'dist') {
+          return grunt.task.run(['build', 'connect:dist:keepalive']);
+        }
 
         grunt.task.run([
           'clean:server',
@@ -292,11 +371,18 @@ module.exports = function(grunt) {
         ]);
       });
 
+
+      // ***************************************************************** //
+      // REGISTER TASKS
+      // ***************************************************************** //
+
+      // Server
       grunt.registerTask('server', function() {
         grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
         grunt.task.run(['serve']);
       });
 
+      // Build
       grunt.registerTask('build', [
         'clean:dist',
         'jekyll:dist',
@@ -311,12 +397,14 @@ module.exports = function(grunt) {
         'htmlmin'
       ]);
 
+      // Deploy
       grunt.registerTask('deploy', [
         'build',
         'copy',
         'buildcontrol'
       ]);
 
+      // Default (serve)
       grunt.registerTask('default', [
         'serve'
       ]);

@@ -116,12 +116,16 @@ $color-text-base:  $color-black;
 
 @import "../../../node_modules/scally/core/settings/cosmetics";
 
+@import "../../../node_modules/scally/core/settings/retina-resolution";
+
 // Functions
 @import "../../../node_modules/scally/core/functions/convert-px-to-em-rem";
 
 @import "../../../node_modules/scally/core/functions/math-helpers";
 
 @import "../../../node_modules/scally/core/functions/string-replace";
+
+@import "../../../node_modules/scally/core/functions/strip-unit";
 
 // Mixins
 @import "../../../node_modules/scally/core/mixins/convert-px-to-em-rem";
@@ -141,6 +145,8 @@ $color-text-base:  $color-black;
 @import "../../../node_modules/scally/core/mixins/target-browsers";
 
 @import "../../../node_modules/scally/core/mixins/target-headings";
+
+@import "../../../node_modules/scally/core/mixins/text-input-placeholder-colour";
 
 // Normalize
 @import "../../../node_modules/scally/core/normalize";
@@ -164,9 +170,9 @@ $font-size-heading-1: 40;
 
 @import "../../../node_modules/scally/core/base/horizontal-rule";
 
+$apply-link-underline-on-hover:   false;
 $link-color:                      $color-brand;
 $link-color-hover:                $color-wild-watermelon;
-$apply-link-underline-on-hover:   false;
 @import "../../../node_modules/scally/core/base/links";
 
 @import "../../../node_modules/scally/core/base/media";
@@ -222,6 +228,9 @@ $l-container-maximum-width:  640;
 
 @import "../../../node_modules/scally/objects/o-list-block";
 
+$o-list-inline-apply-at-breakpoints:                  401;
+$o-list-inline-apply-at-breakpoints-for-default:      true;
+$o-list-inline-apply-at-breakpoints-for-spacing-tiny: true;
 @import "../../../node_modules/scally/objects/o-list-inline";
 
 @import "../../../node_modules/scally/objects/o-arrow";

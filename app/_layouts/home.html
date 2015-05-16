@@ -2,10 +2,12 @@
 
   <body>
 
-    {% include header.html %}
+    {% include hero.html %}
 
     <main role="main" class="c-site-main-content">
-      {{ content }}
+      <div class="l-container">
+        {{ content }}
+      </div>
     </main>
 
     {% include footer.html %}
@@ -13,7 +15,11 @@
     {% include scripts.html %}
 
     <!-- Initialise scripts -->
-    <script></script>
+    <script>
+    // document.addEventListener('DOMContentLoaded', function() {
+    //   animateHeroGradient();
+    // });
+    </script>
     <!-- //Initialise scripts -->
 
   </body>

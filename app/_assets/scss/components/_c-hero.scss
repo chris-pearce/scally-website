@@ -11,25 +11,15 @@
 .c-hero {
   @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
-  //background-image: $color-gradient-tropical;
+  background-image: $color-gradient-tropical;
+  text-align: center;
   // These 2 rules are needs for the animating gradient
   overflow: hidden;
   position: relative;
 
-
-  // background: linear-gradient(to right,
-  //   $color-sun 0%,
-  //   $color-wild-watermelon 16%,
-  //   $color-brick-red 32%,
-  //   $color-wild-watermelon 48%,
-  //   $color-sun 64%,
-  //   $color-wild-watermelon 80%,
-  //   $color-brick-red 100%);
-  // background-size: 300% 300%;
-  // animation: scroll-gradient infinite 60s linear;
-  // background-repeat: no-repeat;
-  // background-position: top left;
-
+  @include respond-to(lap) {
+    @include to-rem(padding-top padding-bottom, $spacing-quadruple);
+  }
 
   /**
    * Base + link colours.
@@ -46,37 +36,17 @@
   }
 }
 
-// @keyframes scroll-gradient {
-//   from {background-position: top left;}
-//   to {background-position: top right;}
-// }
-
 
 /**
  * Logo.
  */
 
 .c-hero__logo {
-  @include to-rem(margin-bottom, $spacing-double);
-  text-align: center;
-}
+  max-width: 80%;
 
-
-/**
- * Description.
- */
-
-.c-hero__desc {
-  @include font-size($font-size-x-large, 1.55);
-}
-
-
-/**
- * Actions.
- */
-
-.c-hero__actions {
-  text-align: center;
+  @include respond-to(lap) {
+    max-width: 100%;
+  }
 }
 
 
@@ -84,30 +54,39 @@
  * Main actions.
  */
 
-.c-hero__actions__main {
-  @include to-rem(margin-bottom, $spacing-half);
+.c-hero__actions-main {
+  @include to-rem(margin-bottom, $spacing-base);
   @include to-rem(margin-top, $spacing-double);
-}
 
-/**
- * Main action buttons are full bleed up until the viewport hits 400px wide at
- * which point they become as wide as the button text and horizontally align.
- */
+  > li {
+    @include to-rem(margin-bottom, $spacing-third);
 
-.c-hero__actions__main__button {
-  @include to-rem(margin-bottom, $spacing-third);
-  @include to-rem(padding-top padding-bottom, $spacing-half + $spacing-micro);
-  @include font-size($font-size-large, normal);
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-  &:last-child {
-    margin-bottom: 0;
+    @include respond-to(400) {
+      @include to-rem(margin-right, $spacing-quarter);
+      margin-bottom: 0;
+    }
   }
 
-  @include respond-to(400) {
-    @include to-rem(margin-right, $spacing-quarter);
-    display: inline-block;
-    margin-bottom: 0;
-    width: auto;
+
+  /**
+   * Main action buttons are full bleed up until the viewport hits 400px wide
+   * at which point they become as wide as the button text and horizontally
+   * aligned.
+   *
+   * Extend `.c-button` from Scally -> Components -> Button.
+   */
+
+  .c-button {
+    @include font-size($font-size-large, normal);
+
+    @include respond-to(400) {
+      display: inline-block;
+      width: auto;
+    }
   }
 }
 
@@ -116,7 +95,7 @@
  * Sub actions.
  */
 
-.c-hero__actions__sub {
+.c-hero__actions-sub {
   @include font-size($font-size-small);
 
   a {
@@ -127,22 +106,21 @@
 
 
 /**
- * Animating the gradient. We have 2 elements each containing ½ of the
- * gradient so the gradient is seamless. The 2nd half of the gradient joins to
- * the 1st half from behind with parts scrolling horizontally for an infinite
- * number of times.
+ * Animating the gradient horizontally. We have 2 elements both being 100% of
+ * the viewport and having the gradient as a background image. Each element of
+ * the gradient, the 2nd element  so the gradient is seamless. The 2nd half of
+ * the gradient joins to the 1st half from behind with parts scrolling
+ * horizontally for an infinite number of times.
  */
 
 .c-hero__gradient {
   @extend %u-position-pin-all;
   background-image: $color-gradient-tropical;
-  background-color: $color-sun;
-  animation-duration: 60s;
+  animation-duration: 90s;
   animation-timing-function: linear;
   animation-delay: 6s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  //animation-fill-mode: backwards;
   z-index: -1;
 }
 
@@ -151,7 +129,7 @@
  */
 
 .c-hero__gradient--lead {
-  animation-name: hero-scroll;
+  animation-name: hero-scroll-lead;
 }
 
 /**
@@ -159,20 +137,20 @@
  */
 
 .c-hero__gradient--follow {
-  animation-name: hero-scroll-reverse;
-  margin-left: -2px;
+  animation-name: hero-scroll-follow;
+  margin-left: -1px;
 }
 
 /**
  * The animations.
  */
 
-@keyframes hero-scroll {
+@keyframes hero-scroll-lead {
   from {transform: translateX(0);}
   to {transform: translateX(-100%);}
 }
 
-@keyframes hero-scroll-reverse {
+@keyframes hero-scroll-follow {
   from {transform: translateX(100%) scaleX(-1);}
   to {transform: translateX(0) scaleX(-1);}
 }

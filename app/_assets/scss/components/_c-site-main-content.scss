@@ -9,5 +9,6 @@
 
 
 .c-site-main-content {
+  @include to-rem(padding-top padding-bottom, $spacing-triple);
   background-color: $color-white;
 }
