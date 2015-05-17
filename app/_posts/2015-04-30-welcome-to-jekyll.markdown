@@ -23,3 +23,31 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-help]: https://github.com/jekyll/jekyll-help
+
+
+<details class="u-hide">
+  <summary class="u-position-relative">
+    View HTML
+    <span class="u-arrow u-arrow--right u-arrow--small u-position-absolute u-position-right u-position-v-middle u-s-mr-micro"></span>
+    <span class="u-arrow u-arrow--down u-arrow--small u-position-absolute u-position-right u-position-v-middle u-s-mr-tiny"></span>
+  </summary>
+  <pre><code class="language-markup">&lt;div class="l-grid"&gt;
+  &lt;div class="l-grid__item  u-one-third-from-lap"&gt;
+    [content]
+  &lt;/div&gt;
+  &lt;div class="l-grid__item  u-one-third-from-lap"&gt;
+    [content]
+  &lt;/div&gt;
+  &lt;div class="l-grid__item  u-one-third-from-lap"&gt;
+    [content]
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="l-grid"&gt;
+  &lt;div class="l-grid__item  u-one-half-from-lap"&gt;
+    [content]
+  &lt;/div&gt;
+  &lt;div class="l-grid__item  u-one-half-from-lap"&gt;
+    [content]
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</details>

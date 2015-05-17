@@ -11,9 +11,30 @@
 
 
 /**
- * Apply font weight.
+ * Apply common treatments.
  */
 
 @include headings(1, 6, true) {
+  @extend %bottom-spacing;
+}
+
+@include headings(2, 4, true) {
   font-weight: 300;
+}
+
+@include headings(5, 6, true) {
+  font-weight: bold;
+}
+
+
+/**
+ * H1.
+ */
+
+h1,
+.h1 {
+  background-image: $color-gradient-tropical;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }

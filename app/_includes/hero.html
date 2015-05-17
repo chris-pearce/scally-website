@@ -1,15 +1,19 @@
 <!-- Hero -->
-<header class="c-hero  js-animate-hero-gradient" role="banner">
-  <div class="l-container">
+<section class="c-hero">
+  <div class="c-hero__inner  l-container">
 
     <!-- Logo -->
     <img class="c-hero__logo" src="/_assets/img/logo.svg" alt="Scally CSS framework">
     <!-- //Logo -->
 
+    <!-- Slogan -->
+    <p class="c-hero__slogan">A rock solid, powerful little CSS framework that won't let you down.</p>
+    <!-- //Slogan -->
+
     <!-- Actions -->
-    <ul class="c-hero__actions-main  o-list-inline-from-401">
+    <ul class="c-hero__actions  o-list-inline-from-401  u-hide">
       <li>
-        <a href="#" class="c-button c-button--full-bleed">Getting started</a>
+        <a href="#" class="c-button c-button--full-bleed">Getting Started</a>
       </li><!--
       --><li>
         <a href="#" class="c-button c-button--full-bleed">Demos</a>
@@ -18,11 +22,28 @@
         <a href="#" class="c-button c-button--full-bleed">Docs</a>
       </li>
     </ul>
-    <div class="c-hero__actions-sub">
-      v2.0.2—<a href="#">CHANGELOG</a><!--
+    <!-- //Actions -->
+
+    <!-- Install commands -->
+    <ul class="c-hero__install  o-list-inline-from-401">
+      <li>
+        <kbd class="c-hero__install__item">bower install scally</kbd>
+      </li><!--
+      --><li>
+        <kbd class="c-hero__install__item">npm install scally</kbd>
+      </li><!--
+      --><li>
+        <a href="https://github.com/chris-pearce/scally/archive/master.zip" rel="external" class="c-hero__install__item c-hero__cmds__item--link"><span>⬇</span> Download Scally</a>
+      </li>
+    </ul>
+    <!-- //Install commands -->
+
+    <!-- Version and GitHub link -->
+    <div class="c-hero__version">
+      <strong>v2.3.1</strong>—<strong>14kb</strong> <a href="https://github.com/chris-pearce/scally/blob/master/CHANGELOG.md" rel="external">CHANGELOG</a><!--
       --><a href="https://github.com/chris-pearce/scally" rel="external">GitHub</a>
     </div>
-    <!-- //Actions -->
+    <!-- //Version and GitHub link -->
 
   </div>
 
@@ -31,5 +52,5 @@
   <div class="c-hero__gradient c-hero__gradient--follow"></div>
   <!-- //Animating gradient -->
 
-</header>
+</section>
 <!-- //Hero -->

@@ -95,8 +95,6 @@
 
 // Settings
 $font-size:            16;
-$font-size-heading-1:  34;
-$font-size-heading-3:  18;
 $line-height:          26;
 $font-family-base:     Merriweather, "Times New Roman", Georgia, Palatino,
                        "Hoefler Text", Baskerville, serif;
@@ -165,7 +163,11 @@ $html-element-background-color: $color-grey-concrete;
 $details-marker: true;
 @import "../../../node_modules/scally/core/base/details";
 
-$font-size-heading-1: 40;
+$apply-heading-margins: false;
+$font-size-heading-1:   30;
+$font-size-heading-5:   $font-size + 2;
+$font-size-heading-6:   $font-size;
+$font-family-headings:  $font-family-sans-serif;
 @import "../../../node_modules/scally/core/base/headings";
 
 @import "../../../node_modules/scally/core/base/horizontal-rule";

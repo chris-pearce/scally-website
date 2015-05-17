@@ -12,10 +12,12 @@
   @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
   background-image: $color-gradient-tropical;
+  background: black;
   text-align: center;
-  // These 2 rules are needs for the animating gradient
+  // These rules are needs for the animating gradient
   overflow: hidden;
   position: relative;
+  z-index: 1;
 
   @include respond-to(lap) {
     @include to-rem(padding-top padding-bottom, $spacing-quadruple);
@@ -38,6 +40,18 @@
 
 
 /**
+ * Inner container.
+ *
+ * N.B. these rules are needed for the animating gradient.
+ */
+
+.c-hero__inner {
+  position: relative;
+  z-index: 3;
+}
+
+
+/**
  * Logo.
  */
 
@@ -51,12 +65,20 @@
 
 
 /**
- * Main actions.
+ * The slogan.
  */
 
-.c-hero__actions-main {
-  @include to-rem(margin-bottom, $spacing-base);
+.c-hero__slogan {
   @include to-rem(margin-top, $spacing-double);
+}
+
+
+/**
+ * Install.
+ */
+
+.c-hero__install {
+  @include to-rem(margin-bottom, $spacing-base);
 
   > li {
     @include to-rem(margin-bottom, $spacing-third);
@@ -65,8 +87,58 @@
       margin-bottom: 0;
     }
 
-    @include respond-to(400) {
-      @include to-rem(margin-right, $spacing-quarter);
+    @include respond-to(401) {
+      @include to-rem(margin-right, $spacing-third);
+    }
+
+    @include respond-to(lap) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/**
+ * Install items.
+ */
+
+// `kbd`
+.c-hero__install__item {
+  @include to-rem(padding, 6 12);
+  background-color: $color-black;
+  border-radius: 6px;
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+// `a`
+.c-hero__cmds__item--link {
+  text-decoration: none;
+
+  // Nudge down the Unicode arrow to align with the link text
+  span {
+    position: relative;
+    top: 1px;
+  }
+}
+
+
+/**
+ * Main actions.
+ */
+
+.c-hero__actions-mainX {
+  @include to-rem(margin-bottom, $spacing-base);
+
+  > li {
+    @include to-rem(margin-bottom, $spacing-third);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include respond-to(401) {
+      @include to-rem(padding-right, $spacing-third);
       margin-bottom: 0;
     }
   }
@@ -83,7 +155,7 @@
   .c-button {
     @include font-size($font-size-large, normal);
 
-    @include respond-to(400) {
+    @include respond-to(401) {
       display: inline-block;
       width: auto;
     }
@@ -92,10 +164,10 @@
 
 
 /**
- * Sub actions.
+ * Version number, CHANGELOG and GitHub links.
  */
 
-.c-hero__actions-sub {
+.c-hero__version {
   @include font-size($font-size-small);
 
   a {
@@ -107,8 +179,7 @@
 
 /**
  * Animating the gradient horizontally. We have 2 elements both being 100% of
- * the viewport and having the gradient as a background image. Each element of
- * the gradient, the 2nd element  so the gradient is seamless. The 2nd half of
+ * the viewport and having the gradient as a background image. The 2nd half of
  * the gradient joins to the 1st half from behind with parts scrolling
  * horizontally for an infinite number of times.
  */
@@ -116,12 +187,15 @@
 .c-hero__gradient {
   @extend %u-position-pin-all;
   background-image: $color-gradient-tropical;
-  animation-duration: 90s;
+  animation-duration: 60s;
   animation-timing-function: linear;
-  animation-delay: 6s;
+  //animation-delay: 6s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  z-index: -1;
+  z-index: 2;
+  // This is needed to join the 2 gradients seamlessly in Chrome
+  width: 100%;
+  height: 100%;
 }
 
 /**
@@ -137,6 +211,7 @@
  */
 
 .c-hero__gradient--follow {
+  background-image: $color-gradient-tropical-alt;
   animation-name: hero-scroll-follow;
   margin-left: -1px;
 }
@@ -151,6 +226,6 @@
 }
 
 @keyframes hero-scroll-follow {
-  from {transform: translateX(100%) scaleX(-1);}
-  to {transform: translateX(0) scaleX(-1);}
+  from {transform: translateX(100%);}
+  to {transform: translateX(0);}
 }

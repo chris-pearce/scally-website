@@ -71,6 +71,10 @@ $color-sun: #f9ac0a;
 // http://chir.ag/projects/name-that-color/#F2F2F2
 $color-grey-concrete: #f2f2f2;
 
+// Scorpion
+// http://chir.ag/projects/name-that-color/#595959
+$color-grey-scorpion: #595959;
+
 
 /**
  * Gradient.
@@ -80,5 +84,13 @@ $color-gradient-tropical: linear-gradient(
   -90deg,
   $color-sun 0%,
   $color-wild-watermelon 50%,
+  $color-brick-red 100%
+);
+
+$color-gradient-tropical-alt: linear-gradient(
+  90deg,
+  $color-sun 0%,
+  $color-wild-watermelon 42%,
+  $color-brick-red 66%,
   $color-brick-red 100%
 );

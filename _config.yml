@@ -50,3 +50,7 @@ markdown: kramdown
 
 # Code highlighter
 highlighter: pygments
+
+
+# Excerpt separator
+excerpt_separator: <!--more-->

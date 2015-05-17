@@ -13,14 +13,37 @@
   @include to-rem(padding-top padding-bottom, $spacing-double);
   @include font-size($font-size-small);
   background-color: $color-grey-concrete;
-  color: darken($color-grey-concrete, 60%);
+  color: $color-grey-scorpion;
 
-  p {margin-bottom: 0;}
+  p {
+    margin-bottom: 0;
+  }
 }
 
 
+/**
+ * Nav.
+ */
+
+.c-site-footer__nav {
+  @include to-rem(margin-top margin-bottom, $spacing-third);
+}
+
+
+/**
+ * Copyright.
+ */
+
 .c-site-footer__copyright {
   @include font-size($font-size-x-small);
-  @include to-rem(margin-top, $spacing-third);
   display: block;
+}
+
+
+/**
+ * Social buttons.
+ */
+
+.c-site-footer__social {
+  @include to-rem(margin-top, $spacing-base-plus-half);
 }

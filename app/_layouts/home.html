@@ -2,12 +2,16 @@
 
   <body>
 
-    {% include hero.html %}
+    <main role="main">
 
-    <main role="main" class="c-site-main-content">
-      <div class="l-container">
-        {{ content }}
-      </div>
+      {% include hero.html %}
+
+      <section class="c-site-main-content">
+        <div class="l-container">
+          {{ content }}
+        </div>
+      </section>
+
     </main>
 
     {% include footer.html %}
