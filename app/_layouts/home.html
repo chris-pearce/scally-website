@@ -2,14 +2,14 @@
 
   <body>
 
-    <main role="main">
+    {% include header.html %}
+
+    <main class="c-site-main-content" role="main">
 
       {% include hero.html %}
 
-      <section class="c-site-main-content">
-        <div class="l-container">
-          {{ content }}
-        </div>
+      <section class="c-site-main-content__top-padding  l-container">
+        {{ content }}
       </section>
 
     </main>
@@ -17,14 +17,6 @@
     {% include footer.html %}
 
     {% include scripts.html %}
-
-    <!-- Initialise scripts -->
-    <script>
-    // document.addEventListener('DOMContentLoaded', function() {
-    //   animateHeroGradient();
-    // });
-    </script>
-    <!-- //Initialise scripts -->
 
   </body>
 

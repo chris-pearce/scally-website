@@ -6,7 +6,7 @@
 /**
  * Double stranded for greater reuse.
  *
- * N.B. this builds on top of the Scally headings component.
+ * N.B. this builds on top of the Scally headings base styles.
  */
 
 
@@ -14,10 +14,12 @@
  * Apply common treatments.
  */
 
-@include headings(1, 6, true) {
+// Bottom margin
+@include headings(4, 6, true) {
   @extend %bottom-spacing;
 }
 
+// Font weights
 @include headings(2, 4, true) {
   font-weight: 300;
 }
@@ -34,7 +36,8 @@
 h1,
 .h1 {
   background-image: $color-gradient-tropical;
+  font-family: $font-family-base;
+  font-weight: $font-weight-bold;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 600;
 }

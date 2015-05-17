@@ -1,0 +1,15 @@
+/* ============================================================================
+   @LAYOUT -> CONTAINER
+   ========================================================================= */
+
+
+/**
+ * The main container that wraps all major layout pieces.
+ *
+ * N.B. this builds on top of the Scally container layout module.
+ */
+
+
+.l-container--wide {
+  @include to-rem(max-width, 1600);
+}

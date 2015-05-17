@@ -9,6 +9,26 @@
 
 
 .c-site-main-content {
-  @include to-rem(padding-top padding-bottom, $spacing-triple);
+  // Apply the amount of top padding + the height of the fixed header
+  @include to-rem(padding-top, $spacing-double + 50);
+  @include to-rem(padding-bottom, $spacing-triple);
   background-color: $color-white;
+
+
+  /**
+   * Home page.
+   */
+
+  .s-view-home & {
+    padding-top: 0;
+  }
+}
+
+
+/**
+ * Apply top padding.
+ */
+
+.c-site-main-content__top-padding {
+  @include to-rem(padding-top, $spacing-triple);
 }

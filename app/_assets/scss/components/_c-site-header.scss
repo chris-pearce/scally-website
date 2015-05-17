@@ -8,7 +8,57 @@
  */
 
 
-.header {
+.c-site-header {
+  @extend %font-family-sans-serif;
+  @include font-size($font-size-small, none);
+  background-image: $color-gradient-tropical;
+  position: fixed;
+  width: 100%;
+  z-index: index($z-index-elements-global, header);
+}
 
-  a {color: $color-white;}
+
+/**
+ * Main navigation.
+ */
+
+.c-site-header__nav {
+  @extend %o-list-inline;
+
+
+  /**
+   * Links.
+   */
+
+  a {
+    @include to-rem(padding, $spacing-half);
+    color: $color-white;
+    display: block;
+    position: relative;
+    text-decoration: none;
+
+
+    /**
+     * Line that appears at the top of the links on hover/active states.
+     */
+
+    &:before {
+      @extend %u-position-pin-sides-top;
+      content: "";
+      height: 3px;
+      background-color: $color-white;
+      transform: translateY(-100%);
+      transition: transform 0.15s linear 0.15s;
+    }
+
+    /**
+     * Hover and active states.
+     */
+
+    &:hover:before,
+    &:focus:before,
+    &.is-active:before {
+      transform: translateY(calc(100% - 3px));
+    }
+  }
 }

@@ -5,6 +5,10 @@
 
 /**
  * The root element: `html`.
+ *
+ * N.B. this builds on top of the Scally root base styles.
  */
 
-html {font-weight: $font-weight-normal;}
+html {
+  font-weight: $font-weight-normal;
+}

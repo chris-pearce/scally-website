@@ -164,7 +164,7 @@ $details-marker: true;
 @import "../../../node_modules/scally/core/base/details";
 
 $apply-heading-margins: false;
-$font-size-heading-1:   30;
+$font-size-heading-1:   36;
 $font-size-heading-5:   $font-size + 2;
 $font-size-heading-6:   $font-size;
 $font-family-headings:  $font-family-sans-serif;
@@ -310,6 +310,13 @@ $c-button-rounded-corners-size:   6px;
 
 // Placeholders
 @import "core/placeholders/typography";
+
+
+/**
+ * LAYOUT.
+ */
+
+@import "layout/l-container";
 
 
 /**

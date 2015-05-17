@@ -3,6 +3,11 @@
  *
  * @credit
  * http://opticalcortex.com/animating-css-gradients/
+ *
+ * @initialise
+   document.addEventListener('DOMContentLoaded', function() {
+     animateHeroGradient();
+   });
  */
 
 
