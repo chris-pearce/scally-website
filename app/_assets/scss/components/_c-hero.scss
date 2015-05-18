@@ -107,18 +107,33 @@
   background-color: $color-black;
   border-radius: 6px;
   display: inline-block;
-  width: 100%;
   vertical-align: middle;
 }
 
 // link
 .c-hero__cmds__item--link {
   text-decoration: none;
+}
 
-  // Nudge down the Unicode arrow to align with the link text
-  span {
-    position: relative;
-    top: 1px;
+
+/**
+ * Unicode arrow.
+ */
+
+.c-hero__install__item__arrow {
+  color: $color-wild-watermelon;
+  display: inline-block;
+  transform: translateY(1px);
+  transition: transform 0.2s ease-in;
+
+
+  /**
+   * Hover state.
+   */
+
+  .c-hero__install__item:hover &,
+  .c-hero__install__item:focus & {
+    transform: translateY(4px);
   }
 }
 
