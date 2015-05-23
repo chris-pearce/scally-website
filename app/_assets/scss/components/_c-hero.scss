@@ -17,7 +17,6 @@
   overflow: hidden;
   position: relative;
   z-index: 1;
-  //min-height: 100vh;
 
   @include respond-to(lap) {
     @include to-rem(padding-top padding-bottom, $spacing-quadruple + $spacing-base);
@@ -56,7 +55,11 @@
  */
 
 .c-hero__logo {
+  width: 251px;
+  height: 92px;
   max-width: 80%;
+  fill: $color-white;
+  //stroke: $color-white;
 
   @include respond-to(lap) {
     max-width: 100%;
@@ -121,20 +124,8 @@
  */
 
 .c-hero__install__item__arrow {
-  color: $color-wild-watermelon;
   display: inline-block;
   transform: translateY(1px);
-  transition: transform 0.2s ease-in;
-
-
-  /**
-   * Hover state.
-   */
-
-  .c-hero__install__item:hover &,
-  .c-hero__install__item:focus & {
-    transform: translateY(4px);
-  }
 }
 
 

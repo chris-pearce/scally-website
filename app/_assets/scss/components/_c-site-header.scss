@@ -31,6 +31,25 @@ $c-site-header-nav-overline-thickness: 3px;
 
 
 /**
+ * Logo.
+ */
+
+.c-site-header__logo {
+  width: 80px;
+  height: 40px;
+
+  // Hide for the home page
+  .s-view-home & {
+    display: none;
+  }
+}
+
+.c-site-header__logo__fill {
+  fill: $color-white;
+}
+
+
+/**
  * Main navigation.
  */
 
