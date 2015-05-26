@@ -1,0 +1,85 @@
+/* ============================================================================
+   @COMPONENTS -> DEMO BLOCK
+   ========================================================================= */
+
+
+/**
+ * A component that encapsulates demos for Scally.
+ */
+
+
+/**
+ * Settings.
+ */
+
+$c-demo-block-border-thickness: 1px;
+
+
+.c-demo-block {
+  @include to-rem(margin-bottom, $spacing-double);
+}
+
+
+/**
+ * The title.
+ */
+
+.c-demo-block__title {
+  @extend %bottom-spacing-half;
+}
+
+
+/**
+ * The intro.
+ */
+
+.c-demo-block__intro {
+  @include font-size($font-size-small);
+}
+
+
+/**
+ * The example block.
+ */
+
+.c-demo-block__example {
+  @include to-rem(margin-left margin-right, -$spacing-base);
+  border: $c-demo-block-border-thickness solid $color-grey-concrete;
+  border-radius: $border-radius;
+}
+
+
+/**
+ * Apply inner padding.
+ *
+ * N.B. override padding from: Vendor -> Pygments Themes -> Solarized Dark.
+ */
+
+.c-demo-block__example__padded {
+  @include to-rem(padding, $spacing-base);
+}
+
+.c-demo-block__example .highlight {
+  @include to-rem(padding-top padding-bottom, $spacing-half);
+}
+
+
+/**
+ * The example code.
+ */
+
+.c-demo-block__example__code {
+  margin-left: -$c-demo-block-border-thickness;
+  margin-right: -$c-demo-block-border-thickness;
+
+
+  /**
+   * Have to apply the rounded corners to Vendor -> Pygments Themes ->
+   * Solarized Dark as that is where the background colour is applied.
+   */
+
+  .highlight {
+    //border-bottom-left-radius: $border-radius;
+    //border-bottom-right-radius: $border-radius;
+  }
+}

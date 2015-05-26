@@ -14,14 +14,19 @@
  * Apply common treatments.
  */
 
+// Colour
+@include headings(3, 6, true) {
+  color: $color-black;
+}
+
 // Bottom margin
-@include headings(4, 6, true) {
+@include headings(2, 6, true) {
   @extend %bottom-spacing;
 }
 
 // Font weights
 @include headings(2, 4, true) {
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 
 @include headings(5, 6, true) {
@@ -30,14 +35,12 @@
 
 
 /**
- * H1.
+ * H2.
  */
 
-h1,
-.h1 {
+h2,
+.h2 {
   background-image: $color-gradient-tropical;
-  font-family: $font-family-base;
-  font-weight: $font-weight-bold;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

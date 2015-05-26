@@ -108,10 +108,11 @@ $font-family-base:     Merriweather, Georgia, Palatino,
 
 @import "../../../node_modules/scally/core/settings/colours";
 $color-brand:      $color-brick-red;
-$color-text-base:  $color-black;
+$color-text-base:  #444;
 
 @import "../../../node_modules/scally/core/settings/positioning";
 
+$border-radius: 4px;
 @import "../../../node_modules/scally/core/settings/cosmetics";
 
 @import "../../../node_modules/scally/core/settings/retina-resolution";
@@ -160,11 +161,12 @@ $html-element-background-color: $color-grey-concrete;
 
 @import "../../../node_modules/scally/core/base/forms";
 
-$details-marker: true;
 @import "../../../node_modules/scally/core/base/details";
 
-$apply-heading-margins: false;
-$font-size-heading-1:   36;
+$apply-heading-margins: true;
+$font-size-heading-1:   42;
+$font-size-heading-2:   35;
+$font-size-heading-3:   30;
 $font-size-heading-5:   $font-size + 2;
 $font-size-heading-6:   $font-size;
 $font-family-headings:  $font-family-sans-serif;
@@ -308,6 +310,10 @@ $c-button-rounded-corners-size:   6px;
 
 @import "core/base/headings";
 
+@import "core/base/code";
+
+@import "core/base/target";
+
 // Placeholders
 @import "core/placeholders/typography";
 
@@ -325,63 +331,24 @@ $c-button-rounded-corners-size:   6px;
 
 @import "components/c-site-header";
 
-@import "components/c-site-main-content";
-
 @import "components/c-site-footer";
+
+@import "components/c-main-content";
 
 @import "components/c-hero";
 
 @import "components/c-button";
 
+@import "components/c-page-heading";
+
+@import "components/c-demo-block";
+
+@import "components/c-inline-code";
 
 
+/**
+ * VENDOR.
+ */
 
-
-
-
-
-/*pre[class*="language-"] {
-  margin: 0 0 2px;
-  padding: 18px;
-  max-height: 212px;
-
-  &:last-child {
-    margin-bottom: 0;
-    border-bottom: 0;
-  }
-}
-code[class*="language-"] {display: block;}
-
-pre code {@include font-size(13);}
-
-.hdr-alt {
-  background-image: linear-gradient(-90deg, #F9AC0A 0%, #FD536F 50%, #BF2F44 100%);
-  padding-bottom: 1px;
-
-  div {
-    background: white;
-    padding: 0 6px 6px 6px;
-  }
-
-  p {line-height: 1.35;}
-}
-
-details {margin-bottom: 2px;}
-
-summary {
-  background: #f5f2f0;
-  padding: 6px 12px;
-  @include font-size(13, 1.2);
-
-  .u-arrow--down {
-    display: none;
-    top: 60%;
-  }
-}
-
-details[open] summary {
-  background: darken(#f5f2f0, 5%);
-
-  .u-arrow--right {display: none;}
-  .u-arrow--down {display: block;}
-}*/
+// Pygments syntax highlighter themes
+@import "vendor/pygments-themes/solarized-dark";

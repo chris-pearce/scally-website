@@ -1,0 +1,14 @@
+/* ============================================================================
+   @COMPONENTS -> LEDE
+   ========================================================================= */
+
+
+/**
+ * An introductory paragraph of a page.
+ */
+
+
+.c-lede {
+  @include font-size($font-size-large, 1.65);
+  @include to-rem(margin-bottom, $spacing-double);
+}

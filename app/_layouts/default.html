@@ -4,8 +4,20 @@
 
     {% include header.html %}
 
-    <main role="main" class="c-site-main-content">
-      {{ content }}
+    <main role="main">
+      <article>
+        <header class="c-page-heading">
+          <div class="l-container">
+            <h1 class="c-page-heading__title">{{ page.title }}</h1>
+            <p class="c-page-heading__intro">{{ page.intro }}</p>
+          </div>
+        </header>
+        <div class="c-main-content">
+          <div class="l-container">
+            {{ content }}
+          </div>
+        </div>
+      </article>
     </main>
 
     {% include footer.html %}
@@ -13,7 +25,11 @@
     {% include scripts.html %}
 
     <!-- Initialise scripts -->
-    <script></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        //ghe.autoload();
+      });
+    </script>
     <!-- //Initialise scripts -->
 
   </body>

@@ -1,0 +1,37 @@
+/* ============================================================================
+   @COMPONENTS -> PAGE HEADING
+   ========================================================================= */
+
+
+/**
+ * The page heading, consists of 1 heading: `h1` and an intro paragraph.
+ */
+
+.c-page-heading {
+  // Apply the amount of top padding + the height of the fixed header
+  @include to-rem(padding-top, $spacing-double + $fixed-site-header-height);
+  @include to-rem(padding-bottom, $spacing-base-plus-half);
+  background-color: $color-brick-red;
+  background-image: $color-gradient-tropical;
+  color: $color-white;
+}
+
+
+/**
+ * Title: `h1`.
+ */
+
+.c-page-heading__title {
+  @extend %bottom-spacing-half;
+  font-family: $font-family-base;
+  font-weight: $font-weight-bold;
+}
+
+
+/**
+ * Intro.
+ */
+
+.c-page-heading__intro {
+  font-style: italic;
+}

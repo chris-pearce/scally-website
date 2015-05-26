@@ -4,14 +4,15 @@
 
     {% include header.html %}
 
-    <main class="c-site-main-content" role="main">
-
-      {% include hero.html %}
-
-      <section class="c-site-main-content__top-padding  l-container">
-        {{ content }}
-      </section>
-
+    <main role="main">
+      <article>
+        {% include hero.html %}
+        <div class="c-main-content">
+          <div class="l-container">
+            {{ content }}
+          </div>
+        </div>
+      </article>
     </main>
 
     {% include footer.html %}

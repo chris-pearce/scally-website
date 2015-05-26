@@ -1,11 +1,94 @@
 ---
 layout:             default
 title:              Demos
-excerpt:
+intro:              Demos for all the major sections of Scally.
+excerpt:            Demos for the Core/Base section. The Base section
+                    provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors.
 exclude_from_nav:   false
 weight:             3
 ---
 
-<div class="l-container">
-  <h1>{{ page.title }}</h1>
-</div>
+
+<h2>Core / Base</h2>
+
+<p>The Base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors. <a href="#">Read more &#8594;</a>.</p>
+
+<h3>What's in Base?</h3>
+<ol class="o-list  u-s-mb-large">
+  <li><a href="#abbreviation">Abbreviation</a></li>
+  <li><a href="#details">Details</a></li>
+  <li><a href="">Forms</a></li>
+  <li><a href="">Headings</a></li>
+  <li><a href="">Horizontal rule</a></li>
+  <li><a href="">Links</a></li>
+  <li><a href="">Media</a></li>
+  <li><a href="">Paragraphs</a></li>
+  <li><a href="">Print</a></li>
+  <li><a href="">Root</a></li>
+  <li><a href="">Viewport</a></li>
+</ol>
+
+
+<section class="c-demo-block" id="abbreviation">
+  <h3 class="c-demo-block__title">Abbreviation</h3>
+  <p class="c-demo-block__intro">Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the <code class="c-inline-code">title</code> attribute.</p>
+  <div class="c-demo-block__example">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>
+{% endhighlight %}
+{% highlight scss %}
+/**
+ * Settings.
+ */
+
+$apply-details-marker: false !default;
+
+
+summary {
+  cursor: pointer;
+
+
+  /**
+   * Control the visibility of the `detail`s marker.
+   */
+
+  @if $apply-details-marker {
+    &::-webkit-details-marker {display: none;}
+  }
+}
+{% endhighlight %}
+    </div>
+    <!-- <script src="http://gist-it.appspot.com/https://github.com/chris-pearce/scally/blob/master/core/base/_abbreviation.scss"></script> -->
+</section>
+
+
+<section class="c-demo-block" id="details">
+  <h3 class="c-demo-block__title">Details</h3>
+  <p class="c-demo-block__intro">Apply <code class="c-inline-code">cursor: pointer;</code> to the <code class="c-inline-code">summary</code> element.</p>
+  <div class="c-demo-block__example">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <details>
+        <summary>Some details</summary>
+        <p>More info about the details.</p>
+      </details>
+    </div>
+    <div class="c-demo-block__example__code">
+{% highlight html linenos %}
+<details>
+  <summary>Some details</summary>
+  <p>More info about the details.</p>
+</details>
+{% endhighlight %}
+    </div>
+    <!-- <div class="c-demo-block__example__padded">
+      <a href="#">View source code</a>
+    </div> -->
+    <!-- <script src="http://gist-it.appspot.com/https://github.com/chris-pearce/scally/blob/master/core/base/_details.scss"></script> -->
+</script>
+  </div>
+</section>

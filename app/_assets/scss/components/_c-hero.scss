@@ -11,6 +11,7 @@
 .c-hero {
   @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
+  background-color: $color-brick-red;
   background-image: $color-gradient-tropical;
   text-align: center;
   // These rules are needs for the animating gradient
@@ -59,7 +60,6 @@
   height: 92px;
   max-width: 80%;
   fill: $color-white;
-  //stroke: $color-white;
 
   @include respond-to(lap) {
     max-width: 100%;
@@ -81,7 +81,7 @@
  */
 
 .c-hero__install {
-  @include to-rem(margin-bottom, $spacing-base);
+  @extend %bottom-spacing;
 
   > li {
     @include to-rem(margin-bottom, $spacing-third);
@@ -116,16 +116,6 @@
 // link
 .c-hero__cmds__item--link {
   text-decoration: none;
-}
-
-
-/**
- * Unicode arrow.
- */
-
-.c-hero__install__item__arrow {
-  display: inline-block;
-  transform: translateY(1px);
 }
 
 

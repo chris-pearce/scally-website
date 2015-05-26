@@ -4,7 +4,7 @@
 
 
 /**
- * All project specific settings
+ * All project specific settings.
  */
 
 
@@ -77,7 +77,7 @@ $color-grey-scorpion: #595959;
 
 
 /**
- * Gradient.
+ * Tropical gradients.
  */
 
 $color-gradient-tropical: linear-gradient(
@@ -94,3 +94,37 @@ $color-gradient-tropical-alt: linear-gradient(
   $color-brick-red 66%,
   $color-brick-red 100%
 );
+
+
+/**
+ * Solarized dark colour palette.
+ */
+
+$color-solarized-dark-base03:  #002b36;
+
+$color-solarized-dark-base01:  #586e75;
+
+$color-solarized-dark-base1:   #93a1a1;
+
+$color-solarized-dark-orange:  #cb4b16;
+
+$color-solarized-dark-red:     #dc322f;
+
+$color-solarized-dark-blue:    #268bd2;
+
+$color-solarized-dark-cyan:    #2aa198;
+
+$color-solarized-dark-green:   #859900;
+
+
+
+
+/* Other
+   ========================================================================= */
+
+
+/**
+ * Fixed site header height.
+ */
+
+$fixed-site-header-height: 50;
