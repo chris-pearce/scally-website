@@ -10,7 +10,7 @@
 
 .c-main-content {
   @include to-rem(padding-bottom, $spacing-triple);
-  @include to-rem(padding-top, $spacing-base-plus-half);
+  @include to-rem(padding-top, $spacing-double);
   background-color: $color-white;
 
 
