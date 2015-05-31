@@ -43,6 +43,7 @@ $c-demo-block-border-thickness: 1px;
  */
 
 .c-demo-block__example {
+  @extend %font-family-sans-serif;
   @include to-rem(margin-left margin-right, -$spacing-base);
   border: $c-demo-block-border-thickness solid $color-grey-concrete;
   border-radius: $border-radius;
@@ -78,8 +79,17 @@ $c-demo-block-border-thickness: 1px;
    * Solarized Dark as that is where the background colour is applied.
    */
 
-  .highlight {
-    //border-bottom-left-radius: $border-radius;
-    //border-bottom-right-radius: $border-radius;
+  &:last-child .highlight {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
+}
+
+
+.c-demo-block__example__title {
+  @include to-rem(padding, $spacing-third $spacing-base);
+  @include font-size($font-size-small);
+  background-color: $color-grey-concrete;
+  margin-bottom: 0;
+  text-transform: uppercase;
 }

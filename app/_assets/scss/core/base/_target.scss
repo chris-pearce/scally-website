@@ -13,7 +13,12 @@
  */
 
 :target {
-  animation: target-fade 3s 1;
+  //animation: target-fade-bg 3s 1;
+
+  h2,
+  h3 {
+    animation: target-heading 1s 1;
+  }
 
 
   /**
@@ -29,7 +34,18 @@
   }
 }
 
-@keyframes target-fade {
-  0%    {background-color: rgba($color-brick-red, 0.2);}
-  100%  {background-color: rgba($color-brick-red, 0);}
+@keyframes target-fade-bg {
+  0%    {background-color: rgba(hotpink, 0.2);}
+  100%  {background-color: rgba(hotpink, 0);}
+}
+
+@keyframes target-heading {
+  0% {
+    color: $color-wild-watermelon;
+    transform: translateX(-10px);
+  }
+  100% {
+    color: currentColor;
+    transform: translateX(0);
+  }
 }

@@ -1,0 +1,732 @@
+---
+layout:             main-content-base
+title:              Core/Base demos
+intro:              Demos for the Core/Base section of Scally.
+excerpt:            Demos for the Core/Base section. The Base section
+                    provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors.
+exclude_from_nav:   true
+weight:             3
+---
+
+
+<h2>Core / Base</h2>
+
+<p>The Base section provides very basic styling that most UI's will need. These
+styles are applied at the most global level, with most being applied via element
+selectors. <a href="#">Read more &#8594;</a></p>
+
+<h3>What's in Base?</h3>
+<ol class="o-list  u-s-mb-large">
+  <li><a href="#abbreviation">Abbreviation</a></li>
+  <li><a href="#details">Details</a></li>
+  <li><a href="#forms">Forms</a></li>
+  <li><a href="#headings">Headings</a></li>
+  <li><a href="#horizontal-rule">Horizontal rule</a></li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#media">Media</a></li>
+  <li><a href="#paragraphs">Paragraphs</a></li>
+  <li><a href="#print">Print</a></li>
+  <li><a href="#root">Root</a></li>
+  <li><a href="#viewport">Viewport</a></li>
+</ol>
+
+
+<!--
+*****************************************************************************
+  ABBREVIATION
+*****************************************************************************
+-->
+<section class="c-demo-block" id="abbreviation">
+  <h3 class="c-demo-block__title">Abbreviation</h3>
+  <p class="c-demo-block__intro">Apply <code class="c-inline-code">cursor: help;</code>
+  when an abbreviation is expanded via the <code class="c-inline-code">title</code>
+  attribute.</p>
+  <div class="c-demo-block__example">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <abbr title="User Interface">UI</abbr>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<abbr title="User Interface">UI</abbr>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight scss %}
+abbr[title] {
+  cursor: help;
+}
+{% endhighlight %}
+    </div>
+</section>
+
+
+<!--
+*****************************************************************************
+  DETAILS
+*****************************************************************************
+-->
+<section class="c-demo-block" id="details">
+  <h3 class="c-demo-block__title">Details</h3>
+  <p class="c-demo-block__intro">Apply <code class="c-inline-code">cursor: pointer;</code>
+  to the <code class="c-inline-code">summary</code> element with the option to
+  remove the browser default <code class="c-inline-code">summary</code> arrow.</p>
+  <div class="c-demo-block__example">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <details>
+        <summary>Some details</summary>
+        <p>More info about the details.</p>
+      </details>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<details>
+  <summary>Some details</summary>
+  <p>More info about the details.</p>
+</details>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+$apply-details-marker: false !default;
+
+
+summary {
+  cursor: pointer;
+
+
+  /**
+   * Control the visibility of the `detail`s marker.
+   */
+
+  @if $apply-details-marker {
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+</section>
+
+
+<!--
+*****************************************************************************
+  FORMS
+*****************************************************************************
+-->
+<section class="c-demo-block" id="forms">
+  <h3 class="c-demo-block__title">Forms</h3>
+  <p class="c-demo-block__intro">Indicate that <code class="c-inline-code">label</code>
+  will shift focus to the associated <code class="c-inline-code">input</code> element.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <label for="test-input">Label</label>
+      <input type="text" class="text-input" id="test-input">
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<label for="test-input">Label</label>
+<input type="text" id="test-input" class="text-input">
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+label,
+.faux-label {
+  cursor: pointer;
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Disable <code class="c-inline-code">textarea</code>'s
+  from being resized horizontally.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <textarea rows="4"></textarea>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<textarea rows="4"></textarea>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+textarea {
+  resize: vertical;
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Override <code class="c-inline-code">content-box</code>
+  from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>
+  for search inputs.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="search" class="text-input">
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="search" class="text-input">
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+
+$apply-friendly-box-model: false !default;
+
+
+@if $apply-friendly-box-model {
+  input[type="search"] {
+    box-sizing: border-box;
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Remove rounded corners from iOS search inputs
+  by overriding <code class="c-inline-code">appearance: textfield</code> from
+  <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>,
+  <a href="https://github.com/necolas/normalize.css/issues/360" rel="external">see</a>.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="search" class="text-input">
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="search">
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+
+$apply-friendly-box-model: false !default;
+
+
+@if $apply-friendly-box-model {
+  input[type="search"] {
+    box-sizing: border-box;
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Remove rounded corners that iOS applies to all
+  <code class="c-inline-code">input</code> buttons,
+  <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>.
+  And certain browsers e.g. Chrome, apply rounded corners to
+  <code class="c-inline-code">select</code> lists so if we haven't opted in for
+  rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code>
+  and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code>
+  settings then turn them off.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="submit" value="Submit">
+      <br><br>
+      <input type="button" value="Button">
+      <br><br>
+      <input type="reset" value="Reset">
+      <br><br>
+      <input type="image" src="http://fillmurray.com/g/100/30" alt="Bill Murrary">
+      <br><br>
+      <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="submit" value="Submit">
+<input type="button" value="Button">
+<input type="reset" value="Reset">
+<input type="image" src="http://fillmurray.com/g/100/30" alt="Bill Murrary">
+<select>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+input[type="submit"],
+input[type="button"],
+input[type="image"],
+input[type="reset"],
+select {
+  border-radius: 0;
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Fix for IE and old versions of some other
+  browsers not wrapping text within a <code class="c-inline-code">legend</code>.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <form action="">
+        <legend>Purus pid dignissim ac, nascetur porttitor phasellus aenean. Nisi
+  tristique ac. Placerat porta et scelerisque etiam ac aliquet tristique
+  nunc natoque vel est.</legend>
+      </form>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<form action="">
+  <legend>Purus pid dignissim ac, nascetur porttitor phasellus aenean. Nisi
+  tristique ac. Placerat porta et scelerisque etiam ac aliquet tristique
+  nunc natoque vel est.</legend>
+</form>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+legend {
+  display: table;
+  white-space: normal;
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Set whitespace for <code class="c-inline-code">legend</code>s
+  via a class, we use <code class="c-inline-code">padding</code> over
+  <code class="c-inline-code">margin</code> as <code class="c-inline-code">padding</code>
+  is the most cross-browser compatible for <code class="c-inline-code">legend</code>s.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <form action="">
+        <legend class="form-heading">A form legend</legend>
+      </form>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<form action="">
+  <legend class="form-heading">A form legend</legend>
+</form>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+.form-heading {
+  @include to-rem(padding-bottom, $spacing-base);
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Disabled state.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <button disabled>Button</button>
+      <br><br>
+      <input disabled type="submit" value="Submit">
+      <br><br>
+      <input disabled type="button" value="Button">
+      <br><br>
+      <input disabled type="reset" value="Reset">
+      <br><br>
+      <input disabled type="image" src="http://fillmurray.com/g/100/30" alt="Bill Murrary">
+      <br><br>
+      <input disabled type="checkbox">
+      <br><br>
+      <input disabled type="radio">
+      <br><br>
+      <input disabled type="color">
+      <br><br>
+      <input disabled type="file">
+      <br><br>
+      <input disabled type="range">
+      <br><br>
+      <input disabled type="date" class="text-input">
+      <br><br>
+      <input disabled type="datetime" class="text-input">
+      <br><br>
+      <input disabled type="datetime-local" class="text-input">
+      <br><br>
+      <input disabled type="month" class="text-input">
+      <br><br>
+      <input disabled type="week" class="text-input">
+      <br><br>
+      <input disabled type="number" class="text-input">
+      <br><br>
+      <input disabled type="email" class="text-input">
+      <br><br>
+      <input disabled type="password" class="text-input">
+      <br><br>
+      <input disabled type="search" class="text-input">
+      <br><br>
+      <input disabled type="tel" class="text-input">
+      <br><br>
+      <input disabled type="text" class="text-input">
+      <br><br>
+      <input disabled type="url" class="text-input">
+      <br><br>
+      <textarea disabled rows="4"></textarea>
+      <br><br>
+      <select disabled>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<button disabled>Button</button>
+<input disabled type="submit" value="Submit">
+<input disabled type="button" value="Button">
+<input disabled type="reset" value="Reset">
+<input disabled type="image" src="http://fillmurray.com/g/100/30" alt="Bill Murrary">
+<input disabled type="checkbox">
+<input disabled type="radio">
+<input disabled type="color">
+<input disabled type="file">
+<input disabled type="range">
+<input disabled type="date" class="text-input">
+<input disabled type="datetime" class="text-input">
+<input disabled type="datetime-local" class="text-input">
+<input disabled type="month" class="text-input">
+<input disabled type="week" class="text-input">
+<input disabled type="number" class="text-input">
+<input disabled type="email" class="text-input">
+<input disabled type="password" class="text-input">
+<input disabled type="search" class="text-input">
+<input disabled type="tel" class="text-input">
+<input disabled type="text" class="text-input">
+<input disabled type="url" class="text-input">
+<textarea disabled rows="4"></textarea>
+<select disabled>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
+$apply-text-input-and-select-disabled-state: true !default;
+
+
+@if $apply-text-input-and-select-disabled-state {
+  button[disabled],
+  input[disabled],
+  select[disabled],
+  textarea[disabled],
+  .is-disabled {
+    cursor: not-allowed !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    opacity: $text-input-and-select-disabled-state-opacity-strength !important;
+  }
+
+  // Modifier: no hover; prevent common hover/focus states being applied
+  .is-disabled--no-hover {
+    cursor: inherit !important;
+    color: inherit !important;
+    background: inherit !important;
+    text-decoration: none !important;
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Required field indicator (asterisk).</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <label for="">A label <em class="required-field">*</em></label>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<label for="">A label <em class="required-field">*</em></label>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+.required-field {
+  color: $color-state-error;
+  cursor: help;
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Style text inputs via the
+  <code class="c-inline-code">.text-input</code> class, and apply to
+  <code class="c-inline-code">textarea</code>s and
+  <code class="c-inline-code">select</code> lists.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="text" class="text-input">
+      <br><br>
+      <textarea rows="4"></textarea>
+      <br><br>
+      <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="text" class="text-input">
+<textarea rows="4"></textarea>
+<select>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
+// Turn styling on for inputs and `select`s
+$apply-text-input-and-select-styles:           true !default;
+
+$apply-text-input-and-select-border:           true !default;
+
+$apply-text-input-and-select-rounded-corners:  false !default;
+
+$apply-text-input-full-bleed:                  true !default;
+
+/**
+ * Box sizing.
+ *
+ * Here we set a variable assuming that `box-sizing: border-box;` is not set
+ * globally. If it has been previously been defined, the following variable
+ * will be overridden and will be set to `true`.
+ */
+
+$apply-friendly-box-model:                     false !default;
+
+
+@if $apply-text-input-and-select-styles {
+  .text-input,
+  textarea,
+  select {
+    @include to-rem(padding, $text-input-and-select-padding);
+    color: $text-input-and-select-text-color;
+    background: $text-input-and-select-background-color;
+
+    // Apply a border but make it optional
+    @if $apply-text-input-and-select-border {
+      border: strip-unit($text-input-and-select-border-thickness) * 1px
+              $text-input-and-select-border-style
+              $text-input-and-select-border-color;
+    }
+    @else {
+      border: 0;
+    }
+
+    // Apply rounded corners but make it optional
+    @if $apply-text-input-and-select-rounded-corners {
+      border-radius: strip-unit($text-input-and-select-rounded-corners-size) * 1px;
+    }
+
+    // Make 100% wide
+    @if $apply-text-input-full-bleed {
+      width: 100%;
+
+      // Need to apply `box-sizing: border-box` if it hasn't been set globally
+      @if $apply-friendly-box-model == false {
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Text input placeholder colour which uses the
+  <code class="c-inline-code">text-input-placeholder-color()</code> mixin.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="text" class="text-input" placeholder="Some placeholder text">
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="text" class="text-input" placeholder="Some placeholder text">
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
+$apply-text-input-placeholder-color: true !default;
+
+
+@if $apply-text-input-placeholder-color {
+  @include text-input-placeholder-color();
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Remove the top inner shadow from iOS inputs.
+  <strong>N.B.</strong> this needs to be isolated to iOS devices so user-agent
+  sniffing needs to happen and the most robust implementation of this is to
+  apply the hook to the <code class="c-inline-code">html</code> element e.g.
+  <code class="c-inline-code">.ios</code>.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="text" class="text-input">
+      <br><br>
+      <textarea rows="4"></textarea>
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="text" class="text-input">
+<textarea rows="4"></textarea>
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
+$apply-top-inner-shadow-for-ios-inputs:          false !default;
+
+/**
+ * The name of the class to target iOS so the top inner shadow from iOS inputs
+ * can be removed.
+ */
+
+$remove-top-inner-shadow-from-ios-inputs-class:  ios !default;
+
+
+@if $apply-top-inner-shadow-for-ios-inputs {
+  .#{$remove-top-inner-shadow-from-ios-inputs-class} {
+    .remove-top-inner-shadow-from-ios-inputs,
+    .text-input,
+    textarea {
+      -webkit-appearance: caret;
+    }
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+  <p class="c-demo-block__intro">Hide the close button generated by IE 10+ for
+  inputs.</p>
+  <div class="c-demo-block__example  u-s-mb-large">
+    <div class="c-demo-block__example__result c-demo-block__example__padded">
+      <input type="text" class="text-input">
+    </div>
+    <h4 class="c-demo-block__example__title">HTML</h4>
+    <div class="c-demo-block__example__code">
+{% highlight html %}
+<input type="text" class="text-input">
+{% endhighlight %}
+    </div>
+    <h4 class="c-demo-block__example__title">Sass</h4>
+    <div class="c-demo-block__example__code">
+{% highlight sass %}
+/**
+ * Settings.
+ */
+
+/**
+ * Toggle on/off certain styles and treatments.
+ */
+
+$apply-close-button-for-ie10plus-inputs: false !default;
+
+@if $apply-close-button-for-ie10plus-inputs {
+  .hide-close-button-for-ie-inputs::-ms-clear,
+  .text-input::-ms-clear {
+    display: none;
+  }
+}
+{% endhighlight %}
+    </div>
+  </div>
+
+</section>

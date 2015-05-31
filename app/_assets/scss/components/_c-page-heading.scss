@@ -8,7 +8,7 @@
  */
 
 .c-page-heading {
-  //@extend %font-family-sans-serif;
+  @extend %font-family-sans-serif;
   // Apply the amount of top padding + the height of the fixed header
   @include to-rem(padding-top, $spacing-double + $fixed-site-header-height);
   @include to-rem(padding-bottom, $spacing-base-plus-half);
@@ -25,13 +25,4 @@
 .c-page-heading__title {
   @include to-rem(margin-bottom, $spacing-third);
   font-weight: $font-weight-bold;
-}
-
-
-/**
- * Intro.
- */
-
-.c-page-heading__intro {
-  font-style: italic;
 }

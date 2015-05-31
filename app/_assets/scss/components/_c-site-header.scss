@@ -25,7 +25,7 @@ $c-site-header-nav-overline-thickness: 3px;
   @include font-size($font-size-small, none);
   background-color: $color-brick-red;
   background-image: $color-gradient-tropical;
-  background: transparent;
+  //background: transparent;
   position: fixed;
   width: 100%;
   z-index: index($z-index-elements-global, header);

@@ -164,7 +164,7 @@ $html-element-background-color: $color-grey-concrete;
 @import "../../../node_modules/scally/core/base/details";
 
 $apply-heading-margins: true;
-$font-size-heading-1:   42;
+$font-size-heading-1:   46;
 $font-size-heading-2:   35;
 $font-size-heading-3:   30;
 $font-size-heading-5:   $font-size + 2;
@@ -345,6 +345,8 @@ $c-button-rounded-corners-size:   6px;
 @import "components/c-demo-block";
 
 @import "components/c-inline-code";
+
+@import "components/c-box";
 
 
 /**
