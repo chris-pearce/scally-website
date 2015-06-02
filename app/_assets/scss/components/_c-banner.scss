@@ -1,20 +1,31 @@
 /* ============================================================================
-   @COMPONENTS -> PAGE HEADING
+   @COMPONENTS -> BANNER
    ========================================================================= */
 
 
 /**
- * The page heading, consists of 1 heading: `h1` and an intro paragraph.
+ * The banner for each page that consists of the page/section title (`h1`) and
+ * an intro paragraph. There is a Landing version which is used for section
+ * landing pages.
  */
 
-.c-page-heading {
+.c-banner {
   @extend %font-family-sans-serif;
   // Apply the amount of top padding + the height of the fixed header
   @include to-rem(padding-top, $spacing-double + $fixed-site-header-height);
   @include to-rem(padding-bottom, $spacing-base-plus-half);
-  background-color: $color-brick-red;
-  background-image: $color-gradient-tropical;
+  //background-color: $color-brick-red;
+  background: $color-brick-red $color-gradient-tropical;
   color: $color-white;
+}
+
+
+/**
+ * Modifier: landing page version.
+ */
+
+.c-banner--landing {
+  text-align: center;
 }
 
 
@@ -22,7 +33,16 @@
  * Title: `h1`.
  */
 
-.c-page-heading__title {
+.c-banner__title {
   @include to-rem(margin-bottom, $spacing-third);
   font-weight: $font-weight-bold;
+
+
+  /**
+   * Hero.
+   */
+
+  .c-banner--landing & {
+    @include font-size(54);
+  }
 }

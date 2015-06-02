@@ -18,16 +18,21 @@
 
   h2 {
     @include font-size(20);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    //text-transform: uppercase;
+    //letter-spacing: 0.05em;
     //font-weight: bold;
     margin-bottom: 0;
-    display: none;
+    //color: black;
+    background: none;
+    color: #fff;
+    -webkit-text-fill-color: white;
   }
 
   svg {
-    //width: 140px;
-    //@include to-rem(margin-bottom, $spacing-base);
+    fill: none;
+    fill: $color-brick-red;
+    fill: white;
+    //stroke: $color-brick-red;
   }
 
   &:hover,
@@ -37,14 +42,15 @@
 }
 
 .c-box__inner {
-  width: 70%;
-  margin: 0 auto;
-  background: red;
-  position: relative;
+  width: 50%;
+  margin: 0 auto 21px;
+  //background: red;
+  //position: relative;
+  vertical-align: middle;
 
-  > div {
-    @extend %u-position-middle;
-    width: 100%;
-    background: green;
-  }
+  // > div {
+  //   @extend %u-position-middle;
+  //   width: 100%;
+  //   background: green;
+  // }
 }

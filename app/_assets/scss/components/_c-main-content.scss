@@ -30,7 +30,7 @@
 
 .c-main-content--landing {
   @include to-rem(padding-top padding-bottom, $spacing-quadruple);
-  background-color: $color-black;
-  background-color: $color-grey-concrete;
-  //background-image: $color-gradient-tropical;
+  //background-color: $color-black;
+  //background-color: $color-grey-concrete;
+  background-image: $color-gradient-tropical;
 }

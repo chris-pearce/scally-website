@@ -6,13 +6,20 @@
 
     <main role="main">
       <article>
-        <header class="c-page-heading">
-          <div class="l-container">
-            <h1 class="c-page-heading__title">{{ page.title }}</h1>
-            <p class="c-page-heading__intro">{{ page.intro }}</p>
+
+        {% if page.home_page %}
+          {% include hero.html %}
+        {% else %}
+          {% include banner.html %}
+        {% endif %}
+
+        <!-- Content -->
+        <div class="c-main-content{% if page.landing_page %} c-main-content--landing{% endif %}">
+          <div class="l-container{% if page.landing_page %} l-container--wide{% endif %}">
+            {{ content }}
           </div>
-        </header>
-        {{ content }}
+        </div>
+        <!-- //Content -->
       </article>
     </main>
 
@@ -23,7 +30,7 @@
     <!-- Initialise scripts -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        //ghe.autoload();
+
       });
     </script>
     <!-- //Initialise scripts -->
