@@ -25,12 +25,10 @@
 
 
 /**
- * Modifier: for landing pages.
+ * Modifier: landing page version.
  */
 
 .c-main-content--landing {
-  @include to-rem(padding-top padding-bottom, $spacing-quadruple);
-  //background-color: $color-black;
-  //background-color: $color-grey-concrete;
-  background-image: $color-gradient-tropical;
+  @include to-rem(padding-top padding-bottom, $spacing-double);
+  background: $color-brick-red $color-gradient-tropical;
 }

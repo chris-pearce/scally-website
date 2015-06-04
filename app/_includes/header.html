@@ -2,6 +2,7 @@
 <header class="c-site-header" role="banner">
   <div class="l-container l-container--wide">
     <div class="l-side-by-side-alt">
+      {% unless page.home_page %}
       <div class="l-side-by-side-alt__left">
         <a href="{{ site.baseurl }}">
           <svg viewBox="0 0 251 92" class="c-site-header__logo">
@@ -9,9 +10,22 @@
           </svg>
         </a>
       </div>
+      {% endunless %}
       <nav class="l-side-by-side-alt__right  u-text-align-right" role="navigation" aria-label="Main navigation">
-        {% assign pages = site.pages | sort:"weight" %}
-        <ul class="c-site-header__nav">{% for p in pages %}{% unless p.exclude_from_nav %}<li><a {% if p.url == page.url %}class="is-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>{% endunless %}{% endfor %}</ul>
+        {% assign pages = site.pages | sort: "weight" %}
+        <ul class="c-site-header__nav">
+          {% for p in pages %}
+            {% assign active = nil %}
+            {% if p.url == page.url | replace: "/"," " | truncatewords: 1 | remove: "..." | remove: ".html" %}
+              {% assign active = "is-active" %}
+            {% endif %}
+            {% unless p.exclude_from_nav %}
+              <li>
+                <a class="{{ active }}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+              </li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
       </nav>
     </div>
   </div>

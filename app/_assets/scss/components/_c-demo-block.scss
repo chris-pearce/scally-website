@@ -87,9 +87,8 @@ $c-demo-block-border-thickness: 1px;
 
 
 .c-demo-block__example__title {
-  @include to-rem(padding, $spacing-third $spacing-base);
+  @include to-rem(padding, $spacing-quarter $spacing-base);
   @include font-size($font-size-small);
   background-color: $color-grey-concrete;
   margin-bottom: 0;
-  text-transform: uppercase;
 }
