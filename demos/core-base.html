@@ -1,0 +1,277 @@
+<!doctype html><html lang=en-au class=s-view-demos-core-base><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Demos for the Core/Base section | Scally CSS framework website</title><meta name=description content="Demos for the Core/Base section. The Base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors."><link href="//fonts.googleapis.com/css?family=Merriweather:400,300,400italic,700" rel=stylesheet><link rel=stylesheet href=/css/style.css><meta name=twitter:card content=summary><meta name=twitter:site content=@scally_fw><meta name=twitter:title content="Demos for the Core/Base section"><meta name=twitter:description content="Demos for the Core/Base section. The Base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors."><meta name=twitter:image content=/img/twitter-card.png></head><body><header class=c-site-header role=banner><div class="l-container l-container--wide"><div class=l-side-by-side-alt><div class=l-side-by-side-alt__left><a href="/" rel=home><svg viewBox="0 0 251 92" class=c-site-header__logo><use xlink:href=/img/logo.svg#scally class=c-site-header__logo__fill></use></svg></a></div><nav class="l-side-by-side-alt__right u-text-align-right" role=navigation aria-label="Main navigation"><ul class=c-site-header__nav><li><a href=/getting-started.html>Getting Started</a></li><li><a href=/demos.html>Demos</a></li><li><a href=/documentation.html>Documentation</a></li></ul></nav></div></div></header><main role=main><article><header class=c-banner><div class=l-container><h1 class=c-banner__title>Demos</h1><p class=c-banner__intro>Demos for all the major sections of Scally.</p></div></header><div class=c-main-content><div class=l-container><h2>Core / Base</h2><p>The Base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors. <a href=#>Read more &#8594;</a></p><h3>What's in Base?</h3><ol class="o-list u-s-mb-large"><li><a href=#abbreviation>Abbreviation</a></li><li><a href=#details>Details</a></li><li><a href=#forms>Forms</a></li><li><a href=#headings>Headings</a></li><li><a href=#horizontal-rule>Horizontal rule</a></li><li><a href=#links>Links</a></li><li><a href=#media>Media</a></li><li><a href=#paragraphs>Paragraphs</a></li><li><a href=#print>Print</a></li><li><a href=#root>Root</a></li><li><a href=#viewport>Viewport</a></li></ol><section class=c-demo-block id=abbreviation><h3 class=c-demo-block__title>Abbreviation</h3><p class=c-demo-block__intro>Apply <code class=c-inline-code>cursor: help;</code> when an abbreviation is expanded via the <code class=c-inline-code>title</code> attribute.</p><div class=c-demo-block__example><div class="c-demo-block__example__result c-demo-block__example__padded"><abbr title="User Interface">UI</abbr></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;abbr</span> <span class=na>title=</span><span class=s>&quot;User Interface&quot;</span><span class=nt>&gt;</span>UI<span class=nt>&lt;/abbr&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-scss data-lang=scss><span class=nt>abbr</span><span class=o>[</span><span class=nt>title</span><span class=o>]</span> <span class=p>{</span>
+  <span class=na>cursor</span><span class=o>:</span> <span class=no>help</span><span class=p>;</span>
+<span class=p>}</span></code></pre></div></div></div></section><section class=c-demo-block id=details><h3 class=c-demo-block__title>Details</h3><p class=c-demo-block__intro>Apply <code class=c-inline-code>cursor: pointer;</code> to the <code class=c-inline-code>summary</code> element with the option to remove the browser default <code class=c-inline-code>summary</code> arrow.</p><div class=c-demo-block__example><div class="c-demo-block__example__result c-demo-block__example__padded"><details><summary>Some details</summary><p>More info about the details.</p></details></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;details&gt;</span>
+  <span class=nt>&lt;summary&gt;</span>Some details<span class=nt>&lt;/summary&gt;</span>
+  <span class=nt>&lt;p&gt;</span>More info about the details.<span class=nt>&lt;/p&gt;</span>
+<span class=nt>&lt;/details&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-details-marker</span><span class=o>:</span> <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=nt>summary</span> <span class=err>{</span>
+  <span class=na>cursor</span><span class=o>:</span> <span class=no>pointer</span><span class=err>;</span>
+
+
+  <span class=cm>/**</span>
+   <span class=cm>* Control the visibility of the `detail`s marker.</span>
+   <span class=cm>*/</span>
+
+  <span class=k>@if</span> <span class=nv>$apply-details-marker</span> <span class=err>{</span>
+    <span class=na>&amp;</span><span class=o>::-</span><span class=n>webkit-details-marker</span> <span class=err>{</span>
+      <span class=na>display</span><span class=o>:</span> <span class=no>none</span><span class=err>;</span>
+    <span class=err>}</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div></section><section class=c-demo-block id=forms><h3 class=c-demo-block__title>Forms</h3><p class=c-demo-block__intro>Indicate that <code class=c-inline-code>label</code> will shift focus to the associated <code class=c-inline-code>input</code> element.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><label for=test-input>Label</label><input class=text-input id=test-input></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;label</span> <span class=na>for=</span><span class=s>&quot;test-input&quot;</span><span class=nt>&gt;</span>Label<span class=nt>&lt;/label&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;text&quot;</span> <span class=na>id=</span><span class=s>&quot;test-input&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=nt>label</span><span class=o>,</span>
+<span class=nc>.faux-label</span> <span class=err>{</span>
+  <span class=na>cursor</span><span class=o>:</span> <span class=no>pointer</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Disable <code class=c-inline-code>textarea</code>'s from being resized horizontally.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><textarea rows=4></textarea></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;textarea</span> <span class=na>rows=</span><span class=s>&quot;4&quot;</span><span class=nt>&gt;&lt;/textarea&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=nt>textarea</span> <span class=err>{</span>
+  <span class=na>resize</span><span class=o>:</span> <span class=n>vertical</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Override <code class=c-inline-code>content-box</code> from <a href="http://necolas.github.io/normalize.css/" rel=external>normalize.css</a> for search inputs.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input type=search class=text-input></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;search&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Box sizing.</span>
+ <span class=cm>*</span>
+ <span class=cm>* Here we set a variable assuming that `box-sizing: border-box;` is not set</span>
+ <span class=cm>* globally. If it has been previously been defined, the following variable</span>
+ <span class=cm>* will be overridden and will be set to `true`.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-friendly-box-model</span><span class=o>:</span> <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=k>@if</span> <span class=nv>$apply-friendly-box-model</span> <span class=err>{</span>
+  <span class=na>input</span><span class=err>[</span><span class=na>type</span><span class=o>=</span><span class=s2>&quot;search&quot;</span><span class=p>]</span> <span class=err>{</span>
+    <span class=na>box-sizing</span><span class=o>:</span> <span class=no>border</span><span class=o>-</span><span class=n>box</span><span class=err>;</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Remove rounded corners from iOS search inputs by overriding <code class=c-inline-code>appearance: textfield</code> from <a href="http://necolas.github.io/normalize.css/" rel=external>normalize.css</a>, <a href=https://github.com/necolas/normalize.css/issues/360 rel=external>see</a>.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input type=search class=text-input></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;search&quot;</span><span class=nt>&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Box sizing.</span>
+ <span class=cm>*</span>
+ <span class=cm>* Here we set a variable assuming that `box-sizing: border-box;` is not set</span>
+ <span class=cm>* globally. If it has been previously been defined, the following variable</span>
+ <span class=cm>* will be overridden and will be set to `true`.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-friendly-box-model</span><span class=o>:</span> <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=k>@if</span> <span class=nv>$apply-friendly-box-model</span> <span class=err>{</span>
+  <span class=na>input</span><span class=err>[</span><span class=na>type</span><span class=o>=</span><span class=s2>&quot;search&quot;</span><span class=p>]</span> <span class=err>{</span>
+    <span class=na>box-sizing</span><span class=o>:</span> <span class=no>border</span><span class=o>-</span><span class=n>box</span><span class=err>;</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Remove rounded corners that iOS applies to all <code class=c-inline-code>input</code> buttons, <a href=https://github.com/necolas/normalize.css/issues/178 rel=external>see</a>. And certain browsers e.g. Chrome, apply rounded corners to <code class=c-inline-code>select</code> lists so if we haven't opted in for rounded corners via the <code class=c-inline-code>$apply-text-input-and-select-styles</code> and <code class=c-inline-code>$apply-text-input-and-select-rounded-corners</code> settings then turn them off.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input type=submit value=Submit><br><br><input type=button value=Button><br><br><input type=reset value=Reset><br><br><input type=image src=http://fillmurray.com/g/100/30 alt="Bill Murrary"><br><br><select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;submit&quot;</span> <span class=na>value=</span><span class=s>&quot;Submit&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;button&quot;</span> <span class=na>value=</span><span class=s>&quot;Button&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;reset&quot;</span> <span class=na>value=</span><span class=s>&quot;Reset&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;image&quot;</span> <span class=na>src=</span><span class=s>&quot;http://fillmurray.com/g/100/30&quot;</span> <span class=na>alt=</span><span class=s>&quot;Bill Murrary&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;select&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 1<span class=nt>&lt;/option&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 2<span class=nt>&lt;/option&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 3<span class=nt>&lt;/option&gt;</span>
+<span class=nt>&lt;/select&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=na>input</span><span class=err>[</span><span class=na>type</span><span class=o>=</span><span class=s2>&quot;submit&quot;</span><span class=p>]</span><span class=o>,</span>
+<span class=na>input</span><span class=err>[</span><span class=na>type</span><span class=o>=</span><span class=s2>&quot;button&quot;</span><span class=p>]</span><span class=o>,</span>
+<span class=na>input</span><span class=err>[</span><span class=na>type</span><span class=o>=</span><span class=s2>&quot;image&quot;</span><span class=p>]</span><span class=o>,</span>
+<span class=na>input</span><span class=err>[</span><span class=na>type</span><span class=o>=</span><span class=s2>&quot;reset&quot;</span><span class=p>]</span><span class=o>,</span>
+<span class=nt>select</span> <span class=err>{</span>
+  <span class=na>border-radius</span><span class=o>:</span> <span class=mi>0</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Fix for IE and old versions of some other browsers not wrapping text within a <code class=c-inline-code>legend</code>.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><form action=""><legend>Purus pid dignissim ac, nascetur porttitor phasellus aenean. Nisi tristique ac. Placerat porta et scelerisque etiam ac aliquet tristique nunc natoque vel est.</legend></form></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;form</span> <span class=na>action=</span><span class=s>&quot;&quot;</span><span class=nt>&gt;</span>
+  <span class=nt>&lt;legend&gt;</span>Purus pid dignissim ac, nascetur porttitor phasellus aenean. Nisi
+  tristique ac. Placerat porta et scelerisque etiam ac aliquet tristique
+  nunc natoque vel est.<span class=nt>&lt;/legend&gt;</span>
+<span class=nt>&lt;/form&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=nt>legend</span> <span class=err>{</span>
+  <span class=na>display</span><span class=o>:</span> <span class=n>table</span><span class=err>;</span>
+  <span class=na>white-space</span><span class=o>:</span> <span class=no>normal</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Set whitespace for <code class=c-inline-code>legend</code>s via a class, we use <code class=c-inline-code>padding</code> over <code class=c-inline-code>margin</code> as <code class=c-inline-code>padding</code> is the most cross-browser compatible for <code class=c-inline-code>legend</code>s.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><form action=""><legend class=form-heading>A form legend</legend></form></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;form</span> <span class=na>action=</span><span class=s>&quot;&quot;</span><span class=nt>&gt;</span>
+  <span class=nt>&lt;legend</span> <span class=na>class=</span><span class=s>&quot;form-heading&quot;</span><span class=nt>&gt;</span>A form legend<span class=nt>&lt;/legend&gt;</span>
+<span class=nt>&lt;/form&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=nc>.form-heading</span> <span class=err>{</span>
+  <span class=k>@include</span><span class=nd> to-rem</span><span class=p>(</span><span class=no>padding-bottom</span><span class=o>,</span> <span class=nv>$spacing-base</span><span class=p>)</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Disabled state.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><button disabled>Button</button><br><br><input disabled type=submit value=Submit><br><br><input disabled type=button value=Button><br><br><input disabled type=reset value=Reset><br><br><input disabled type=image src=http://fillmurray.com/g/100/30 alt="Bill Murrary"><br><br><input disabled type=checkbox><br><br><input disabled type=radio><br><br><input disabled type=color><br><br><input disabled type=file><br><br><input disabled type=range><br><br><input disabled type=date class=text-input><br><br><input disabled type=datetime class=text-input><br><br><input disabled type=datetime-local class=text-input><br><br><input disabled type=month class=text-input><br><br><input disabled type=week class=text-input><br><br><input disabled type=number class=text-input><br><br><input disabled type=email class=text-input><br><br><input disabled type=password class=text-input><br><br><input disabled type=search class=text-input><br><br><input disabled type=tel class=text-input><br><br><input disabled class=text-input><br><br><input disabled type=url class=text-input><br><br><textarea disabled rows=4></textarea><br><br><select disabled><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;button</span> <span class=na>disabled</span><span class=nt>&gt;</span>Button<span class=nt>&lt;/button&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;submit&quot;</span> <span class=na>value=</span><span class=s>&quot;Submit&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;button&quot;</span> <span class=na>value=</span><span class=s>&quot;Button&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;reset&quot;</span> <span class=na>value=</span><span class=s>&quot;Reset&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;image&quot;</span> <span class=na>src=</span><span class=s>&quot;http://fillmurray.com/g/100/30&quot;</span> <span class=na>alt=</span><span class=s>&quot;Bill Murrary&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;checkbox&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;radio&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;color&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;file&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;range&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;date&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;datetime&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;datetime-local&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;month&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;week&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;number&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;email&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;password&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;search&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;tel&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;text&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;input</span> <span class=na>disabled</span> <span class=na>type=</span><span class=s>&quot;url&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;textarea</span> <span class=na>disabled</span> <span class=na>rows=</span><span class=s>&quot;4&quot;</span><span class=nt>&gt;&lt;/textarea&gt;</span>
+<span class=nt>&lt;select</span> <span class=na>disabled</span><span class=nt>&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 1<span class=nt>&lt;/option&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 2<span class=nt>&lt;/option&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 3<span class=nt>&lt;/option&gt;</span>
+<span class=nt>&lt;/select&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Toggle on/off certain styles and treatments.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-text-input-and-select-disabled-state</span><span class=o>:</span> <span class=n-Pseudo>true</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=k>@if</span> <span class=nv>$apply-text-input-and-select-disabled-state</span> <span class=err>{</span>
+  <span class=nt>button</span><span class=o>[</span><span class=nt>disabled</span><span class=o>],</span>
+  <span class=nt>input</span><span class=o>[</span><span class=nt>disabled</span><span class=o>],</span>
+  <span class=nt>select</span><span class=o>[</span><span class=nt>disabled</span><span class=o>],</span>
+  <span class=nt>textarea</span><span class=o>[</span><span class=nt>disabled</span><span class=o>],</span>
+  <span class=nc>.is-disabled</span> <span class=err>{</span>
+    <span class=na>cursor</span><span class=o>:</span> <span class=ow>not</span><span class=o>-</span><span class=n>allowed</span> <span class=nv>!important</span><span class=err>;</span>
+    <span class=na>text-shadow</span><span class=o>:</span> <span class=no>none</span> <span class=nv>!important</span><span class=err>;</span>
+    <span class=na>box-shadow</span><span class=o>:</span> <span class=no>none</span> <span class=nv>!important</span><span class=err>;</span>
+    <span class=na>opacity</span><span class=o>:</span> <span class=nv>$text-input-and-select-disabled-state-opacity-strength</span> <span class=nv>!important</span><span class=err>;</span>
+  <span class=err>}</span>
+
+  <span class=c1>// Modifier: no hover; prevent common hover/focus states being applied</span>
+  <span class=nc>.is-disabled--no-hover</span> <span class=err>{</span>
+    <span class=na>cursor</span><span class=o>:</span> <span class=no>inherit</span> <span class=nv>!important</span><span class=err>;</span>
+    <span class=na>color</span><span class=o>:</span> <span class=no>inherit</span> <span class=nv>!important</span><span class=err>;</span>
+    <span class=na>background</span><span class=o>:</span> <span class=no>inherit</span> <span class=nv>!important</span><span class=err>;</span>
+    <span class=na>text-decoration</span><span class=o>:</span> <span class=no>none</span> <span class=nv>!important</span><span class=err>;</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Required field indicator (asterisk).</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><label for="">A label <em class=required-field>*</em></label></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;label</span> <span class=na>for=</span><span class=s>&quot;&quot;</span><span class=nt>&gt;</span>A label <span class=nt>&lt;em</span> <span class=na>class=</span><span class=s>&quot;required-field&quot;</span><span class=nt>&gt;</span>*<span class=nt>&lt;/em&gt;&lt;/label&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=nc>.required-field</span> <span class=err>{</span>
+  <span class=na>color</span><span class=o>:</span> <span class=nv>$color-state-error</span><span class=err>;</span>
+  <span class=na>cursor</span><span class=o>:</span> <span class=no>help</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Style text inputs via the <code class=c-inline-code>.text-input</code> class, and apply to <code class=c-inline-code>textarea</code>s and <code class=c-inline-code>select</code> lists.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input class=text-input><br><br><textarea rows=4></textarea><br><br><select><option>Option 1</option><option>Option 2</option><option>Option 3</option></select></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;text&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;textarea</span> <span class=na>rows=</span><span class=s>&quot;4&quot;</span><span class=nt>&gt;&lt;/textarea&gt;</span>
+<span class=nt>&lt;select&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 1<span class=nt>&lt;/option&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 2<span class=nt>&lt;/option&gt;</span>
+  <span class=nt>&lt;option&gt;</span>Option 3<span class=nt>&lt;/option&gt;</span>
+<span class=nt>&lt;/select&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Toggle on/off certain styles and treatments.</span>
+ <span class=cm>*/</span>
+
+<span class=c1>// Turn styling on for inputs and `select`s</span>
+<span class=na>$apply-text-input-and-select-styles</span><span class=o>:</span>           <span class=n-Pseudo>true</span> <span class=nv>!default</span><span class=err>;</span>
+
+<span class=na>$apply-text-input-and-select-border</span><span class=o>:</span>           <span class=n-Pseudo>true</span> <span class=nv>!default</span><span class=err>;</span>
+
+<span class=na>$apply-text-input-and-select-rounded-corners</span><span class=o>:</span>  <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+<span class=na>$apply-text-input-full-bleed</span><span class=o>:</span>                  <span class=n-Pseudo>true</span> <span class=nv>!default</span><span class=err>;</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Box sizing.</span>
+ <span class=cm>*</span>
+ <span class=cm>* Here we set a variable assuming that `box-sizing: border-box;` is not set</span>
+ <span class=cm>* globally. If it has been previously been defined, the following variable</span>
+ <span class=cm>* will be overridden and will be set to `true`.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-friendly-box-model</span><span class=o>:</span>                     <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=k>@if</span> <span class=nv>$apply-text-input-and-select-styles</span> <span class=err>{</span>
+  <span class=nc>.text-input</span><span class=o>,</span>
+  <span class=nt>textarea</span><span class=o>,</span>
+  <span class=nt>select</span> <span class=err>{</span>
+    <span class=k>@include</span><span class=nd> to-rem</span><span class=p>(</span><span class=no>padding</span><span class=o>,</span> <span class=nv>$text-input-and-select-padding</span><span class=p>)</span><span class=err>;</span>
+    <span class=na>color</span><span class=o>:</span> <span class=nv>$text-input-and-select-text-color</span><span class=err>;</span>
+    <span class=na>background</span><span class=o>:</span> <span class=nv>$text-input-and-select-background-color</span><span class=err>;</span>
+
+    <span class=c1>// Apply a border but make it optional</span>
+    <span class=k>@if</span> <span class=nv>$apply-text-input-and-select-border</span> <span class=err>{</span>
+      <span class=na>border</span><span class=o>:</span> <span class=nf>strip-unit</span><span class=p>(</span><span class=nv>$text-input-and-select-border-thickness</span><span class=p>)</span> <span class=o>*</span> <span class=mi>1</span><span class=kt>px</span>
+              <span class=err>$</span><span class=nt>text-input-and-select-border-style</span>
+              <span class=err>$</span><span class=nt>text-input-and-select-border-color</span><span class=o>;</span>
+    <span class=err>}</span>
+    <span class=k>@else</span> <span class=err>{</span>
+      <span class=na>border</span><span class=o>:</span> <span class=mi>0</span><span class=err>;</span>
+    <span class=err>}</span>
+
+    <span class=c1>// Apply rounded corners but make it optional</span>
+    <span class=k>@if</span> <span class=nv>$apply-text-input-and-select-rounded-corners</span> <span class=err>{</span>
+      <span class=na>border-radius</span><span class=o>:</span> <span class=nf>strip-unit</span><span class=p>(</span><span class=nv>$text-input-and-select-rounded-corners-size</span><span class=p>)</span> <span class=o>*</span> <span class=mi>1</span><span class=kt>px</span><span class=err>;</span>
+    <span class=err>}</span>
+
+    <span class=c1>// Make 100% wide</span>
+    <span class=k>@if</span> <span class=nv>$apply-text-input-full-bleed</span> <span class=err>{</span>
+      <span class=na>width</span><span class=o>:</span> <span class=mi>100</span><span class=kt>%</span><span class=err>;</span>
+
+      <span class=c1>// Need to apply `box-sizing: border-box` if it hasn&#39;t been set globally</span>
+      <span class=k>@if</span> <span class=nv>$apply-friendly-box-model</span> <span class=o>==</span> <span class=n-Pseudo>false</span> <span class=err>{</span>
+        <span class=na>box-sizing</span><span class=o>:</span> <span class=no>border</span><span class=o>-</span><span class=n>box</span><span class=err>;</span>
+      <span class=err>}</span>
+    <span class=err>}</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Text input placeholder colour which uses the <code class=c-inline-code>text-input-placeholder-color()</code> mixin.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input class=text-input placeholder="Some placeholder text"></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;text&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span> <span class=na>placeholder=</span><span class=s>&quot;Some placeholder text&quot;</span><span class=nt>&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Toggle on/off certain styles and treatments.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-text-input-placeholder-color</span><span class=o>:</span> <span class=n-Pseudo>true</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=k>@if</span> <span class=nv>$apply-text-input-placeholder-color</span> <span class=err>{</span>
+  <span class=k>@include</span><span class=nd> text-input-placeholder-color</span><span class=p>()</span><span class=err>;</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Remove the top inner shadow from iOS inputs. <strong>N.B.</strong> this needs to be isolated to iOS devices so user-agent sniffing needs to happen and the most robust implementation of this is to apply the hook to the <code class=c-inline-code>html</code> element e.g. <code class=c-inline-code>.ios</code>.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input class=text-input><br><br><textarea rows=4></textarea></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;text&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span>
+<span class=nt>&lt;textarea</span> <span class=na>rows=</span><span class=s>&quot;4&quot;</span><span class=nt>&gt;&lt;/textarea&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Toggle on/off certain styles and treatments.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-top-inner-shadow-for-ios-inputs</span><span class=o>:</span>          <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* The name of the class to target iOS so the top inner shadow from iOS inputs</span>
+ <span class=cm>* can be removed.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$remove-top-inner-shadow-from-ios-inputs-class</span><span class=o>:</span>  <span class=n>ios</span> <span class=nv>!default</span><span class=err>;</span>
+
+
+<span class=k>@if</span> <span class=nv>$apply-top-inner-shadow-for-ios-inputs</span> <span class=err>{</span>
+  <span class=nc>.</span><span class=si>#{</span><span class=nv>$remove-top-inner-shadow-from-ios-inputs-class</span><span class=si>}</span> <span class=err>{</span>
+    <span class=nc>.remove-top-inner-shadow-from-ios-inputs</span><span class=o>,</span>
+    <span class=nc>.text-input</span><span class=o>,</span>
+    <span class=nt>textarea</span> <span class=err>{</span>
+      <span class=na>-webkit-appearance</span><span class=o>:</span> <span class=n>caret</span><span class=err>;</span>
+    <span class=err>}</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div><p class=c-demo-block__intro>Hide the close button generated by IE 10+ for inputs.</p><div class="c-demo-block__example u-s-mb-large"><div class="c-demo-block__example__result c-demo-block__example__padded"><input class=text-input></div><h4 class=c-demo-block__example__title>HTML</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-html data-lang=html><span class=nt>&lt;input</span> <span class=na>type=</span><span class=s>&quot;text&quot;</span> <span class=na>class=</span><span class=s>&quot;text-input&quot;</span><span class=nt>&gt;</span></code></pre></div></div><h4 class=c-demo-block__example__title>Sass</h4><div class=c-demo-block__example__code><div class=highlight><pre><code class=language-sass data-lang=sass><span class=cm>/**</span>
+ <span class=cm>* Settings.</span>
+ <span class=cm>*/</span>
+
+<span class=cm>/**</span>
+ <span class=cm>* Toggle on/off certain styles and treatments.</span>
+ <span class=cm>*/</span>
+
+<span class=na>$apply-close-button-for-ie10plus-inputs</span><span class=o>:</span> <span class=n-Pseudo>false</span> <span class=nv>!default</span><span class=err>;</span>
+
+<span class=k>@if</span> <span class=nv>$apply-close-button-for-ie10plus-inputs</span> <span class=err>{</span>
+  <span class=na>.hide-close-button-for-ie-inputs</span><span class=o>::-</span><span class=n>ms-clear</span><span class=o>,</span>
+  <span class=na>.text-input</span><span class=o>::-</span><span class=n>ms-clear</span> <span class=err>{</span>
+    <span class=na>display</span><span class=o>:</span> <span class=no>none</span><span class=err>;</span>
+  <span class=err>}</span>
+<span class=err>}</span></code></pre></div></div></div></section></div></div></article></main><footer class=c-site-footer role=contentinfo><div class=l-container><p>Scally is an open source project by <a href=http://chris-pearce.me rel=external>Chris Pearce</a> and some other <a href=#>fine fellows</a>.</p><ul class="c-site-footer__nav o-list-inline o-list-inline--delimited-slash o-list-inline--spacing-tiny"><li><a href=#>Colophon</a></li><li><a href=https://github.com/chris-pearce/scally/issues rel=external>Issues</a></li><li><a href=https://github.com/chris-pearce/scally/blob/master/CHANGELOG.md rel=external>CHANGELOG</a></li><li><a href=#>Credit</a></li></ul><small class=c-site-footer__copyright>&copy; Chris Pearce 2015—<a href=https://github.com/chris-pearce/scally/blob/master/LICENSE rel=external>License</a>.</small><ul class="c-site-footer__social o-list-inline o-list-inline--spacing-tiny"><li><a href=https://twitter.com/scally_fw class=twitter-follow-button data-show-count=false data-size=large data-show-screen-name=false>Follow @scally_fw</a></li><li><a href=https://twitter.com/share class=twitter-share-button data-via=scally_fw data-size=large data-count=none>Tweet</a></li><li><iframe src="https://ghbtns.com/github-btn.html?user=chris-pearce&amp;type=star&amp;size=large&amp;repo=scally&amp;count=true" frameborder=0 scrolling=0 width=160px height=30px></iframe></li></ul></div></footer><script src=/js/scripts.js></script><script>!function(t,e,r){var n,s=t.getElementsByTagName(e)[0],i=/^http:/.test(t.location)?"http":"https";t.getElementById(r)||(n=t.createElement(e),n.id=r,n.src=i+"://platform.twitter.com/widgets.js",s.parentNode.insertBefore(n,s))}(document,"script","twitter-wjs");</script><script>document.addEventListener("DOMContentLoaded",function(){});</script></body></html>
