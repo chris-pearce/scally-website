@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/chris-pearce/scally-website/issues"
   },
-  "license": "Apache-2.0",
+  "license": "The MIT License (MIT)",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "^3.0.1",
