@@ -355,3 +355,11 @@ $c-button-rounded-corners-size:   6px;
 
 // Pygments syntax highlighter themes
 @import "vendor/pygments-themes/solarized-dark";
+
+
+
+.fuckyou {
+   display: flex;
+   filter: blur(5px);
+   background: brown;
+}

@@ -2,8 +2,8 @@
 name:         Scally website
 title:        Scally CSS framework website
 email:        hi@chris-pearce.me
-baseurl:      /scally-website
-url:          http://scally.chris-pearce.me
+baseurl:      ""
+url:          ""
 sitename:     Scally CSS framework website
 description:  "A website for the Scally CSS framework featuring demos and docs."
 

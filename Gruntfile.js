@@ -13,11 +13,10 @@ module.exports = function(grunt) {
       app: {
         app:      'app',
         dist:     'dist',
-        baseurl:  '/scally-website'
+        baseurl:  ''
       },
 
       watch: {
-
 
         // ***************************************************************** //
         // SASS COMPILATION & AUTOPREFIXER
@@ -27,7 +26,6 @@ module.exports = function(grunt) {
           tasks: ['sass:server', 'autoprefixer']
         },
 
-
         // ***************************************************************** //
         // MINIFY JS
         // ***************************************************************** //
@@ -36,6 +34,13 @@ module.exports = function(grunt) {
           tasks: ['uglify']
         },
 
+        // ***************************************************************** //
+        // IMAGES
+        // ***************************************************************** //
+        images: {
+            files: ['<%= app.app %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'],
+            tasks: ['copy:server']
+        },
 
         // ***************************************************************** //
         // JEKYLL TASKS WITH LIVE-RELOAD
@@ -52,11 +57,10 @@ module.exports = function(grunt) {
               '.jekyll/**/*.{html,yml,md,mkd,markdown}',
               '.tmp/<%= app.baseurl %>/css/*.css',
               '.tmp/<%= app.baseurl %>/js/*.js',
-              '<%= app.app %>/_assets/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
+              '.tmp/<%= app.baseurl %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
             ]
           }
         },
-
 
         // ***************************************************************** //
         // CONNECT: LOCAL SERVER SETUP INC. LIVE-RELOAD
@@ -93,7 +97,6 @@ module.exports = function(grunt) {
           }
         },
 
-
         // ***************************************************************** //
         // CLEAN FILES & FOLDERS
         // ***************************************************************** //
@@ -113,7 +116,6 @@ module.exports = function(grunt) {
             }]
           }
         },
-
 
         // ***************************************************************** //
         // JEKYLL TASKS
@@ -135,7 +137,6 @@ module.exports = function(grunt) {
               }
             }
           },
-
 
           // *************************************************************** //
           // MINIFY HTML
@@ -161,21 +162,30 @@ module.exports = function(grunt) {
             }
           },
 
-
           // *************************************************************** //
           // MINIFY JS
           // *************************************************************** //
           uglify: {
-            options: {
-              preserveComments: false
-            },
-            dist: {
+            server: {
+              options: {
+                mangle: false,
+                beautify: true
+              },
               files: {
                 '.tmp/<%= app.baseurl %>/js/scripts.js': ['<%= app.app %>/_assets/js/**/*.js']
               }
+            },
+            dist: {
+              options: {
+                compress: true,
+                preserveComments: false,
+                report: 'min'
+              },
+              files: {
+                '<%= app.dist %>/<%= app.baseurl %>/js/scripts.js': ['<%= app.app %>/_assets/js/**/*.js']
+              }
             }
-          },
-
+        },
 
           // *************************************************************** //
           // SASS COMPILATION
@@ -195,7 +205,8 @@ module.exports = function(grunt) {
             },
             dist: {
               options: {
-                style: 'compressed'
+                style: 'compressed',
+                sourceMap: false
               },
               files: [{
                 expand: true,
@@ -207,9 +218,8 @@ module.exports = function(grunt) {
             }
           },
 
-
           // *************************************************************** //
-          // REMOVE UNUSED CSS
+          // REMOVE UNNEEDED CSS
           // *************************************************************** //
           uncss: {
             options: {
@@ -222,24 +232,30 @@ module.exports = function(grunt) {
             }
           },
 
-
           // *************************************************************** //
           // AUTOPREFIXER
           // *************************************************************** //
           autoprefixer: {
             options: {
-               browsers: ['last 2 versions']
+              browsers: ['last 2 versions']
             },
-            dist: {
+            server: {
               files: [{
                 expand: true,
                 cwd: '.tmp/<%= app.baseurl %>/css',
                 src: '**/*.css',
                 dest: '.tmp/<%= app.baseurl %>/css'
               }]
+            },
+            dist: {
+              files: [{
+                expand: true,
+                cwd: '<%= app.dist %>/<%= app.baseurl %>/css',
+                src: '**/*.css',
+                dest: '<%= app.dist %>/<%= app.baseurl %>/css'
+              }]
             }
-          },
-
+        },
 
           // *************************************************************** //
           // LOAD CRITICAL CSS
@@ -262,7 +278,6 @@ module.exports = function(grunt) {
             }
           },
 
-
           // *************************************************************** //
           // MINIFY CSS
           // *************************************************************** //
@@ -281,24 +296,24 @@ module.exports = function(grunt) {
             }
           },
 
-
           // *************************************************************** //
           // OPTIMISE IMAGES
           // *************************************************************** //
           imagemin: {
             options: {
-              progressive: true
+              progressive: true,
+              cache: false,
+              optimizationLevel: 4
             },
             dist: {
               files: [{
                 expand: true,
-                cwd: '<%= app.dist %>/<%= app.baseurl %>/_assets/img',
-                src: '**/*.{jpg,jpeg,png,gif}',
-                dest: '<%= app.dist %>/<%= app.baseurl %>/_assets/img'
+                cwd: '<%= app.app %>/img',
+                src: ['**/*.{png,jpg,jpeg,gif}'],
+                dest: '<%= app.dist %>/<%= app.baseurl %>/img'
               }]
             }
           },
-
 
           // *************************************************************** //
           // MINIFY SVG
@@ -307,13 +322,12 @@ module.exports = function(grunt) {
             dist: {
               files: [{
                 expand: true,
-                cwd: '<%= app.dist %>/<%= app.baseurl %>/_assets/img',
+                cwd: '<%= app.app %>/img',
                 src: '**/*.svg',
-                dest: '<%= app.dist %>/<%= app.baseurl %>/_assets/img'
+                dest: '<%= app.dist %>/<%= app.baseurl %>/img'
               }]
             }
           },
-
 
           // *************************************************************** //
           // COPY FILES AND FOLDERS
@@ -325,14 +339,13 @@ module.exports = function(grunt) {
                 dot: true,
                 cwd: '.tmp/<%= app.baseurl %>',
                 src: [
-                'css/**/*',
-                'js/**/*'
-              ],
-              dest: '<%= app.dist %>/<%= app.baseurl %>'
+                  'css/**/*',
+                  'js/**/*'
+                ],
+                dest: '<%= app.dist %>/<%= app.baseurl %>'
               }]
             }
           },
-
 
           // *************************************************************** //
           // GIT COMMIT AND PUSH TO GH-PAGES
@@ -351,7 +364,6 @@ module.exports = function(grunt) {
           }
         });
 
-
       // ***************************************************************** //
       // DEFINE TASKS
       // ***************************************************************** //
@@ -364,13 +376,12 @@ module.exports = function(grunt) {
           'clean:server',
           'jekyll:server',
           'sass:server',
-          'autoprefixer',
-          'uglify',
+          'autoprefixer:server',
+          'uglify:server',
           'connect:livereload',
           'watch'
         ]);
       });
-
 
       // ***************************************************************** //
       // REGISTER TASKS
@@ -389,13 +400,13 @@ module.exports = function(grunt) {
         'imagemin',
         'svgmin',
         'sass:dist',
-        'uncss',
-        'autoprefixer',
+        //'uncss',
+        'autoprefixer:dist',
         'cssmin',
-        'uglify',
+        'uglify:dist',
         'critical',
         'htmlmin'
-      ]);
+    ]);
 
       // Deploy
       grunt.registerTask('deploy', [
