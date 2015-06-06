@@ -3,13 +3,3 @@
 # Scally CSS framework website
 
 A website for the [Scally CSS framework](https://github.com/chris-pearce/scally). Built on [Jekyll](http://jekyllrb.com/) and uses [Grunt](http://gruntjs.com/) for a number of tasks.
-
-## To run
-
-```
-grunt serve
-```
-
-```
-grunt deploy
-```

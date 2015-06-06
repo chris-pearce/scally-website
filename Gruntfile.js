@@ -366,7 +366,6 @@ module.exports = function(grunt) {
       // ***************************************************************** //
       // LOAD NPM TASKS
       // ***************************************************************** //
-      grunt.loadNpmTasks('time-grunt');
       grunt.loadNpmTasks('grunt-contrib-clean');
       grunt.loadNpmTasks('grunt-contrib-connect');
       grunt.loadNpmTasks('grunt-contrib-copy');
@@ -381,6 +380,7 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-jekyll');
       grunt.loadNpmTasks('grunt-sass');
       grunt.loadNpmTasks('grunt-svgmin');
+      grunt.loadNpmTasks('time-grunt');
       //grunt.loadNpmTasks('grunt-uncss');
 
       // ***************************************************************** //

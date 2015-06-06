@@ -1,8 +1,8 @@
 {
-  "name": "scally-website",
-  "version": "0.0.0",
-  "description": "A website for the Scally CSS framework",
-  "homepage": "https://github.com/chris-pearce/scally-website",
+  "name":         "scally-website",
+  "version":      "0.0.0",
+  "description":  "A website for the Scally CSS framework",
+  "homepage":     "https://github.com/chris-pearce/scally-website",
   "keywords": [
     "scally",
     "css",
@@ -13,14 +13,14 @@
   ],
   "author": [
     {
-      "name": "Chris Pearce",
-      "email": "hi@chris-pearce.me",
-      "url": "http://chris-pearce.me"
+      "name":   "Chris Pearce",
+      "email":  "hi@chris-pearce.me",
+      "url":    "http://chris-pearce.me"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:chris-pearce/scally-website.git"
+    "url":  "git@github.com:chris-pearce/scally-website.git"
   },
   "bugs": {
     "url": "https://github.com/chris-pearce/scally-website/issues"
