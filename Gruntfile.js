@@ -1,17 +1,13 @@
 // @credit
 // https://github.com/ozasadnyy/optimized-jekyll-grunt/blob/master/Gruntfile.js
 
-'use strict';
-
 module.exports = function(grunt) {
 
   // Show elapsed time after tasks run
   require('time-grunt')(grunt);
 
-  // Load all Grunt tasks
-  require('jit-grunt')(grunt);
-
     grunt.initConfig({
+      pkg: grunt.file.readJSON('package.json'),
 
       // Setup env vars
       app: {
@@ -368,7 +364,27 @@ module.exports = function(grunt) {
       });
 
       // ***************************************************************** //
-      // DEFINE TASKS
+      // LOAD NPM TASKS
+      // ***************************************************************** //
+      grunt.loadNpmTasks('time-grunt');
+      grunt.loadNpmTasks('grunt-contrib-clean');
+      grunt.loadNpmTasks('grunt-contrib-connect');
+      grunt.loadNpmTasks('grunt-contrib-copy');
+      grunt.loadNpmTasks('grunt-contrib-cssmin');
+      grunt.loadNpmTasks('grunt-contrib-htmlmin');
+      grunt.loadNpmTasks('grunt-contrib-imagemin');
+      grunt.loadNpmTasks('grunt-contrib-uglify');
+      grunt.loadNpmTasks('grunt-contrib-watch');
+      grunt.loadNpmTasks('grunt-autoprefixer');
+      grunt.loadNpmTasks('grunt-build-control');
+      grunt.loadNpmTasks('grunt-critical');
+      grunt.loadNpmTasks('grunt-jekyll');
+      grunt.loadNpmTasks('grunt-sass');
+      grunt.loadNpmTasks('grunt-svgmin');
+      //grunt.loadNpmTasks('grunt-uncss');
+
+      // ***************************************************************** //
+      // REGISTER TASKS
       // ***************************************************************** //
       grunt.registerTask('serve', function(target) {
         if (target === 'dist') {
@@ -385,10 +401,6 @@ module.exports = function(grunt) {
           'watch'
         ]);
       });
-
-      // ***************************************************************** //
-      // REGISTER TASKS
-      // ***************************************************************** //
 
       // Server
       grunt.registerTask('server', function() {
@@ -409,17 +421,17 @@ module.exports = function(grunt) {
         'uglify:dist',
         'critical',
         'htmlmin'
-    ]);
+      ]);
 
-    // Deploy
-    grunt.registerTask('deploy', [
-      'build',
-      'copy',
-      'buildcontrol'
-    ]);
+      // Deploy
+      grunt.registerTask('deploy', [
+        'build',
+        'copy',
+        'buildcontrol'
+      ]);
 
-    // Default (serve)
-    grunt.registerTask('default', [
-      'serve'
-    ]);
+      // Default (serve)
+      grunt.registerTask('default', [
+        'serve'
+      ]);
 };
