@@ -3,9 +3,6 @@
 
 module.exports = function(grunt) {
 
-  // Show elapsed time after tasks run
-  require('time-grunt')(grunt);
-
     grunt.initConfig({
       pkg: grunt.file.readJSON('package.json'),
 
@@ -44,21 +41,25 @@ module.exports = function(grunt) {
         },
 
         // ***************************************************************** //
-        // JEKYLL TASKS WITH LIVE-RELOAD
+        // GENERATE JEKYLL SITE
         // ***************************************************************** //
         jekyll: {
           files: ['<%= app.source %>/**/*.{html,yml,md,mkd,markdown}'],
           tasks: ['jekyll:server']
+        },
+
+        // ***************************************************************** //
+        // LIVE RELOAD
+        // ***************************************************************** //
+        livereload: {
+          options: {
+            livereload: '<%= connect.options.livereload %>'
           },
-          livereload: {
-            options: {
-              livereload: '<%= connect.options.livereload %>'
-            },
-            files: [
-              '.jekyll/**/*.{html,yml,md,mkd,markdown}',
-              '.tmp/<%= app.baseurl %>/css/*.css',
-              '.tmp/<%= app.baseurl %>/js/*.js',
-              '.tmp/<%= app.baseurl %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
+          files: [
+            '.jekyll/**/*.{html,yml,md,mkd,markdown}',
+            '.tmp/<%= app.baseurl %>/css/*.css',
+            '.tmp/<%= app.baseurl %>/js/*.js',
+            '.tmp/<%= app.baseurl %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}'
             ]
           }
         },
@@ -76,7 +77,7 @@ module.exports = function(grunt) {
           livereload: {
             options: {
               open: {
-                target: 'http://localhost:9000/<%= app.baseurl %>'
+                target: 'http://localhost:9000'
               },
               base: [
                 '.jekyll',
@@ -88,7 +89,7 @@ module.exports = function(grunt) {
           dist: {
             options: {
               open: {
-                target: 'http://localhost:9000/<%= app.baseurl %>'
+                target: 'http://localhost:9000'
               },
               base: [
                 '<%= app.dist %>',
@@ -286,9 +287,9 @@ module.exports = function(grunt) {
             },
             files: [{
               expand: true,
-              cwd: '.tmp/<%= app.baseurl %>/css',
-              src: ['*.css'],
-              dest: '.tmp/<%= app.baseurl %>/css'
+              cwd:  '<%= app.dist %>/<%= app.baseurl %>/css',
+              src:  ['*.css'],
+              dest: '<%= app.dist %>/<%= app.baseurl %>/css'
             }]
           }
         },
@@ -300,7 +301,10 @@ module.exports = function(grunt) {
           options: {
             progressive: true,
             cache: false,
-            optimizationLevel: 3
+            optimizationLevel: 3,
+            svgoPlugins: [
+              { cleanupIDs: false }
+            ]
           },
           dist: {
             files: [{
@@ -316,6 +320,11 @@ module.exports = function(grunt) {
         // MINIFY SVG
         // *************************************************************** //
         svgmin: {
+          options: {
+            plugins: [
+              { cleanupIDs: false }
+            ]
+          },
           dist: {
             files: [{
               expand: true,
@@ -380,7 +389,6 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-jekyll');
       grunt.loadNpmTasks('grunt-sass');
       grunt.loadNpmTasks('grunt-svgmin');
-      grunt.loadNpmTasks('time-grunt');
       //grunt.loadNpmTasks('grunt-uncss');
 
       // ***************************************************************** //
@@ -417,7 +425,7 @@ module.exports = function(grunt) {
         'sass:dist',
         //'uncss',
         'autoprefixer:dist',
-        'cssmin',
+        'cssmin:dist',
         'uglify:dist',
         'critical',
         'htmlmin'

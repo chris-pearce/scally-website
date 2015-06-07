@@ -11,8 +11,7 @@
 .c-hero {
   @extend %font-family-sans-serif;
   @include to-rem(padding-top padding-bottom, $spacing-double);
-  background-color: $color-brick-red;
-  background-image: $color-gradient-tropical;
+  background: $color-brick-red $color-gradient-tropical;
   text-align: center;
   // These rules are needs for the animating gradient
   overflow: hidden;
@@ -115,7 +114,14 @@
 
 // link
 .c-hero__cmds__item--link {
+  box-shadow: 0 0 0 1px transparent;
   text-decoration: none;
+  transition: box-shadow 0.15s ease-in;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 0 1px $color-white;
+  }
 }
 
 
@@ -153,8 +159,8 @@
 
 .c-hero__gradient {
   @extend %u-position-pin-all;
-  background-image: $color-gradient-tropical;
-  animation-duration: 90s;
+  background: $color-brick-red $color-gradient-tropical;
+  animation-duration: 40s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -177,7 +183,7 @@
  */
 
 .c-hero__gradient--follow {
-  background-image: $color-gradient-tropical-alt;
+  background: $color-brick-red $color-gradient-tropical-alt;
   animation-name: hero-scroll-follow;
   // This is needed to join the 2 gradients seamlessly in Chrome
   margin-left: -1px;
@@ -188,11 +194,19 @@
  */
 
 @keyframes hero-scroll-lead {
-  from {transform: translateX(0);}
-  to {transform: translateX(-100%);}
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes hero-scroll-follow {
-  from {transform: translateX(100%);}
-  to {transform: translateX(0);}
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }

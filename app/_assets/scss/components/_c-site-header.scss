@@ -23,12 +23,19 @@ $c-site-header-nav-overline-thickness: 3px;
   @extend %font-family-sans-serif;
   @extend %u-gpu-accelerated;
   @include font-size($font-size-small, none);
-  background-color: $color-brick-red;
-  background-image: $color-gradient-tropical;
-  //background: transparent;
+  background: $color-brick-red $color-gradient-tropical;
   position: fixed;
   width: 100%;
   z-index: index($z-index-elements-global, header);
+
+
+  /**
+   * Home page.
+   */
+
+  .s-view-index & {
+    background: none;
+  }
 }
 
 
@@ -52,6 +59,13 @@ $c-site-header-nav-overline-thickness: 3px;
 
 .c-site-header__nav {
   @extend %o-list-inline;
+  // Hack to remove whitespace between the `li`s
+  font-size: 0;
+
+  // Reapply font size after the hack above
+  li {
+    @include font-size($font-size-small, none);
+  }
 
 
   /**

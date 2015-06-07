@@ -15,13 +15,15 @@
         {% assign pages = site.pages | sort: "weight" %}
         <ul class="c-site-header__nav">
           {% for p in pages %}
-            {% assign active = nil %}
-            {% if p.url == page.url | replace: "/"," " | truncatewords: 1 | remove: "..." | remove: ".html" %}
-              {% assign active = "is-active" %}
+            {% assign is_active = nil %}
+            {% assign url_one = p.url | replace: "/"," " | truncatewords: 1 | remove: "..." | remove: ".html" %}
+            {% assign url_two = page.url | replace: "/"," " | truncatewords: 1 | remove: "..." | remove: ".html" %}
+            {% if url_one == url_two %}
+              {% assign is_active = "is-active" %}
             {% endif %}
             {% unless p.exclude_from_nav %}
               <li>
-                <a class="{{ active }}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+                <a class="{{ is_active }}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
               </li>
             {% endunless %}
           {% endfor %}
