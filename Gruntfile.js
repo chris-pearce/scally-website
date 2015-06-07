@@ -364,7 +364,8 @@ module.exports = function(grunt) {
               branch: 'gh-pages',
               commit: true,
               push: true,
-              connectCommits: false
+              connectCommits: false,
+              shallowFetch: true
             }
           }
         }

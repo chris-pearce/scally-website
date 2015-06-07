@@ -3,6 +3,7 @@
 # Ignore hidden folders #
 # This takes care of .tmp, .sass-cache, and many others #
 .*/
+CNAME
 
 # Ignore OS generated files #
 .DS_Store*
