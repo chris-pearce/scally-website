@@ -3,10 +3,54 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="fullcss" content="{{ site.baseurl }}/css/style.css">
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 240 }}{% else %}{{ site.description }}{% endif %}">
-    <link href="//fonts.googleapis.com/css?family=Merriweather:400,300,400italic,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    {% if cookies.fullcss == true %}
+      <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    {% elsif site.environment == "production" %}
+      <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    {% elsif page.section == 1 %}
+      <style>
+        {% include critical-css/getting-started.css %}
+      </style>
+      <script>
+        {% include js/enhance.js %}
+      </script>
+      <noscript>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+      </noscript>
+    {% elsif page.section == 2 %}
+      <style>
+        {% include critical-css/demos.css %}
+      </style>
+      <script>
+        {% include js/enhance.js %}
+      </script>
+      <noscript>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+      </noscript>
+    {% elsif page.section == 3 %}
+      <style>
+        {% include critical-css/documentation.css %}
+      </style>
+      <script>
+        {% include js/enhance.js %}
+      </script>
+      <noscript>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+      </noscript>
+    {% else %}
+      <style>
+        {% include critical-css/home.css %}
+      </style>
+      <script>
+        {% include js/enhance.js %}
+      </script>
+      <noscript>
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+      </noscript>
+    {% endif %}
     <!-- Twitter summary card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@scally_fw">

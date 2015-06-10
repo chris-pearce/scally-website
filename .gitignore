@@ -4,6 +4,7 @@
 # This takes care of .tmp, .sass-cache, and many others #
 .*/
 CNAME
+app/_includes/critical-css
 
 # Ignore OS generated files #
 .DS_Store*

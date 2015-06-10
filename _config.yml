@@ -54,3 +54,6 @@ highlighter: pygments
 
 # Excerpt separator
 excerpt_separator: <!--more-->
+
+# Faux environment
+environment: development
