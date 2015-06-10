@@ -133,13 +133,13 @@ module.exports = function(grunt) {
           },
           dist: {
             options: {
-              dest: '<%= app.dist %>/<%= app.baseurl %>',
+              dest: '<%= app.dist %>',
             }
           },
           server: {
             options: {
               config: '_config.yml',
-              dest: '<%= app.jekyll %>/<%= app.baseurl %>'
+              dest: '<%= app.jekyll %>'
             }
           }
         },
@@ -161,9 +161,9 @@ module.exports = function(grunt) {
             },
             files: [{
               expand: true,
-              cwd: '<%= app.dist %>/<%= app.baseurl %>',
+              cwd: '<%= app.dist %>',
               src: '**/*.html',
-              dest: '<%= app.dist %>/<%= app.baseurl %>'
+              dest: '<%= app.dist %>'
             }]
           }
         },
@@ -181,11 +181,24 @@ module.exports = function(grunt) {
               '<%= app.temp %>/js/scripts.js': ['<%= app.source %>/_assets/js/**/*.js']
             }
           },
+          // Minify enhance.js in the _includes folder
+          server_enhance: {
+            options: {
+              compress: true,
+              preserveComments: false,
+              report: 'gzip',
+              mangle: false
+            },
+            files: {
+              '<%= app.source %>/_includes/js/enhance.min.js': ['<%= app.source %>/_includes/js/enhance.js']
+            }
+          },
           dist: {
             options: {
               compress: true,
               preserveComments: false,
-              report: 'min'
+              report: 'gzip',
+              screwIE8: true
             },
             files: {
               '<%= app.dist %>/js/scripts.js': ['<%= app.source %>/_assets/js/**/*.js']
@@ -229,15 +242,15 @@ module.exports = function(grunt) {
         // *************************************************************** //
         uncss: {
           options: {
-            htmlroot: '<%= app.dist %>/<%= app.baseurl %>',
+            htmlroot: '<%= app.dist %>',
             report: 'gzip'
           },
           dist: {
             files: [{
               expand: true,
-              cwd: '<%= app.dist %>/<%= app.baseurl %>',
+              cwd: '<%= app.dist %>',
               src: '**/*.html',
-              dest: '<%= app.dist %>/<%= app.baseurl %>'
+              dest: '<%= app.dist %>'
             }]
           }
         },
@@ -247,7 +260,7 @@ module.exports = function(grunt) {
         // *************************************************************** //
         autoprefixer: {
           options: {
-            browsers: ['last 1 version']
+            browsers: ['last 2 versions']
           },
           server: {
             files: [{
@@ -270,32 +283,6 @@ module.exports = function(grunt) {
         // *************************************************************** //
         // LOAD CRITICAL CSS
         // *************************************************************** //
-        critical: {
-          options: {
-            base: './',
-            css: '<%= app.temp %>/css/style.css',
-            width: 1366,
-            height: 900,
-            minify: true
-          },
-          home: {
-            src: '<%= app.jekyll %>/index.html',
-            dest: '<%= app.source %>/_includes/critical-css/home.css'
-          },
-          getting_started: {
-            src: '<%= app.jekyll %>/getting-started.html',
-            dest: '<%= app.source %>/_includes/critical-css/getting-started.css'
-          },
-          demos: {
-            src: '<%= app.jekyll %>/demos.html',
-            dest: '<%= app.source %>/_includes/critical-css/demos.css'
-          },
-          documentation: {
-            src: '<%= app.jekyll %>/documentation.html',
-            dest: '<%= app.source %>/_includes/critical-css/documentation.css'
-          }
-        },
-
         criticalcss: {
           options: {
             filename: '<%= app.temp %>/css/style.css',
@@ -406,9 +393,9 @@ module.exports = function(grunt) {
             assets: {
               files: [{
                 expand: true,
-                cwd: '<%= app.dist %>/<%= app.baseurl %>',
+                cwd: '<%= app.dist %>',
                 src: '**/*.html',
-                dest: '<%= app.dist %>/<%= app.baseurl %>'
+                dest: '<%= app.dist %>'
               }]
             }
           }
@@ -422,12 +409,12 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               dot: true,
-              cwd: '<%= app.temp %>/<%= app.baseurl %>',
+              cwd: '<%= app.temp %>',
               src: [
                 'css/**/*',
                 'js/**/*'
               ],
-              dest: '<%= app.dist %>/<%= app.baseurl %>'
+              dest: '<%= app.dist %>'
             }]
           }
         },
@@ -438,7 +425,7 @@ module.exports = function(grunt) {
         buildcontrol: {
           dist: {
             options: {
-              dir: '<%= app.dist %>/<%= app.baseurl %>',
+              dir: '<%= app.dist %>',
               remote: 'git@github.com:chris-pearce/scally-website.git',
               branch: 'gh-pages',
               commit: true,
@@ -465,7 +452,6 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-autoprefixer');
       grunt.loadNpmTasks('grunt-build-control');
       //grunt.loadNpmTasks('grunt-cache-bust');
-      //grunt.loadNpmTasks('grunt-critical');
       grunt.loadNpmTasks('grunt-criticalcss');
       grunt.loadNpmTasks('grunt-jekyll');
       grunt.loadNpmTasks('grunt-sass');
@@ -486,6 +472,7 @@ module.exports = function(grunt) {
           'sass:server',
           'autoprefixer:server',
           'uglify:server',
+          'uglify:server_enhance',
           'connect:livereload',
           'criticalcss',
           'cssmin:server',
@@ -501,13 +488,11 @@ module.exports = function(grunt) {
 
       // Build
       grunt.registerTask('build', [
-        //'connect:dist',
         'clean:dist',
         'jekyll:dist',
         'imagemin',
         'svgmin',
         'sass:dist',
-        //'uncss',
         'autoprefixer:dist',
         'cssmin:dist',
         'uglify:dist',

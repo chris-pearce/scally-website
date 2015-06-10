@@ -6,7 +6,7 @@
       <div class="l-side-by-side-alt__left">
         <a href="/" rel="home">
           <svg viewBox="0 0 251 92" class="c-site-header__logo">
-            <use xlink:href="{{ site.baseurl }}/img/logo.svg#scally" class="c-site-header__logo__fill"></use>
+            <use xlink:href="/img/logo.svg#scally" class="c-site-header__logo__fill"></use>
           </svg>
         </a>
       </div>
@@ -23,7 +23,7 @@
             {% endif %}
             {% unless p.exclude_from_nav %}
               <li>
-                <a class="{{ is_active }}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+                <a class="{{ is_active }}" href="{{ p.url }}">{{ p.title }}</a>
               </li>
             {% endunless %}
           {% endfor %}

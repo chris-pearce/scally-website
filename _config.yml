@@ -2,7 +2,6 @@
 name:         Scally website
 title:        Scally CSS framework website
 email:        hi@chris-pearce.me
-baseurl:      ""
 url:          "http://scally.chris-pearce.me"
 sitename:     Scally CSS framework website
 description:  "A website for the Scally CSS framework featuring demos and docs."
@@ -56,4 +55,4 @@ highlighter: pygments
 excerpt_separator: <!--more-->
 
 # Faux environment
-environment: development
+#environment: development

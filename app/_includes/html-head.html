@@ -3,59 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="fullcss" content="{{ site.baseurl }}/css/style.css">
+    <meta name="fullcss" content="/css/style.css">
     <title>{{ page.title }} | {{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 240 }}{% else %}{{ site.description }}{% endif %}">
-    {% if cookies.fullcss == true %}
-      <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-    {% elsif site.environment == "production" %}
-      <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    <!-- Here we're loading the critical CSS and the remaining CSS async to
+    first time visitors, for everyone else we load the full stylesheet as
+    per normal, we're using a cookie to determine this -->
+    {% if cookie.name == fullcss %}
+      <link rel="stylesheet" href="/css/style.css">
     {% elsif page.section == 1 %}
       <style>
         {% include critical-css/getting-started.css %}
       </style>
-      <script>
-        {% include js/enhance.js %}
-      </script>
-      <noscript>
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-      </noscript>
+      {% include js/critical-css.js %}
     {% elsif page.section == 2 %}
       <style>
         {% include critical-css/demos.css %}
       </style>
-      <script>
-        {% include js/enhance.js %}
-      </script>
-      <noscript>
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-      </noscript>
+      {% include js/critical-css.js %}
     {% elsif page.section == 3 %}
       <style>
         {% include critical-css/documentation.css %}
       </style>
-      <script>
-        {% include js/enhance.js %}
-      </script>
-      <noscript>
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-      </noscript>
+      {% include js/critical-css.js %}
     {% else %}
       <style>
         {% include critical-css/home.css %}
       </style>
-      <script>
-        {% include js/enhance.js %}
-      </script>
-      <noscript>
-        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
-      </noscript>
+      {% include js/critical-css.js %}
     {% endif %}
     <!-- Twitter summary card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@scally_fw">
     <meta name="twitter:title" content="{{ page.title }}">
     <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:image" content="{{ site.baseurl }}/img/twitter-card.png">
+    <meta name="twitter:image" content="/img/twitter-card.png">
     <!-- //Twitter summary card -->
   </head>
