@@ -1,9 +1,21 @@
+# _config.build.yml sets future and show_drafts to false on `grunt build`
 future:       false
 show_drafts:  false
 
+# Grunt handles images and assets
 exclude: [
+  'img',
   'css',
-  'js'
+  'js',
+  'fonts',
+  '**.png',
+  '**.jpg',
+  '**.jpeg',
+  '**.gif',
+  '**.webp',
+  '**.svg',
+  '**.ico'
 ]
 
+# Faux environment
 environment: production
