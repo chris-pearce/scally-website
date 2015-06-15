@@ -5,33 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="fullcss" content="/css/style.css">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 240 }}{% else %}{{ site.description }}{% endif %}">
-    <!-- Here we're loading the critical CSS and the remaining CSS async to
-    first time visitors, for everyone else we load the full stylesheet as
-    per normal, we're using a cookie to determine this -->
-    {% if cookie.name == fullcss %}
+
+    <!-- Critical CSS setup, we're inlining critical CSS for the index pages of each section including the home page and all other pages get the
+    full stylesheet served async -->
+    {% if site.environment == "development" %}
       <link rel="stylesheet" href="/css/style.css">
-    {% elsif page.section == 1 %}
-      <style>
-        {% include critical-css/getting-started.css %}
-      </style>
-      {% include js/critical-css.js %}
-    {% elsif page.section == 2 %}
-      <style>
-        {% include critical-css/demos.css %}
-      </style>
-      {% include js/critical-css.js %}
-    {% elsif page.section == 3 %}
-      <style>
-        {% include critical-css/documentation.css %}
-      </style>
-      {% include js/critical-css.js %}
     {% else %}
-      <style>
-        {% include critical-css/home.css %}
-      </style>
-      {% include js/critical-css.js %}
+      {% if page.section == 1 and page.exclude_from_nav == false %}
+        <style>
+          {% include critical-css/getting-started.css %}
+        </style>
+      {% elsif page.section == 2 and page.exclude_from_nav == false %}
+        <style>
+          {% include critical-css/demos.css %}
+        </style>
+      {% elsif page.section == 3 and page.exclude_from_nav == false %}
+        <style>
+          {% include critical-css/documentation.css %}
+        </style>
+      {% elsif page.home_page == true %}
+        <style>
+          {% include critical-css/home.css %}
+        </style>
+      {% endif %}
+      <script>
+        {% include js/enhance.min.js %}
+      </script>
+      <noscript>
+        <link rel="stylesheet" href="/css/style.css">
+      </noscript>
     {% endif %}
+    <!-- //Critical CSS setup -->
+
+    <!-- DNS prefetching -->
+    <link rel="dns-prefetch" href="//platform.twitter.com">
+    <link rel="dns-prefetch" href="//syndication.twitter.com">
+    <link rel="dns-prefetch" href="//ghbtns.com">
+    <!-- //DNS prefetching -->
+
+    <!-- Description -->
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 240 }}{% else %}{{ site.description }}{% endif %}">
+    <!-- //Description -->
+
     <!-- Twitter summary card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@scally_fw">

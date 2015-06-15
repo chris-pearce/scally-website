@@ -33,15 +33,7 @@ module.exports = function(grunt) {
         // ***************************************************************** //
         scripts: {
           files: '<%= app.source %>/_assets/js/**/*.{js}',
-          tasks: 'uglify'
-        },
-
-        // ***************************************************************** //
-        // IMAGES
-        // ***************************************************************** //
-        images: {
-            files: '<%= app.source %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            tasks: 'copy:server'
+          tasks: 'uglify:server'
         },
 
         // ***************************************************************** //
@@ -109,7 +101,8 @@ module.exports = function(grunt) {
         clean: {
           server: [
             '<%= app.jekyll %>',
-            '<%= app.temp %>'
+            '<%= app.temp %>',
+            '<%= app.dist %>'
           ],
           dist: {
             files: [{
@@ -131,15 +124,15 @@ module.exports = function(grunt) {
             config: '_config.yml,_config.build.yml',
             src: '<%= app.source %>'
           },
-          dist: {
-            options: {
-              dest: '<%= app.dist %>',
-            }
-          },
           server: {
             options: {
               config: '_config.yml',
               dest: '<%= app.jekyll %>'
+            }
+          },
+          dist: {
+            options: {
+              dest: '<%= app.dist %>',
             }
           }
         },
@@ -181,8 +174,8 @@ module.exports = function(grunt) {
               '<%= app.temp %>/js/scripts.js': ['<%= app.source %>/_assets/js/**/*.js']
             }
           },
-          // Minify enhance.js in the _includes folder
-          server_enhance: {
+          // Minify JS in the _includes folder
+          server_jekyll_includes: {
             options: {
               compress: true,
               preserveComments: false,
@@ -190,7 +183,8 @@ module.exports = function(grunt) {
               mangle: false
             },
             files: {
-              '<%= app.source %>/_includes/js/enhance.min.js': ['<%= app.source %>/_includes/js/enhance.js']
+              '<%= app.source %>/_includes/js/enhance.min.js': ['<%= app.source %>/_includes/js/enhance.js'],
+              '<%= app.source %>/_includes/js/font-face-observer.min.js': ['<%= app.source %>/_includes/js/font-face-observer.js']
             }
           },
           dist: {
@@ -210,10 +204,13 @@ module.exports = function(grunt) {
         // SASS COMPILATION
         // *************************************************************** //
         sass: {
+          options: {
+            sourceMap: false,
+            precision: 3,
+            // nested, expanded, compact, compressed
+            outputStyle: 'expanded'
+          },
           server: {
-            options: {
-              sourceMap: false
-            },
             files: [{
               expand: true,
               cwd: '<%= app.source %>/_assets/scss/',
@@ -223,9 +220,6 @@ module.exports = function(grunt) {
             }]
           },
           dist: {
-            options: {
-              sourceMap: false
-            },
             files: [{
               expand: true,
               cwd: '<%= app.source %>/_assets/scss',
@@ -259,9 +253,6 @@ module.exports = function(grunt) {
         // AUTOPREFIXER
         // *************************************************************** //
         autoprefixer: {
-          options: {
-            browsers: ['last 2 versions']
-          },
           server: {
             files: [{
               expand: true,
@@ -283,36 +274,29 @@ module.exports = function(grunt) {
         // *************************************************************** //
         // LOAD CRITICAL CSS
         // *************************************************************** //
-        criticalcss: {
+        critical: {
           options: {
-            filename: '<%= app.temp %>/css/style.css',
+            base: './',
+            css: '<%= app.temp %>/css/style.css',
             width: 1366,
             height: 900,
             minify: true
           },
           home: {
-            options: {
-              url: 'http://localhost:9000',
-              outputfile: '<%= app.source %>/_includes/critical-css/home.css'
-            }
+            src:  '<%= app.jekyll %>/index.html',
+            dest: '<%= app.source %>/_includes/critical-css/home.css'
           },
           getting_started: {
-            options: {
-              url: 'http://localhost:9000/getting-started.html',
-              outputfile: '<%= app.source %>/_includes/critical-css/getting-started.css'
-            }
+            src:  '<%= app.jekyll %>/getting-started.html',
+            dest: '<%= app.source %>/_includes/critical-css/getting-started.css'
           },
           demos: {
-            options: {
-              url: 'http://localhost:9000/demos.html',
-              outputfile: '<%= app.source %>/_includes/critical-css/demos.css'
-            }
+            src:  '<%= app.jekyll %>/demos.html',
+            dest: '<%= app.source %>/_includes/critical-css/demos.css'
           },
-          docs: {
-            options: {
-              url: 'http://localhost:9000/documentation.html',
-              outputfile: '<%= app.source %>/_includes/critical-css/documentation.css'
-            }
+          documentation: {
+            src:  '<%= app.jekyll %>/documentation.html',
+            dest: '<%= app.source %>/_includes/critical-css/documentation.css'
           }
         },
 
@@ -348,16 +332,12 @@ module.exports = function(grunt) {
         imagemin: {
           options: {
             progressive: true,
-            optimizationLevel: 4,
-            svgoPlugins: [
-              { cleanupIDs: false },
-              { removeUselessStrokeAndFill: false },
-            ]
+            optimizationLevel: 4
           },
           dist: {
             files: [{
               expand: true,
-              cwd: '<%= app.source %>/img',
+              cwd: '<%= app.source %>/_assets/img',
               src: '**/*.{png,jpg,jpeg,gif}',
               dest: '<%= app.dist %>/img'
             }]
@@ -371,13 +351,13 @@ module.exports = function(grunt) {
           options: {
             plugins: [
               { cleanupIDs: false },
-              { removeUselessStrokeAndFill: false },
+              { removeUselessStrokeAndFill: false }
             ]
           },
           dist: {
             files: [{
               expand: true,
-              cwd: '<%= app.source %>/img',
+              cwd: '<%= app.source %>/_assets/img',
               src: '**/*.svg',
               dest: '<%= app.dist %>/img'
             }]
@@ -405,16 +385,31 @@ module.exports = function(grunt) {
         // COPY FILES AND FOLDERS
         // *************************************************************** //
         copy: {
-          dist: {
+          fonts: {
             files: [{
               expand: true,
               dot: true,
-              cwd: '<%= app.temp %>',
-              src: [
-                'css/**/*',
-                'js/**/*'
-              ],
-              dest: '<%= app.dist %>'
+              cwd: '<%= app.source %>/_assets/fonts',
+              src: '**/*.{woff,woff2}',
+              dest: '<%= app.temp %>/fonts'
+            }]
+          },
+          fonts_dist: {
+            files: [{
+              expand: true,
+              dot: true,
+              cwd: '<%= app.source %>/_assets/fonts',
+              src: '**/*.{woff,woff2}',
+              dest: '<%= app.dist %>/fonts'
+            }]
+          },
+          images: {
+            files: [{
+              expand: true,
+              dot: true,
+              cwd: '<%= app.source %>/_assets/img',
+              src: '**/*.{gif,jpg,jpeg,png,svg,webp}',
+              dest: '<%= app.temp %>/img'
             }]
           }
         },
@@ -452,7 +447,8 @@ module.exports = function(grunt) {
       grunt.loadNpmTasks('grunt-autoprefixer');
       grunt.loadNpmTasks('grunt-build-control');
       //grunt.loadNpmTasks('grunt-cache-bust');
-      grunt.loadNpmTasks('grunt-criticalcss');
+      //grunt.loadNpmTasks('grunt-criticalcss');
+      grunt.loadNpmTasks('grunt-critical');
       grunt.loadNpmTasks('grunt-jekyll');
       grunt.loadNpmTasks('grunt-sass');
       grunt.loadNpmTasks('grunt-svgmin');
@@ -467,15 +463,16 @@ module.exports = function(grunt) {
         }
 
         grunt.task.run([
+          'critical',
           'clean:server',
           'jekyll:server',
+          'copy:fonts',
+          'copy:images',
           'sass:server',
           'autoprefixer:server',
           'uglify:server',
-          'uglify:server_enhance',
+          'uglify:server_jekyll_includes',
           'connect:livereload',
-          'criticalcss',
-          'cssmin:server',
           'watch'
         ]);
       });
@@ -490,13 +487,14 @@ module.exports = function(grunt) {
       grunt.registerTask('build', [
         'clean:dist',
         'jekyll:dist',
+        'copy:fonts_dist',
         'imagemin',
         'svgmin',
         'sass:dist',
         'autoprefixer:dist',
         'cssmin:dist',
         'uglify:dist',
-        'htmlmin'
+        'htmlmin',
       ]);
 
       // Deploy

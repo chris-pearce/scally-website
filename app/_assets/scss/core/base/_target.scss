@@ -13,7 +13,6 @@
  */
 
 :target {
-  //animation: target-fade-bg 3s 1;
 
   h2,
   h3 {
@@ -34,10 +33,6 @@
   }
 }
 
-@keyframes target-fade-bg {
-  0%    {background-color: rgba(hotpink, 0.2);}
-  100%  {background-color: rgba(hotpink, 0);}
-}
 
 @keyframes target-heading {
   0% {

@@ -10,16 +10,14 @@
 
   // Define some variables to be used throughout this file
   var doc = window.document,
-    docElem = doc.documentElement,
-    head = doc.head || doc.getElementsByTagName( "head" )[ 0 ],
-    // this references a meta tag's name whose content attribute should define the path to the full CSS file for the site
-    fullCSSKey = "fullcss",
-    // this references a meta tag's name whose content attribute should define the path to the enhanced JS file for the site (delivered to qualified browsers)
-    fullJSKey = "fulljs",
-    // this references a meta tag's name whose content attribute should define the path to the custom fonts file for the site (delivered to qualified browsers)
-    fontsKey = "fonts",
-    // classes to be added to the HTML element in qualified browsers
-    htmlClasses = [ "enhanced js" ];
+      docElem = doc.documentElement,
+      head = doc.head || doc.getElementsByTagName( "head" )[ 0 ],
+      // this references a meta tag's name whose content attribute should define the path to the full CSS file for the site
+      fullCSSKey = "fullcss",
+      // this references a meta tag's name whose content attribute should define the path to the enhanced JS file for the site (delivered to qualified browsers)
+      fullJSKey = "fulljs",
+      // classes to be added to the HTML element in qualified browsers
+      htmlClasses = [ "enhanced js" ];
 
   /* Some commonly used functions - delete anything you don't need! */
 
@@ -95,38 +93,6 @@
   // expose it
   enhance.getMeta = getMeta;
 
-  // cookie function from https://github.com/filamentgroup/cookie/
-  function cookie( name, value, days ){
-    var expires;
-    // if value is undefined, get the cookie value
-    if( value === undefined ){
-      var cookiestring = "; " + window.document.cookie;
-      var cookies = cookiestring.split( "; " + name + "=" );
-      if ( cookies.length == 2 ){
-        return cookies.pop().split( ";" ).shift();
-      }
-      return null;
-    }
-    else {
-      // if value is a false boolean, we'll treat that as a delete
-      if( value === false ){
-        days = -1;
-      }
-      if ( days ) {
-        var date = new Date();
-        date.setTime( date.getTime() + ( days * 24 * 60 * 60 * 1000 ) );
-        expires = "; expires="+date.toGMTString();
-      }
-      else {
-        expires = "";
-      }
-      window.document.cookie = name + "=" + value + expires + "; path=/";
-    }
-  }
-
-  // expose it
-  enhance.cookie = cookie;
-
   /* Enhancements for all browsers - qualified or not */
 
   /* Load non-critical CSS async on first visit:
@@ -136,11 +102,7 @@
     Once the cookie is set, the full CSS is assumed to be in cache, and the server-side templates should reference the full CSS directly from the head of the page with a link element, in place of inline critical styles.
     */
   var fullCSS = getMeta( fullCSSKey );
-  if( fullCSS && !cookie( fullCSSKey ) ){
-    loadCSS( fullCSS.content );
-    // set cookie to mark this file fetched
-    cookie( fullCSSKey, "true", 365 );
-  }
+  loadCSS( fullCSS.content );
 
   /* Enhancements for qualified browsers - "Cutting the Mustard"
     Add your qualifications for major browser experience divisions here.
@@ -164,17 +126,6 @@
   var fullJS = getMeta( fullJSKey );
   if( fullJS ){
     loadJS( fullJS.content );
-  }
-
-  /* Load custom fonts
-    We prefer to load fonts asynchronously so that they do not block page rendering.
-    To do this, a meta tag with a name matching the fontsWoffKey should have a content attribute referencing the path to this fonts file.
-    NOTE: You may want to have logic here to choose between one of many font formats before loading it.
-      For example, we often load WOFF, Truetype, or SVG. If so, just define meta tags for each
-    */
-  var fonts = getMeta( fontsKey );
-  if( fonts ){
-    loadCSS( fonts.content );
   }
 
   // expose the 'enhance' object globally. Use it to expose anything in here that's useful to other parts of your application.

@@ -10,17 +10,16 @@
 
 .c-hero {
   @extend %font-family-sans-serif;
-  @include to-rem(padding-top padding-bottom, $spacing-double);
+  @include to-rem(padding-top, $spacing-double - $fixed-site-header-height);
+  @include to-rem(padding-bottom, $spacing-double);
   background: $color-brick-red $color-gradient-tropical;
   text-align: center;
-  // These rules are needs for the animating gradient
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
 
   @include respond-to(lap) {
-    @include to-rem(padding-top padding-bottom, $spacing-quadruple + $spacing-base);
+    @include to-rem(padding-top, $spacing-quadruple + $spacing-base - $fixed-site-header-height);
+    @include to-rem(padding-bottom, $spacing-quadruple + $spacing-base);
   }
+
 
   /**
    * Base + link colours.
@@ -33,20 +32,8 @@
 
   a:hover,
   a:focus {
-    text-decoration: none;
+    color: $color-grey-concrete;
   }
-}
-
-
-/**
- * Inner container.
- *
- * N.B. these rules are needed for the animating gradient.
- */
-
-.c-hero__inner {
-  position: relative;
-  z-index: 3;
 }
 
 
@@ -139,74 +126,5 @@
     &:last-child {
       margin-right: 0;
     }
-  }
-}
-
-
-/**
- * Animating the gradient horizontally. This is achieved by 2 empty
- * `div` elements being positioned absolutely to all corners of the hero
- * component—meaning they stretch to cover the entire area of the component but
- * sit behind everything in the component i.e. the text. Before the animation
- * starts 1 element is in view whilst the other is positioned off-screen to the
- * right. And when the animation starts both elements begin scrolling
- * horizontally across the viewport using the `transform`/`translate`
- * property/value. Both elements will alternate scrolling across the viewport
- * for an infinite number of times. The reason 2 elements is needed is because
- * each element needs to contain 1/2 of the gradient so the gradient appears
- * to be seamless.
- */
-
-.c-hero__gradient {
-  @extend %u-position-pin-all;
-  background: $color-brick-red $color-gradient-tropical;
-  animation-duration: 40s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  z-index: 2;
-  // This is needed to join the 2 gradients seamlessly in Chrome
-  width: 100%;
-  height: 100%;
-}
-
-/**
- * Modifier: 1st half.
- */
-
-.c-hero__gradient--lead {
-  animation-name: hero-scroll-lead;
-}
-
-/**
- * Modifier: 2nd half.
- */
-
-.c-hero__gradient--follow {
-  background: $color-brick-red $color-gradient-tropical-alt;
-  animation-name: hero-scroll-follow;
-  // This is needed to join the 2 gradients seamlessly in Chrome
-  margin-left: -1px;
-}
-
-/**
- * The animations.
- */
-
-@keyframes hero-scroll-lead {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes hero-scroll-follow {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
   }
 }

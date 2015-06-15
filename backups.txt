@@ -1,0 +1,228 @@
+<div class="l-grid l-grid-gutter-huge  u-hide">
+  <div class="l-grid__item  u-one-fifth-from-lap">
+    <a href="demos/core-base.html" class="c-box">
+      <div class="c-box__inner">
+          <svg viewBox="0 0 100 100">
+            <use xlink:href="/_assets/img/icons/set-1/core.svg#core" />
+          </svg>
+      </div>
+      <h2>Core</h2>
+    </a>
+  </div>
+  <div class="l-grid__item  u-one-fifth-from-lap">
+    <a href="#" class="c-box">
+      <div class="c-box__inner">
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="/_assets/img/icons/set-1/objects.svg#objects" />
+      </svg>
+      </div>
+      <h2>Objects</h2>
+    </a>
+  </div>
+  <div class="l-grid__item  u-one-fifth-from-lap">
+    <a href="#" class="c-box">
+      <div class="c-box__inner">
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="/_assets/img/icons/set-1/layout.svg#layout" />
+      </svg>
+      </div>
+      <h2>Layout Modules</h2>
+    </a>
+  </div>
+  <div class="l-grid__item  u-one-fifth-from-lap">
+    <a href="#" class="c-box">
+      <div class="c-box__inner">
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="/_assets/img/icons/set-1/components.svg#components" />
+      </svg>
+      </div>
+      <h2>Components</h2>
+    </a>
+  </div>
+  <div class="l-grid__item  u-one-fifth-from-lap">
+    <a href="#" class="c-box">
+      <div class="c-box__inner">
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="/_assets/img/icons/set-1/utilities.svg#utilities" />
+      </svg>
+      </div>
+      <h2>Utilities</h2>
+    </a>
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400,300,400italic,700">
+
+
+html {
+  font-weight: $font-weight-normal;
+  background-image: url('some/big/image.png');
+}
+
+@font-face {
+  font-family: 'My awesome font';
+}
+
+@media print {
+
+}
+
+
+<!-- Animating gradient -->
+  <!-- <div class="c-hero__gradient c-hero__gradient--lead"></div>
+  <div class="c-hero__gradient c-hero__gradient--follow"></div> -->
+  <!-- //Animating gradient -->
+
+
+/**
+ * Animating the gradient horizontally. This is achieved by 2 empty
+ * `div` elements being positioned absolutely to all corners of the hero
+ * component—meaning they stretch to cover the entire area of the component but
+ * sit behind everything in the component i.e. the text. Before the animation
+ * starts 1 element is in view whilst the other is positioned off-screen to the
+ * right. And when the animation starts both elements begin scrolling
+ * horizontally across the viewport using the `transform`/`translate`
+ * property/value. Both elements will alternate scrolling across the viewport
+ * for an infinite number of times. The reason 2 elements is needed is because
+ * each element needs to contain 1/2 of the gradient so the gradient appears
+ * to be seamless.
+ */
+
+.c-hero__gradient {
+  @extend %u-position-pin-all;
+  background: $color-brick-red $color-gradient-tropical;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: 2;
+  // This is needed to join the 2 gradients seamlessly in Chrome
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * Modifier: 1st half.
+ */
+
+.c-hero__gradient--lead {
+  animation-name: hero-scroll-lead;
+}
+
+/**
+ * Modifier: 2nd half.
+ */
+
+.c-hero__gradient--follow {
+  background: $color-brick-red $color-gradient-tropical-alt;
+  animation-name: hero-scroll-follow;
+  // This is needed to join the 2 gradients seamlessly in Chrome
+  margin-left: -1px;
+}
+
+/**
+ * The animations.
+ */
+
+@keyframes hero-scroll-lead {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes hero-scroll-follow {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+// Filament Groups version, wasn't working properly by not bringing
+        // over CSS gradients, not using shorthand for `background`, and
+        // including `@media print` styles
+        criticalcss: {
+          options: {
+            filename: '<%= app.temp %>/css/style.css',
+            width: 1366,
+            height: 900
+          },
+          home: {
+            options: {
+              url: 'http://localhost:9000',
+              outputfile: '<%= app.source %>/_includes/critical-css/home.css',
+              forceInclude: ['.c-hero']
+            }
+          },
+          getting_started: {
+            options: {
+              url: 'http://localhost:9000/getting-started.html',
+              outputfile: '<%= app.source %>/_includes/critical-css/getting-started.css',
+              forceInclude: ['.c-banner']
+            }
+          },
+          demos: {
+            options: {
+              url: 'http://localhost:9000/demos.html',
+              outputfile: '<%= app.source %>/_includes/critical-css/demos.css',
+              forceInclude: ['.c-banner']
+            }
+          },
+          docs: {
+            options: {
+              url: 'http://localhost:9000/documentation.html',
+              outputfile: '<%= app.source %>/_includes/critical-css/documentation.css',
+              forceInclude: ['.c-banner']
+            }
+          }
+        },
+
+
+// ***************************************************************** //
+        // SASS COMPILATION & AUTOPREFIXER
+        // ***************************************************************** //
+        sass: {
+          files: '<%= app.source %>/_assets/scss/**/*.{scss,sass}',
+          tasks: [
+            'sass:server',
+            'autoprefixer'
+          ]
+        },
+
+        // ***************************************************************** //
+        // MINIFY JS
+        // ***************************************************************** //
+        scripts: {
+          files: '<%= app.source %>/_assets/js/**/*.{js}',
+          tasks: 'uglify'
+        },
+
+        // ***************************************************************** //
+        // IMAGES
+        // ***************************************************************** //
+        images: {
+          files: '<%= app.source %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
+          tasks: 'copy:server'
+        },
+
+        // ***************************************************************** //
+        // FONTS
+        // ***************************************************************** //
+        fonts: {
+          files: '<%= app.source %>/_assets/fonts/**/*.{woff,woff2}',
+          tasks: 'copy:server'
+        },
+
+        // ***************************************************************** //
+        // GENERATE JEKYLL SITE
+        // ***************************************************************** //
+        jekyll: {
+          files: '<%= app.source %>/**/*.{html,yml,md,mkd,markdown}',
+          tasks: 'jekyll:server'
+        },

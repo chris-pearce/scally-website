@@ -32,8 +32,18 @@
   @include to-rem(padding-top padding-bottom, $spacing-double);
   background: $color-brick-red $color-gradient-tropical;
 
+
+  /**
+   * Base + link colours.
+   */
+
   &,
   a {
     color: $color-white;
+  }
+
+  a:hover,
+  a:focus {
+    color: $color-grey-concrete;
   }
 }

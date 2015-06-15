@@ -34,7 +34,7 @@ $c-site-header-nav-overline-thickness: 3px;
    */
 
   .s-view-index & {
-    background: none;
+    position: static;
   }
 }
 
@@ -46,9 +46,6 @@ $c-site-header-nav-overline-thickness: 3px;
 .c-site-header__logo {
   width: 80px;
   height: 40px;
-}
-
-.c-site-header__logo__fill {
   fill: $color-white;
 }
 
@@ -62,7 +59,7 @@ $c-site-header-nav-overline-thickness: 3px;
   // Hack to remove whitespace between the `li`s
   font-size: 0;
 
-  // Reapply font size after the hack above
+  // Reapply font size due to hack above
   li {
     @include font-size($font-size-small, none);
   }

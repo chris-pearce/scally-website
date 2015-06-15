@@ -12,3 +12,8 @@
 html {
   font-weight: $font-weight-normal;
 }
+
+// Once the Merriweather custom font has loaded we can show it via this class
+.has-fonts-loaded {
+  font-family: $font-family-base-custom;
+}

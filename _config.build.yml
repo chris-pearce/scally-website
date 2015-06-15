@@ -3,8 +3,7 @@ show_drafts:  false
 
 exclude: [
   'css',
-  'js',
-  'fonts'
+  'js'
 ]
 
 environment: production

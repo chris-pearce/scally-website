@@ -16,9 +16,13 @@
  * Font families.
  */
 
-$font-family-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light",
-                          "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
-                          sans-serif;
+// This is the font you see whilst waiting for the Merriweather custom font to
+// load (`$font-family-base`)
+$font-family-base-custom:   Merriweather, Georgia, Palatino, "Hoefler Text",
+                            Baskerville, serif;
+
+$font-family-sans-serif:    "HelveticaNeue-Light", "Helvetica Neue Light",
+                            "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 
 /**
@@ -26,8 +30,6 @@ $font-family-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light",
  */
 
 $font-weight-normal:  400;
-
-$font-weight-light:   300;
 
 $font-weight-bold:    700;
 

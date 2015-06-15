@@ -26,7 +26,7 @@
 
 // Font weights
 @include headings(2, 4, true) {
-  font-weight: $font-weight-light;
+  font-weight: 300;
 }
 
 @include headings(5, 6, true) {

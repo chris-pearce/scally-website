@@ -16,7 +16,7 @@ github_username:  chris-pearce
 timezone: Australia/Sydney
 
 
-# Grunt handles images and assets.
+# Grunt handles images and assets
 exclude: [
   'img',
   'css',
@@ -55,4 +55,4 @@ highlighter: pygments
 excerpt_separator: <!--more-->
 
 # Faux environment
-#environment: development
+environment: development
