@@ -8,33 +8,29 @@
 
     <!-- Critical CSS setup, we're inlining critical CSS for the index pages of each section including the home page and all other pages get the
     full stylesheet served async -->
-    {% if site.environment == "development" %}
-      <link rel="stylesheet" href="/css/style.css">
-    {% else %}
-      {% if page.section == 1 and page.exclude_from_nav == false %}
-        <style>
-          {% include critical-css/getting-started.css %}
-        </style>
-      {% elsif page.section == 2 and page.exclude_from_nav == false %}
-        <style>
-          {% include critical-css/demos.css %}
-        </style>
-      {% elsif page.section == 3 and page.exclude_from_nav == false %}
-        <style>
-          {% include critical-css/documentation.css %}
-        </style>
-      {% elsif page.home_page == true %}
-        <style>
-          {% include critical-css/home.css %}
-        </style>
-      {% endif %}
-      <script>
-        {% include js/enhance.min.js %}
-      </script>
-      <noscript>
-        <link rel="stylesheet" href="/css/style.css">
-      </noscript>
+    {% if page.section == 1 and page.exclude_from_nav == false %}
+      <style>
+        {% include critical-css/getting-started.css %}
+      </style>
+    {% elsif page.section == 2 and page.exclude_from_nav == false %}
+      <style>
+        {% include critical-css/demos.css %}
+      </style>
+    {% elsif page.section == 3 and page.exclude_from_nav == false %}
+      <style>
+        {% include critical-css/documentation.css %}
+      </style>
+    {% elsif page.home_page == true %}
+      <style>
+        {% include critical-css/home.css %}
+      </style>
     {% endif %}
+    <script>
+      {% include js/enhance.min.js %}
+    </script>
+    <noscript>
+      <link rel="stylesheet" href="/css/style.css">
+    </noscript>
     <!-- //Critical CSS setup -->
 
     <!-- DNS prefetching -->

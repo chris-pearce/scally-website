@@ -25,8 +25,7 @@ module.exports = function(grunt) {
         files: '<%= app.source %>/_assets/scss/**/*.{scss,sass}',
         tasks: [
           'sass:dev',
-          'autoprefixer',
-          'critical'
+          'autoprefixer'
         ],
         options: {
           spawn: false
@@ -269,7 +268,7 @@ module.exports = function(grunt) {
         css: '<%= app.temp %>/css/style.css',
         width: 1366,
         height: 768,
-        minify: false
+        minify: true
       },
       home: {
         src:  '<%= app.jekyll %>/index.html',
@@ -448,6 +447,7 @@ module.exports = function(grunt) {
 
   // Build
   grunt.registerTask('build', [
+    'critical',
     'clean:dist',
     'jekyll:dist',
     'copy:fonts_dist',
