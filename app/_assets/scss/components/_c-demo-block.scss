@@ -86,9 +86,33 @@ $c-demo-block-border-thickness: 1px;
 }
 
 
-.c-demo-block__example__title {
+/**
+ * An example heading.
+ */
+
+.c-demo-block__example__heading {
   @include to-rem(padding, $spacing-quarter $spacing-base);
   @include font-size($font-size-small);
   background-color: $color-grey-concrete;
   margin-bottom: 0;
+}
+
+
+/**
+ * Apply styles to a `div` element to visually show how some of Scally works.
+ */
+
+// Tropical gradient border
+.c-demo-block__example__result__box {
+  padding: 1px;
+  background: $color-gradient-tropical;
+}
+
+.c-demo-block__example__result__box__inner {
+  background: white;
+}
+
+// Grey border
+.c-demo-block__example__result__box-alt {
+  border: 1px solid $color-solarized-dark-base1;
 }

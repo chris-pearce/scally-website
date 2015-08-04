@@ -1,0 +1,25 @@
+/* ============================================================================
+   @UTILITIES -> ANCHOR TARGET
+   ========================================================================= */
+
+
+/**
+ * Apply a fade effect to elements that are anchored too via the `:target`
+ * pseudo selector.
+ */
+
+
+:target .u-anchor-target {
+  animation: target-heading 1s 1;
+}
+
+@keyframes target-heading {
+  0% {
+    color: $color-wild-watermelon;
+    transform: translateX(-10px);
+  }
+  100% {
+    color: currentColor;
+    transform: translateX(0);
+  }
+}

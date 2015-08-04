@@ -12,10 +12,14 @@
   var doc = window.document,
       docElem = doc.documentElement,
       head = doc.head || doc.getElementsByTagName( "head" )[ 0 ],
+      // this references a meta tag's name whose content attribute should define the path to the full CSS file for the site
+      fullCSSKey = "fullcss",
       // this references a meta tag's name whose content attribute should define the path to the enhanced JS file for the site (delivered to qualified browsers)
       fullJSKey = "fulljs",
       // classes to be added to the HTML element in qualified browsers
       htmlClasses = [ "enhanced js" ];
+
+  /* Some commonly used functions - delete anything you don't need! */
 
   // loadJS: load a JS file asynchronously. Included from https://github.com/filamentgroup/loadJS/
   function loadJS( src ){
@@ -29,6 +33,48 @@
 
   // expose it
   enhance.loadJS = loadJS;
+
+  // loadCSS: load a CSS file asynchronously. Included from https://github.com/filamentgroup/loadCSS/
+  function loadCSS( href, before, media ){
+    // Arguments explained:
+    // `href` is the URL for your CSS file.
+    // `before` optionally defines the element we'll use as a reference for injecting our <link>
+    // By default, `before` uses the first <script> element in the page.
+    // However, since the order in which stylesheets are referenced matters, you might need a more specific location in your document.
+    // If so, pass a different reference element to the `before` argument and it'll insert before that instead
+    // note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+    var ss = window.document.createElement( "link" );
+    var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+    var sheets = window.document.styleSheets;
+    ss.rel = "stylesheet";
+    ss.href = href;
+    // temporarily, set media to something non-matching to ensure it'll fetch without blocking render
+    ss.media = "only x";
+    // inject link
+    ref.parentNode.insertBefore( ss, ref );
+    // This function sets the link's media back to `all` so that the stylesheet applies once it loads
+    // It is designed to poll until document.styleSheets includes the new sheet.
+    function toggleMedia(){
+      var defined;
+      for( var i = 0; i < sheets.length; i++ ){
+        if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+          defined = true;
+        }
+      }
+      if( defined ){
+        ss.media = media || "all";
+      }
+      else {
+        setTimeout( toggleMedia );
+      }
+    }
+
+    toggleMedia();
+    return ss;
+  }
+
+  // expose it
+  enhance.loadCSS = loadCSS;
 
   // getMeta function: get a meta tag by name
   // NOTE: meta tag must be in the HTML source before this script is included in order to guarantee it'll be found
@@ -46,6 +92,17 @@
 
   // expose it
   enhance.getMeta = getMeta;
+
+  /* Enhancements for all browsers - qualified or not */
+
+  /* Load non-critical CSS async on first visit:
+    On first visit to the site, the critical CSS for each template should be inlined in the head, while the full CSS for the site should be requested async and cached for later use.
+    A meta tag with a name matching the fullCSSKey should have a content attribute referencing the path to the full CSS file for the site.
+    If no cookie is set to specify that the full CSS has already been fetched, load it asynchronously and set the cookie.
+    Once the cookie is set, the full CSS is assumed to be in cache, and the server-side templates should reference the full CSS directly from the head of the page with a link element, in place of inline critical styles.
+    */
+  var fullCSS = getMeta( fullCSSKey );
+  loadCSS( fullCSS.content );
 
   /* Enhancements for qualified browsers - "Cutting the Mustard"
     Add your qualifications for major browser experience divisions here.

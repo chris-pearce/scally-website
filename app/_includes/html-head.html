@@ -3,35 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="fullcss" content="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>{{ page.title }} | {{ site.title }}</title>
-
-    <!-- Critical CSS setup, we're inlining critical CSS for the index pages of each section including the home page and all other pages get the
-    full stylesheet served async -->
-    {% if page.section == 1 and page.exclude_from_nav == false %}
-      <style>
-        {% include critical-css/getting-started.css %}
-      </style>
-    {% elsif page.section == 2 and page.exclude_from_nav == false %}
-      <style>
-        {% include critical-css/demos.css %}
-      </style>
-    {% elsif page.section == 3 and page.exclude_from_nav == false %}
-      <style>
-        {% include critical-css/documentation.css %}
-      </style>
-    {% elsif page.home_page == true %}
-      <style>
-        {% include critical-css/home.css %}
-      </style>
-    {% endif %}
-    <script>
-      {% include js/enhance.min.js %}
-    </script>
-    <noscript>
-      <link rel="stylesheet" href="/css/style.css">
-    </noscript>
-    <!-- //Critical CSS setup -->
+    <script>{% include js/enhance.min.js %}</script>
 
     <!-- DNS prefetching -->
     <link rel="dns-prefetch" href="//platform.twitter.com">

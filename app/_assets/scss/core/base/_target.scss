@@ -4,43 +4,17 @@
 
 
 /**
- * Apply a fade effect to elements that are anchored too via the `:target`
- * pseudo selector and a hack to prevent elements that are anchored too from
- * slipping under the fixed header.
+ * Apply a hack to prevent elements that are anchored too from slipping under
+ * the fixed header.
  *
  * @credit
  * http://nicolasgallagher.com/jump-links-and-viewport-positioning/
  */
 
-:target {
-
-  h2,
-  h3 {
-    animation: target-heading 1s 1;
-  }
-
-
-  /**
-   * A hack to prevent anchored elements from slipping under the fixed header.
-   */
-
-  &:before {
-    content: "";
-    display: block;
-    height: $fixed-site-header-height * 1px;
-    margin-top: -$fixed-site-header-height * 1px;
-    opacity: 0;
-  }
-}
-
-
-@keyframes target-heading {
-  0% {
-    color: $color-wild-watermelon;
-    transform: translateX(-10px);
-  }
-  100% {
-    color: currentColor;
-    transform: translateX(0);
-  }
+:target:before {
+  content: "";
+  display: block;
+  height: $fixed-site-header-height * 1px;
+  margin-top: -$fixed-site-header-height * 1px;
+  opacity: 0;
 }

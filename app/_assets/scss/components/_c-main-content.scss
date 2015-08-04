@@ -29,8 +29,9 @@
  */
 
 .c-main-content--landing {
-  @include to-rem(padding-top padding-bottom, $spacing-double);
+  @include to-rem(padding-bottom, $spacing-triple);
   background: $color-brick-red $color-gradient-tropical;
+  padding-top: 0;
 
 
   /**

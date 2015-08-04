@@ -13,7 +13,7 @@
   @extend %font-family-sans-serif;
   // Apply the amount of top padding + the height of the fixed header
   @include to-rem(padding-top, $spacing-double + $fixed-site-header-height);
-  @include to-rem(padding-bottom, $spacing-base-plus-half);
+  @include to-rem(padding-bottom, $spacing-double);
   background: $color-brick-red $color-gradient-tropical;
 
 
@@ -56,6 +56,6 @@
    */
 
   .c-banner--landing & {
-    @include font-size(54);
+    @include font-size($font-size-heading-1 + 8);
   }
 }

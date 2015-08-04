@@ -415,7 +415,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-build-control');
   //grunt.loadNpmTasks('grunt-cache-bust');
   //grunt.loadNpmTasks('grunt-criticalcss');
-  grunt.loadNpmTasks('grunt-critical');
+  //grunt.loadNpmTasks('grunt-critical');
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-svgmin');
@@ -447,7 +447,7 @@ module.exports = function(grunt) {
 
   // Build
   grunt.registerTask('build', [
-    'critical',
+    //'critical',
     'clean:dist',
     'jekyll:dist',
     'copy:fonts_dist',
