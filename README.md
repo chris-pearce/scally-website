@@ -17,5 +17,3 @@ website in your browser on `localhost:9000`.
 
 If you find any problems with the site or would like to offer any suggestions
 for improvements please submit [an issue](https://github.com/chris-pearce/scally-website/issues).
-
-

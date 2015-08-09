@@ -387,19 +387,27 @@ module.exports = function(grunt) {
 
     // STRING REPLACE
     'string-replace': {
-      version: {
+      options: {
+        replacements: [{
+          pattern: /<< VERSION >>/g,
+          replacement: '<%= scally_version %>'
+        }]
+      },
+      dev: {
         files: [{
           expand: true,
           cwd: '<%= app.jekyll %>',
           src: 'index.html',
           dest: '<%= app.jekyll %>'
-        }],
-        options: {
-          replacements: [{
-            pattern: /<< VERSION >>/g,
-            replacement: '<%= scally_version %>'
-          }]
-        }
+        }]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.dist %>',
+          src: 'index.html',
+          dest: '<%= app.dist %>'
+        }]
       }
     },
 
@@ -454,7 +462,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:dev',
       'jekyll:dev',
-      'string-replace',
+      'string-replace:dev',
       'copy:fonts_dev',
       'copy:images_dev',
       'sass:dev',
@@ -468,9 +476,9 @@ module.exports = function(grunt) {
 
   // Build
   grunt.registerTask('build', [
-    //'critical',
     'clean:dist',
     'jekyll:dist',
+    'string-replace:dist',
     'copy:fonts_dist',
     'imagemin',
     'svgmin',

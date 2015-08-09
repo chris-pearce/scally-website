@@ -252,8 +252,8 @@ $o-list-inline-apply-at-breakpoints-for-spacing-tiny: true;
 
 $c-button-apply-hover-styles:     false;
 $c-button-apply-border:           true;
-$c-button-background-color:       $color-black;
-$c-button-border-color:           $c-button-background-color;
+$c-button-background-color:       none;
+$c-button-border-color:           $color-white;
 $c-button-rounded-corners-size:   6px;
 @import "../../../node_modules/scally/components/c-button";
 

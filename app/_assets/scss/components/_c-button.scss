@@ -17,7 +17,10 @@
 
   &:hover,
   &:focus {
-    background: none;
-    border-color: $color-white;
+    background-color: rgba($color-white, 0.1);
+  }
+
+  &:active {
+    box-shadow: inset 0 2px 4px rgba($color-tundora, 0.1);
   }
 }
