@@ -12,9 +12,8 @@
 
 .c-button {
   @extend %font-family-sans-serif;
-  padding: to-rem(12) to-rem(32);
-  //font-weight: $font-weight-bold;
-  //transition: all 0.15s;
+  padding: to-rem($spacing-half) to-rem($spacing-base-plus-half);
+  transition: all 0.1s;
 
   &:hover,
   &:focus {

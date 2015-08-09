@@ -1,0 +1,16 @@
+{% for example in site.data.examples %}
+  <section class="c-demo-block" id="{{ example.id }}">
+    <h3 class="c-demo-block__title  u-anchor-target">{{ example.title }}</h3>
+    <p class="c-demo-block__intro">{{ example.intro }}</p>
+    <div class="c-demo-block__example">
+      <div class="c-demo-block__example__result c-demo-block__example__padded">
+        {{ example.demo_rendered }}
+      </div>
+      <div class="c-demo-block__example__code">
+{% highlight html %}
+{{ example.demo_html }}
+{% endhighlight %}
+      </div>
+    </div>
+  </section>
+{% endfor %}

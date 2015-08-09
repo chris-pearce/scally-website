@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
+    scally_version: grunt.file.read('node_modules/scally/.version'),
 
     // Setup env vars
     app: {
@@ -384,6 +385,24 @@ module.exports = function(grunt) {
       }
     },
 
+    // STRING REPLACE
+    'string-replace': {
+      version: {
+        files: [{
+          expand: true,
+          cwd: '<%= app.jekyll %>',
+          src: 'index.html',
+          dest: '<%= app.jekyll %>'
+        }],
+        options: {
+          replacements: [{
+            pattern: /<< VERSION >>/g,
+            replacement: '<%= scally_version %>'
+          }]
+        }
+      }
+    },
+
     // PUSH TO GH-PAGES
     buildcontrol: {
       dist: {
@@ -419,6 +438,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-string-replace');
   //grunt.loadNpmTasks('grunt-uncss');
 
 
@@ -434,6 +454,7 @@ module.exports = function(grunt) {
     grunt.task.run([
       'clean:dev',
       'jekyll:dev',
+      'string-replace',
       'copy:fonts_dev',
       'copy:images_dev',
       'sass:dev',

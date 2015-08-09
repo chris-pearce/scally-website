@@ -41,9 +41,9 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-critical": "^0.1.5",
-    "grunt-criticalcss": "^0.5.0",
     "grunt-jekyll": "~0.4.2",
     "grunt-sass": "^1.0.0",
+    "grunt-string-replace": "^1.2.0",
     "grunt-svgmin": "^2.0.1",
     "grunt-uncss": "^0.4.2",
     "scally": "latest"

@@ -1,0 +1,121 @@
+- id: abbreviation
+  title: Abbreviation
+  intro: 'Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the attribute.'
+  demo-rendered:  !xml |
+                  <abbr title="User Interface">UI</abbr>
+  demo-html:      !xml |
+                  <abbr title="User Interface">UI</abbr>
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+- id: abbreviation
+  title: Abbreviation
+  intro: ''
+  demo-rendered:  !xml |
+
+  demo-html:      !xml |
+
+

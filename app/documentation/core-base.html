@@ -28,6 +28,23 @@ section:            2
   <li><a href="#viewport">Viewport</a></li>
 </ol>
 
+{% for example in site.data.documentation-examples %}
+  <section class="c-demo-block" id="{{ example.id }}">
+    <h3 class="c-demo-block__title  u-anchor-target">{{ example.title }}</h3>
+    <p class="c-demo-block__intro">{{ example.intro }}</p>
+    <div class="c-demo-block__example">
+      <div class="c-demo-block__example__result c-demo-block__example__padded">
+        {{ example.demo-rendered }}
+      </div>
+      <div class="c-demo-block__example__code">
+{% highlight html %}
+{{ example.demo-html }}
+{% endhighlight %}
+      </div>
+    </div>
+  </section>
+{% endfor %}
+
 
 <!--
 *****************************************************************************
@@ -48,9 +65,6 @@ section:            2
 <abbr title="User Interface">UI</abbr>
 {% endhighlight %}
     </div>
-  </div>
-  <div class="c-back-to-top  u-s-pt-base">
-    <a href="#main">Back to top</a>
   </div>
 </section>
 
@@ -80,9 +94,6 @@ section:            2
 </details>
 {% endhighlight %}
     </div>
-  </div>
-  <div class="c-back-to-top  u-s-pt-base">
-    <a href="#main">Back to top</a>
   </div>
 </section>
 
@@ -490,9 +501,6 @@ nunc natoque vel est.</legend>
 {% endhighlight %}
     </div>
   </div>
-  <div class="c-back-to-top  u-s-pt-base">
-    <a href="#main">Back to top</a>
-  </div>
 </section>
 
 
@@ -512,9 +520,6 @@ nunc natoque vel est.</legend>
 <hr>
 {% endhighlight %}
     </div>
-  </div>
-  <div class="c-back-to-top  u-s-pt-base">
-    <a href="#main">Back to top</a>
   </div>
 </section>
 
@@ -542,9 +547,6 @@ nunc natoque vel est.</legend>
 <a href="#">Link</a>
 {% endhighlight %}
     </div>
-  </div>
-  <div class="c-back-to-top  u-s-pt-base">
-    <a href="#main">Back to top</a>
   </div>
 </section>
 
