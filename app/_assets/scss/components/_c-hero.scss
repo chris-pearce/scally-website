@@ -8,6 +8,15 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+$c-hero-install-item-padding-ends:  6;
+
+$c-hero-install-item-padding-sides: 12;
+
+
 .c-hero {
   @extend %font-family-sans-serif;
   @include to-rem(padding-top, $spacing-double - $fixed-site-header-height);
@@ -92,23 +101,16 @@
 
 // `kbd`
 .c-hero__install__item {
-  @include to-rem(padding, 6 12);
+  @include to-rem(padding, $c-hero-install-item-padding-ends $c-hero-install-item-padding-sides);
   background-color: $color-black;
-  border-radius: 6px;
+  border-radius: $c-button-rounded-corners-size;
   display: inline-block;
   vertical-align: middle;
 }
 
 // link
-.c-hero__cmds__item--link {
-  box-shadow: 0 0 0 1px transparent;
-  text-decoration: none;
-  transition: box-shadow 0.15s ease-in;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 0 1px $color-white;
-  }
+.c-hero__install__link {
+  @include to-rem(padding, $c-hero-install-item-padding-ends + 3 $c-hero-install-item-padding-sides);
 }
 
 

@@ -20,8 +20,12 @@
 }
 
 // Bottom margin
-@include headings(2, 6, true) {
-  @extend %bottom-spacing;
+@include headings(4, 6, true) {
+  @include to-rem(margin-bottom, $spacing-base);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 // Font weights

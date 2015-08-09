@@ -165,7 +165,8 @@ $html-element-background-color: $color-grey-concrete;
 $apply-heading-margins: true;
 $font-size-heading-1:   46;
 $font-size-heading-2:   36;
-$font-size-heading-3:   30;
+$font-size-heading-3:   31;
+$font-size-heading-4:   24;
 $font-size-heading-5:   $font-size + 2;
 $font-size-heading-6:   $font-size;
 $font-family-headings:  $font-family-sans-serif;
@@ -337,9 +338,9 @@ $c-button-rounded-corners-size:   6px;
 
 @import "components/c-main-content";
 
-@import "components/c-hero";
-
 @import "components/c-button";
+
+@import "components/c-hero";
 
 @import "components/c-banner";
 
