@@ -17,6 +17,7 @@
 // Colour
 @include headings(3, 6, true) {
   color: $color-black;
+  line-height: 1.5;
 }
 
 // Bottom margin
@@ -37,6 +38,28 @@
   font-weight: bold;
 }
 
+// Apply anchor icon on hover
+@include headings(2, 6) {
+  // position: relative;
+  // &::before {
+  //   @extend %u-position-v-middle;
+  //   content: "\00A7";
+  //   left: -(to-rem($spacing-base));
+  // }
+
+  // &:hover {}
+}
+
+
+/**
+ * H1.
+ */
+
+h1,
+.h1 {
+  font-weight: $font-weight-bold;
+}
+
 
 /**
  * H2.
@@ -47,14 +70,4 @@ h2,
   background-image: $color-gradient-tropical;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-
-/**
- * H3.
- */
-
-h3,
-.h3 {
-
 }

@@ -22,8 +22,9 @@ Scally Core is the foundation of a project's UI build providing things like:
   <li>A powerful reset, and <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>.</li>
 </ul>
 
-**N.B.** Without Core Scally won't work. It is the only mandatory part of the
-framework.
+<div class="c-alert  u-s-mb-base">
+  <p>Without Core Scally won't work. It is the only mandatory part of the framework.</p>
+</div>
 
 ### The breakdown
 
@@ -41,7 +42,7 @@ And a few things not sectioned:
 
 #### normalize.css
 
-[normalize.css](http://necolas.github.io/normalize.css/) is a third party solution. Scally always makes sure it's using the latest version.
+[normalize.css](http://necolas.github.io/normalize.css/) is a third party solution and Scally always makes sure it's using the latest version.
 
 #### Reset
 
@@ -61,16 +62,13 @@ bottom when it comes to specificity (CSS' first C; the cascade) as any styles
 defined in Core need to be easily overridden.
 
 That's why Core is declared first when pulling in the Scally framework via your
-master stylesheet so it's compiled before everything else.
+<a href="">master stylesheet</a> so it's compiled before everything else.
 
-### Further reading
+<!-- ### Further reading -->
 
-*Make sure to read the documentation within each Core Sass partial file as it
-will contain information about the core feature and it's implementation.*
-
-<ul class="o-list">
+<!-- <ul class="o-list">
   <li><a href="http://thesassway.com/advanced/pure-sass-functions" rel="external">Using pure Sass functions to make reusable logic more useful</a></li>
   <li><a href="http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code" rel="external">Leveraging Sass mixins for cleaner code</a></li>
   <li><a href="http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/" rel="external">When to use <code class="c-inline-code">@extend</code>; when to use a mixin</a></li>
   <li><a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a></li>
-</ul>
+</ul> -->

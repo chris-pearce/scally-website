@@ -1,0 +1,17 @@
+/* ============================================================================
+   @COMPONENTS -> ALERT
+   ========================================================================= */
+
+
+/**
+ * Grab users attention with this alert component.
+ */
+
+
+.c-alert {
+  background-color: $color-grey-concrete;
+  border-radius: $border-radius;
+  margin-left: to-rem(-$spacing-base);
+  margin-right: to-rem(-$spacing-base);
+  padding: to-rem($spacing-base);
+}

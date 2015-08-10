@@ -164,7 +164,7 @@ $html-element-background-color: $color-grey-concrete;
 
 $apply-heading-margins: true;
 $font-size-heading-1:   46;
-$font-size-heading-2:   36;
+$font-size-heading-2:   38;
 $font-size-heading-3:   31;
 $font-size-heading-4:   24;
 $font-size-heading-5:   $font-size + 2;
@@ -349,6 +349,8 @@ $c-button-rounded-corners-size:   6px;
 @import "components/c-inline-code";
 
 @import "components/c-back-to-top";
+
+@import "components/c-alert";
 
 
 /**
