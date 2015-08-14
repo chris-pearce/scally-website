@@ -12,6 +12,8 @@ section:            2
 
 ### What is it?
 
+{% include sidebar.html %}
+
 Scally Core is the foundation of a project's UI build providing things like:
 
 <ul class="o-list">

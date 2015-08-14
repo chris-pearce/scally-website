@@ -263,6 +263,7 @@ module.exports = function(grunt) {
     },
 
     // LOAD CRITICAL CSS
+    // N.B. not using due to being unable to set a cookie
     critical: {
       options: {
         base: './',
@@ -389,7 +390,7 @@ module.exports = function(grunt) {
     'string-replace': {
       options: {
         replacements: [{
-          pattern: /<< VERSION >>/g,
+          pattern: /<<VERSION>>/g,
           replacement: '<%= scally_version %>'
         }]
       },
