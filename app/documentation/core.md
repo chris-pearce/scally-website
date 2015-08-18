@@ -12,8 +12,6 @@ section:            2
 
 ### What is it?
 
-{% include sidebar.html %}
-
 Scally Core is the foundation of a project's UI build providing things like:
 
 <ul class="o-list">
@@ -74,3 +72,5 @@ That's why Core is declared first when pulling in the Scally framework via your
   <li><a href="http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/" rel="external">When to use <code class="c-inline-code">@extend</code>; when to use a mixin</a></li>
   <li><a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a></li>
 </ul> -->
+
+{% include section-nav.html %}

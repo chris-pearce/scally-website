@@ -1,0 +1,43 @@
+/* ============================================================================
+   @COMPONENTS -> SECTION NAVIGATION
+   ========================================================================= */
+
+
+/**
+ * Navigation block for a section.
+ */
+
+
+.c-section-nav {
+  @extend %font-family-sans-serif;
+  //position: absolute;
+  top: 12px;
+  top: 0;
+  left: -260px;
+  width: 200px;
+  border-radius: $border-radius;
+  padding: to-rem($spacing-base);
+  border: 2px solid $color-grey-concrete;
+
+  &.is-fixed {
+    position: fixed;
+    top: $fixed-site-header-height * 1px;
+    left: 0;
+  }
+}
+
+
+/**
+ * The definition list heading.
+ */
+
+.c-section-nav__heading {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.c-section-nav__back-to-top {
+  margin-top: to-rem($spacing-half);
+}

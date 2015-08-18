@@ -38,18 +38,6 @@
   font-weight: bold;
 }
 
-// Apply anchor icon on hover
-@include headings(2, 6) {
-  // position: relative;
-  // &::before {
-  //   @extend %u-position-v-middle;
-  //   content: "\00A7";
-  //   left: -(to-rem($spacing-base));
-  // }
-
-  // &:hover {}
-}
-
 
 /**
  * H1.

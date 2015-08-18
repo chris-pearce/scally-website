@@ -1,6 +1,77 @@
 <script>
   {% include js/font-face-observer.min.js %}
 
+  // function findPos(obj) {
+  //   var curleft = curtop = 0;
+  //   if (obj.offsetParent) {
+  //     do {
+  //       curleft += obj.offsetLeft;
+  //       curtop += obj.offsetTop;
+  //     } while {
+  //       (obj = obj.offsetParent);
+  //     }
+  //   }
+  //   return [curleft,curtop];
+  // }
+
+  function getScrollTop(){
+    if(typeof pageYOffset != 'undefined'){
+        //most browsers except IE before #9
+        return pageYOffset;
+    }
+    else{
+        var B = document.body; //IE 'quirks'
+        var D = document.documentElement; //IE with doctype
+        D = (D.clientHeight)? D: B;
+        return D.scrollTop;
+    }
+  }
+
+  // var fixSideBarToTopOfViewPortWhenTold = function() {
+  //   var sidebar       = document.querySelector('.js-fix-the-sidebar');
+  //   var header        = document.querySelector('.js-site-header');
+  //   var headerHeight  = window.getComputedStyle(header).height;
+  //   var scrolltop     = window.scrollTop;
+  //   document.addEventListener("scroll", function() {
+  //     if (window.pageYOffset > headerHeight) {
+  //       sidebar.classList.add('is-fixed');
+  //     } else {
+  //       sidebar.classList.remove('is-fixed');
+  //     }
+  //     console.log(scrolltop);
+  //   });
+  // };
+  // fixSideBarToTopOfViewPortWhenTold();
+
+  // var stickyScroll = function(scrollSelector, offsetSelector, scrollClass) {
+  //   var scrolledElement = document.querySelector(scrollSelector);
+  //   var stickyHeaderTop = document.querySelector(offsetSelector).offsetTop;
+
+  //   var whenScrolled = function() {
+  //       if (window.pageYOffset > stickyHeaderTop) {
+  //           scrolledElement.className += ' ' + scrollClass;
+  //       } else {
+  //           var classes = scrolledElement.className.split(' ');
+  //           for (i = 0; i < classes.length; ++i) {
+  //               if (classes[i] == scrollClass) {
+  //                   classes.splice(i, 1);
+  //                   --i;
+  //               }
+  //           }
+  //           scrolledElement.className = classes.join(' ');
+  //       }
+  //   };
+
+  //   window.onscroll = whenScrolled;
+  //   window.addEventListener("touchmove", whenScrolled, false);
+  //   console.log(stickyHeaderTop);
+  // };
+
+  // window.onload = function() {
+  //   // took classes from Blender's solution
+  //   stickyScroll('.js-fix-the-sidebar', '.js-site-header', 'is-fixed');
+  // }
+
   // Twitter API
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 </script>
