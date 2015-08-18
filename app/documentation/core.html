@@ -1,0 +1,131 @@
+---
+layout:             default
+title:              "Documentation for the Core section"
+excerpt:            "Documentation for the Core section. Scally core is the
+                    foundation of a project's UI build."
+exclude_from_nav:   true
+section:            2
+---
+
+
+<!-- Section Nav -->
+{% include section-nav.html %}
+<!-- //Section Nav -->
+
+
+<h2>Core</h2>
+
+
+<!-- Intro -->
+<section class="c-content-section">
+  <h3>What is it?</h3>
+  <p>Scally Core is the foundation of a project's UI build providing things like:</p>
+  <ul class="o-list">
+    <li>Sensible global styles.</li>
+    <li>Global settings (Sass variables).</li>
+    <li>Handy Sass functions and mixins.</li>
+    <li>Global Sass silent placeholder selectors.</li>
+    <li>A powerful reset, and <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>.</li>
+  </ul>
+
+  <div class="c-alert  u-s-mb-base">
+    <p>Without Core Scally won't work. It is the only mandatory part of the framework.</p>
+  </div>
+
+  <h3>The breakdown</h3>
+  <p>Core is broken down into the following sections:</p>
+  <ul class="o-list">
+    <li><a href="core-base.html">Base</a></li>
+    <li><a href="core-functions.html">Functions</a></li>
+    <li><a href="core-mixins.html">Mixins</a></li>
+    <li><a href="core-placeholders.html">Placeholders</a></li>
+    <li><a href="core-settings.html">Settings</a></li>
+  </ul>
+
+  <p>And a few things not sectioned:</p>
+
+  <h4>normalize.css</h4>
+  <p><a href="http://necolas.github.io/normalize.css/">normalize.css</a> is a third party solution and Scally always makes sure it's using the latest version.</p>
+
+  <h4>Reset</h4>
+  <p>In addition to <a href="http://necolas.github.io/normalize.css/">normalize.css</a> Scally also provides a powerful reset, resetting things like:</p>
+  <ul class="o-list">
+    <li><code class="c-inline-code">margin</code>, <code class="c-inline-code">padding</code>, and <code class="c-inline-code">border</code> to zero, for <strong>ALL</strong> HTML elements.</li>
+    <li><code class="c-inline-code">box-sizing</code> to the more friendly <code class="c-inline-code">border-box</code> value.</li>
+    <li>No bullets for unordered (<code class="c-inline-code">ul</code>) and ordered (<code class="c-inline-code">ol</code>) lists.</li>
+  </ul>
+
+  <h3 id="specificity">Specificity</h3>
+  <p>Scally Core is the foundation of the framework therefore it sits right at the bottom when it comes to specificity (CSS' first C; the cascade) as any styles defined in Core need to be easily overridden.</p>
+  <p>That's why Core is declared first when pulling in the Scally framework via your <a href="#">master stylesheet</a> so it's compiled before everything else.</p>
+</section>
+<!-- //Intro -->
+
+
+<!-- Base -->
+<section class="c-content-section">
+  <h3>Base</h3>
+  <p>The base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors e.g.</p>
+
+<div class="u-s-mb-base">
+{% highlight scss %}
+abbr[title] {
+  cursor: help;
+}
+{% endhighlight %}
+</div>
+
+  <p>Everything in base needs to be easily overridden which is really easy to do as everything in base sits right at the bottom in terms of Scally's specificity (CSS' first C; the cascade), <a href="#specificity">see</a>, and any of the more opinionated styles sit behind a toggle setting e.g.</p>
+
+<div class="u-s-mb-base">
+{% highlight scss %}
+$apply-paragraph-bottom-margin: true !default;
+
+@if $apply-paragraph-bottom-margin {
+  p {
+    @extend %bottom-spacing;
+  }
+}
+{% endhighlight %}
+</div>
+
+<h4>Sensible Styles</h4>
+<p>Base styles try to be as unopinionated as possible—like most things in Scally—with most applying sensible styles that you'd expect to find in a user agent stylesheet, like:</p>
+
+<ul class="o-list">
+  <li>Applying <code class="c-inline-code">cursor: help</code> to abbreviations (<code class="c-inline-code">abbr</code>) that have a <code class="c-inline-code">title</code> attribute.</li>
+  <li>Applying <code class="c-inline-code">cursor: pointer</code> to <code class="c-inline-code">summary</code> and <code class="c-inline-code">label</code> elements.</li>
+  <li>Removing the gap between media elements (<code class="c-inline-code">img</code>, <code class="c-inline-code">video</code>, <code class="c-inline-code">audio</code>, etc) and the bottom of their containers.</li>
+  <li>Applying a bottom margin to all paragraphs (<code class="c-inline-code">p</code>) of text.</li>
+</ul>
+
+<h4>Normalize-esque styles</h4>
+<p>Base also provides <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>-esque styles like:</p>
+
+<ul class="o-list">
+  <li>Set the default behaviour for touch-based browsing in IE 10 on devices running Windows 8.</li>
+  <li>Remove rounded corners from iOS search inputs</li>
+  <li>Remove rounded corners from iOS input buttons.</li>
+  <li>Remove the top inner shadow from iOS inputs, <mark>optional</mark>.</li>
+  <li>Hide the close button generated by IE 10+ for inputs, <mark>optional</mark>.</li>
+</ul>
+
+<h4>Other noteworthy parts of base</h4>
+
+<h5>Responsive images</h5>
+<p>Scally—being a responsive ready framework—sets all image elements (<code class="c-inline-code">img</code>) to be responsive by default:</p>
+
+<div class="u-s-mb-base">
+{% highlight scss %}
+img {
+  @if $responsive-images {
+    max-width: 100%;
+    height: auto;
+  }
+}
+{% endhighlight %}
+</div>
+
+<p>However this is optional via a toggle setting.</p>
+</section>
+<!-- //Base -->

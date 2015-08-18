@@ -1,0 +1,42 @@
+/* ============================================================================
+   @COMPONENTS -> CONTENT SECTIONS
+   ========================================================================= */
+
+
+/**
+ * A simple component used for sectioning major pieces of content via the
+ * `section` element.
+ */
+
+
+.c-content-section {
+  margin-bottom: to-rem($spacing-double);
+  padding-bottom: to-rem($spacing-double);
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+
+  /**
+   * A divider line sitting at the bottom.
+   */
+
+  &::after {
+    @extend %u-position-pin-sides-bottom;
+    background-image: $color-gradient-tropical;
+    content: "";
+    height: 1px;
+  }
+
+  // Apply alternate gradient for every "even" section
+  &:nth-child(even)::after {
+    background-image: $color-gradient-tropical-alt;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}

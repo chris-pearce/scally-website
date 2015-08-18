@@ -109,6 +109,7 @@ $font-family-base:   Georgia, Palatino, "Hoefler Text", Baskerville, serif;
 $color-brand:      $color-brick-red;
 $color-text-base:  $color-tundora;
 
+$z-index-elements-global:   section-nav, header;
 @import "../../../node_modules/scally/core/settings/positioning";
 
 $border-radius: 4px;
@@ -172,6 +173,8 @@ $font-size-heading-6:   $font-size;
 $font-family-headings:  $font-family-sans-serif;
 @import "../../../node_modules/scally/core/base/headings";
 
+$hr-color: $color-brick-red;
+$hr-style: solid;
 @import "../../../node_modules/scally/core/base/horizontal-rule";
 
 $apply-link-underline-on-hover:   false;
@@ -353,6 +356,8 @@ $c-button-rounded-corners-size:   6px;
 @import "components/c-alert";
 
 @import "components/c-section-nav";
+
+@import "components/c-content-section";
 
 
 /**

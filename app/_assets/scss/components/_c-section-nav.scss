@@ -8,21 +8,44 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+$c-section-nav-width: 200;
+
+
 .c-section-nav {
   @extend %font-family-sans-serif;
-  //position: absolute;
-  top: 12px;
-  top: 0;
-  left: -260px;
-  width: 200px;
   border-radius: $border-radius;
-  padding: to-rem($spacing-base);
   border: 2px solid $color-grey-concrete;
+  left: -(to-rem($c-section-nav-width + 60));
+  padding: to-rem($spacing-base);
+  position: absolute;
+  top: -(to-rem($spacing-half));
+  width: to-rem($c-section-nav-width);
+  z-index: index($z-index-elements-global, section-nav);
+
+
+
+  /**
+   * When the nav hits the top of the viewport make it `position: fixed` via
+   * JS.
+   */
 
   &.is-fixed {
     position: fixed;
     top: $fixed-site-header-height * 1px;
     left: 0;
+  }
+
+
+  /**
+   * Links.
+   */
+
+  a {
+    display: block;
   }
 }
 
@@ -32,11 +55,16 @@
  */
 
 .c-section-nav__heading {
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 14px;
-  text-transform: uppercase;
+  color: $color-black;
+  font-size: to-rem($font-size);
+  font-weight: 700;
+  margin-bottom: to-rem($spacing-half);
 }
+
+
+/**
+ * Back to top anchor.
+ */
 
 .c-section-nav__back-to-top {
   margin-top: to-rem($spacing-half);

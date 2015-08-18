@@ -14,19 +14,6 @@
   //   return [curleft,curtop];
   // }
 
-  function getScrollTop(){
-    if(typeof pageYOffset != 'undefined'){
-        //most browsers except IE before #9
-        return pageYOffset;
-    }
-    else{
-        var B = document.body; //IE 'quirks'
-        var D = document.documentElement; //IE with doctype
-        D = (D.clientHeight)? D: B;
-        return D.scrollTop;
-    }
-  }
-
   // var fixSideBarToTopOfViewPortWhenTold = function() {
   //   var sidebar       = document.querySelector('.js-fix-the-sidebar');
   //   var header        = document.querySelector('.js-site-header');
