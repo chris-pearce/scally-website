@@ -1,0 +1,61 @@
+/* ============================================================================
+   @COMPONENTS -> VIEW SOURCE CODE
+   ========================================================================= */
+
+
+/**
+ * A simple link within a right aligned container that points to the GitHub
+ * source code for Scally examples.
+ */
+
+
+/**
+ * Settings.
+ */
+
+$c-view-source-code-icon-size: 26px;
+
+
+.c-view-source-code {
+  @extend %bottom-spacing;
+  @extend %font-family-sans-serif;
+  font-size: to-rem($font-size-x-small);
+  margin-top: -(to-rem($spacing-half));
+  text-align: right;
+}
+
+
+/**
+ * The link.
+ */
+
+.c-view-source-code__link {
+  color: $color-tundora;
+  display: inline-block;
+  text-decoration: none;
+
+
+  /**
+   * The link text.
+   */
+
+  span {
+    vertical-align: middle;
+  }
+
+
+  /**
+   * The GitHub icon.
+   */
+
+  svg {
+    height: $c-view-source-code-icon-size;
+    transition: fill ease 0.15s;
+    width: $c-view-source-code-icon-size;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $color-wild-watermelon;
+  }
+}

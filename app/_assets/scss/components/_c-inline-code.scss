@@ -9,11 +9,12 @@
 
 
 .c-inline-code {
-  @include to-rem(margin-left margin-right, $spacing-micro);
-  @include to-rem(padding, $spacing-micro $spacing-fifth);
   background-color: $color-grey-concrete;
   border-radius: $border-radius;
   color: $color-solarized-dark-blue;
   display: inline-block;
   line-height: normal;
+  margin-left: to-rem($spacing-micro);
+  margin-right: to-rem($spacing-micro);
+  padding: to-rem($spacing-micro) to-rem($spacing-fifth);
 }

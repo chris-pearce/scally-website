@@ -11,7 +11,7 @@
  * http://nicolasgallagher.com/jump-links-and-viewport-positioning/
  */
 
-:target:before {
+:target::before {
   content: "";
   display: block;
   height: $fixed-site-header-height * 1px;
