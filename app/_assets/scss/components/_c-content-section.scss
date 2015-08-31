@@ -29,6 +29,8 @@
     background-image: $color-gradient-tropical;
     content: "";
     height: 1px;
+    margin-left: -(to-rem($spacing-base));
+    margin-right: -(to-rem($spacing-base));
   }
 
   // Apply alternate gradient for every "even" section

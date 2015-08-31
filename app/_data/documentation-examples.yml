@@ -6,116 +6,18 @@
   demo-html:      !xml |
                   <abbr title="User Interface">UI</abbr>
 
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
+- id: details
+  title: Details
+  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code>
+  to the <code class="c-inline-code">summary</code> element with the option to
+  remove the browser default <code class="c-inline-code">summary</code> arrow.'
   demo-rendered:  !xml |
-
+                  <details>
+                    <summary>Some details</summary>
+                    <p>More info about the details.</p>
+                  </details>
   demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-- id: abbreviation
-  title: Abbreviation
-  intro: ''
-  demo-rendered:  !xml |
-
-  demo-html:      !xml |
-
-
+                  <details>
+                    <summary>Some details</summary>
+                    <p>More info about the details.</p>
+                  </details>

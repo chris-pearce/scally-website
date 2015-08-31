@@ -16,7 +16,7 @@ $c-demo-block-border-thickness: 1px;
 
 
 .c-demo-block {
-  @include to-rem(margin-bottom, $spacing-double);
+  margin-bottom: to-rem($spacing-double);
 }
 
 
@@ -44,9 +44,10 @@ $c-demo-block-border-thickness: 1px;
 
 .c-demo-block__example {
   @extend %font-family-sans-serif;
-  @include to-rem(margin-left margin-right, -$spacing-base);
   border: $c-demo-block-border-thickness solid $color-grey-concrete;
   border-radius: $border-radius;
+  margin-left: -(to-rem($spacing-base));
+  margin-right: -(to-rem($spacing-base));
 }
 
 
@@ -57,11 +58,12 @@ $c-demo-block-border-thickness: 1px;
  */
 
 .c-demo-block__example__padded {
-  @include to-rem(padding, $spacing-base);
+  padding: to-rem($spacing-base);
 }
 
 .c-demo-block__example .highlight {
-  @include to-rem(padding-top padding-bottom, $spacing-half);
+  padding-top: to-rem($spacing-half);
+  padding-bottom: to-rem($spacing-half);
 }
 
 
@@ -91,10 +93,10 @@ $c-demo-block-border-thickness: 1px;
  */
 
 .c-demo-block__example__heading {
-  @include to-rem(padding, $spacing-quarter $spacing-base);
   @include font-size($font-size-small);
   background-color: $color-grey-concrete;
   margin-bottom: 0;
+  padding: to-rem($spacing-quarter) to-rem($spacing-base);
 }
 
 

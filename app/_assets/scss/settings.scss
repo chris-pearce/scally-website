@@ -37,6 +37,12 @@ $font-weight-bold:    700;
 /* Colours
    ========================================================================= */
 
+/**
+ * White.
+ */
+
+$color-white: #fff;
+
 
 /**
  * Tundora.
@@ -105,6 +111,12 @@ $color-gradient-tropical-alt: linear-gradient(
   $color-brick-red 100%
 );
 
+
+/**
+ * Main content area background.
+ */
+
+$color-main-content-area-background: $color-white;
 
 /**
  * Solarized dark colour palette.

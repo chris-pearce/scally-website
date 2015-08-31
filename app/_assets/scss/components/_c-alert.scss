@@ -8,10 +8,41 @@
  */
 
 
+/**
+ * Settings.
+ */
+
+$c-alert-icon-size: 26px;
+
+
 .c-alert {
-  background-color: $color-grey-concrete;
+  background: $color-brick-red $color-gradient-tropical;
   border-radius: $border-radius;
-  margin-left: to-rem(-$spacing-base);
-  margin-right: to-rem(-$spacing-base);
-  padding: to-rem($spacing-base);
+  padding: to-rem(1);
+  position: relative;
+}
+
+
+/**
+ * Inner element.
+ */
+
+.c-alert__inner {
+  background-color: $color-main-content-area-background;
+  border-radius: $border-radius;
+  padding: to-rem($spacing-base) to-rem($spacing-double) to-rem($spacing-base) to-rem($spacing-double + 10);
+}
+
+
+/**
+ * SVG icon.
+ */
+
+.c-alert__icon {
+  fill: $color-text-base;
+  height: $c-alert-icon-size;
+  left: $spacing-base * 1px;
+  position: absolute;
+  top: $spacing-base + 1 * 1px;
+  width: $c-alert-icon-size;
 }

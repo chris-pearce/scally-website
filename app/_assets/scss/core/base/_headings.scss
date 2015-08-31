@@ -75,23 +75,24 @@ h2,
  */
 
 .section-anchor {
-  @extend %u-position-v-middle;
+  bottom: 0;
   left: -36px;
   line-height: 0;
   padding: 8px 6px;
-  background: red;
+  position: absolute;
   transition: none;
 
 
   /**
-   * The anchor's target which is a heading element, need to account for the
-   * fixed header.
+   * Different positioning for the `h4`–`h6` headings.
    */
 
-  :target & {
-    top: auto !important;
-    bottom: 0 !important;
-    transform: none !important;
+  h4 & {
+    bottom: -5px;
+  }
+
+  h5 & {
+    bottom: -9px;
   }
 
 
@@ -102,7 +103,7 @@ h2,
   svg {
     fill: $color-grey-scorpion;
     height: $heading-anchor-icon-size;
-    opacity: 0.3;
+    opacity: 0.25;
     transition: opacity 0.15s;
     width: $heading-anchor-icon-size;
   }

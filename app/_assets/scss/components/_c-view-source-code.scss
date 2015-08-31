@@ -13,7 +13,9 @@
  * Settings.
  */
 
-$c-view-source-code-icon-size: 26px;
+$c-view-source-code-transition: ease 0.10s;
+
+$c-view-source-code-icon-size:  26px;
 
 
 .c-view-source-code {
@@ -33,6 +35,7 @@ $c-view-source-code-icon-size: 26px;
   color: $color-tundora;
   display: inline-block;
   text-decoration: none;
+  transition: color $c-view-source-code-transition;
 
 
   /**
@@ -49,8 +52,9 @@ $c-view-source-code-icon-size: 26px;
    */
 
   svg {
+    fill: $color-text-base;
     height: $c-view-source-code-icon-size;
-    transition: fill ease 0.15s;
+    transition: fill $c-view-source-code-transition;
     width: $c-view-source-code-icon-size;
   }
 
