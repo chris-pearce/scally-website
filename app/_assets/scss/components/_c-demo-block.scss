@@ -17,6 +17,15 @@ $c-demo-block-border-thickness: 1px;
 
 .c-demo-block {
   margin-bottom: to-rem($spacing-double);
+
+
+  /**
+   * Extend `.c-view-source-code` in View Source Code.
+   */
+
+  .c-view-source-code {
+    margin-top: to-rem($spacing-half);
+  }
 }
 
 

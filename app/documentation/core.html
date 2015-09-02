@@ -15,13 +15,64 @@ section:            2
 
 <h2 id="core">Core</h2>
 
+<h3 id="table-of-contents">
+  Table of contents
+  <a href="#table-of-contents" class="section-anchor">
+    <span class="u-hide-visually">Anchor to section "Table of contents"</span>
+    <svg aria-hidden="true">
+      <use xlink:href="#link-icon" />
+    </svg>
+  </a>
+</h3>
+
+<ol class="o-list  u-s-mb-large">
+  <li><a href="#what-is-it">What is it?</a></li>
+  <li><a href="#the-breakdown">The breakdown</a></li>
+  <li><a href="#normalize">normalize.css</a></li>
+  <li><a href="#reset">Reset</a></li>
+  <li><a href="#specificity">Specificity</a></li>
+  <li>
+    <a href="#base">Base</a>
+    <ol>
+      <li><a href="#sensible-styles">Sensible Styles</a></li>
+      <li><a href="#normalize-esque-styles">Normalize-esque styles</a></li>
+      <li>
+        <a href="#other-noteworthy-parts-of-base">Other noteworthy parts of base</a>
+        <ol>
+          <li><a href="#responsive-images">Responsive images</a></li>
+          <li><a href="#print">Print</a></li>
+          <li><a href="#root">Root</a></li>
+          <li><a href="#forms">Forms</a></li>
+        </ol>
+      </li>
+      <li>
+        <a href="#demos">Demos</a>
+        <ol>
+          <li><a href="#abbreviation">Abbreviation</a></li>
+          <li><a href="#details">Details</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#headings">Headings</a></li>
+          <li><a href="#horizontal-rule">Horizontal rule</a></li>
+          <li><a href="#links">Links</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#paragraphs">Paragraphs</a></li>
+          <li><a href="#print">Print</a></li>
+          <li><a href="#root">Root</a></li>
+          <li><a href="#viewport">Viewport</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
 
 
 
 <!-- Intro -->
 <section class="c-content-section">
 
-  <h3 id="what-is-it" class="u-anchor-target">
+  <h3 id="what-is-it">
     What is it?
     <a href="#what-is-it" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "What is it?"</span>
@@ -50,7 +101,7 @@ section:            2
     </div>
   </div>
 
-  <h3 id="the-breakdown" class="u-anchor-target">
+  <h3 id="the-breakdown">
     The breakdown
     <a href="#the-breakdown" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "The breakdown"</span>
@@ -72,7 +123,7 @@ section:            2
 
   <p>And a few things not sectioned:</p>
 
-  <h3 id="normalize" class="u-anchor-target">
+  <h3 id="normalize">
     normalize.css
     <a href="#normalize" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "normalize.css"</span>
@@ -86,7 +137,7 @@ section:            2
 
   {% include view-source-code-link.html url="https://github.com/chris-pearce/scally/blob/master/core/_normalize.scss" %}
 
-  <h3 id="reset" class="u-anchor-target">
+  <h3 id="reset">
     Reset
     <a href="#reset" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Reset"</span>
@@ -106,7 +157,7 @@ section:            2
 
   {% include view-source-code-link.html url="https://github.com/chris-pearce/scally/blob/master/core/_reset.scss" %}
 
-  <h3 id="specificity" class="u-anchor-target">
+  <h3 id="specificity">
     Specificity
     <a href="#specificity" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Specificity"</span>
@@ -128,7 +179,7 @@ section:            2
 <!-- Base -->
 <section class="c-content-section">
 
-  <h3 id="base" class="u-anchor-target">
+  <h3 id="base">
     Base
     <a href="#base" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Base"</span>
@@ -162,7 +213,7 @@ $apply-paragraph-bottom-margin: true !default;
 {% endhighlight %}
 </div>
 
-  <h4 id="sensible-styles" class="u-anchor-target">
+  <h4 id="sensible-styles">
     Sensible Styles
     <a href="#sensible-styles" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Sensible Styles"</span>
@@ -181,7 +232,7 @@ $apply-paragraph-bottom-margin: true !default;
     <li>Applying a bottom margin to all paragraphs (<code class="c-inline-code">p</code>) of text.</li>
   </ul>
 
-  <h4 id="normalize-esque-styles" class="u-anchor-target">
+  <h4 id="normalize-esque-styles">
     Normalize-esque styles
     <a href="#normalize-esque-styles" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Normalize-esque styles"</span>
@@ -202,7 +253,7 @@ $apply-paragraph-bottom-margin: true !default;
 
   <p>Some of the above are optional via a toggle setting.</p>
 
-  <h4 id="other-noteworthy-parts-of-base" class="u-anchor-target">
+  <h4 id="other-noteworthy-parts-of-base">
     Other noteworthy parts of base
     <a href="#other-noteworthy-parts-of-base" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Other noteworthy parts of base"</span>
@@ -212,7 +263,7 @@ $apply-paragraph-bottom-margin: true !default;
     </a>
   </h4>
 
-  <h5 id="responsive-images" class="u-anchor-target">
+  <h5 id="responsive-images">
     Responsive images
     <a href="#responsive-images" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Responsive images"</span>
@@ -237,7 +288,7 @@ img {
 
   <p>However this is optional via a toggle setting.</p>
 
-  <h5 id="print" class="u-anchor-target">
+  <h5 id="print">
     Print
     <a href="#print" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Print"</span>
@@ -251,7 +302,7 @@ img {
 
   <p>All print styles that aren't defined at this global base level will live in context in their relevant Sass partial.</p>
 
-  <h5 id="root" class="u-anchor-target">
+  <h5 id="root">
     Root
     <a href="#root" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Root"</span>
@@ -263,7 +314,7 @@ img {
 
   <p>Root defines styles for the <code class="c-inline-code">html</code> element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the <code class="c-inline-code">html</code> element itself.</p>
 
-  <h5 id="forms" class="u-anchor-target">
+  <h5 id="forms">
     Forms
     <a href="#forms" class="section-anchor">
       <span class="u-hide-visually">Anchor to section "Forms"</span>
@@ -277,51 +328,45 @@ img {
 
   <p>The other two main parts of forms are concerned with providing styles for text inputs (including <code class="c-inline-code">textarea</code>) and <code class="c-inline-code">select</code> lists, and a disabled state for <strong>ALL</strong> HTML form elements. These styles—being fairly opinionated—are all optional sitting behind toggle settings.</p>
 
-  <h4 id="examples" class="u-anchor-target">
-    Examples
-    <a href="#examples" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Examples"</span>
+  <h4 id="demos">
+    Demos
+    <a href="#demos" class="section-anchor">
+      <span class="u-hide-visually">Anchor to section "Demos"</span>
       <svg aria-hidden="true">
         <use xlink:href="#link-icon" />
       </svg>
     </a>
   </h4>
 
-  <ol class="o-list  u-s-mb-large">
-    <li><a href="#abbreviation">Abbreviation</a></li>
-    <li><a href="#details">Details</a></li>
-    <li><a href="#forms">Forms</a></li>
-    <li><a href="#headings">Headings</a></li>
-    <li><a href="#horizontal-rule">Horizontal rule</a></li>
-    <li><a href="#links">Links</a></li>
-    <li><a href="#media">Media</a></li>
-    <li><a href="#paragraphs">Paragraphs</a></li>
-    <li><a href="#print">Print</a></li>
-    <li><a href="#root">Root</a></li>
-    <li><a href="#viewport">Viewport</a></li>
-  </ol>
-
-  {% for example in site.data.documentation-examples %}
-    <div class="c-demo-block" id="{{ example.id }}">
-      <h5 class="c-demo-block__title  u-anchor-target">
-        {{ example.title }}
-        <a href="#{{ example.id }}" class="section-anchor">
-          <span class="u-hide-visually">Anchor to section "{{ example.title }}"</span>
+  {% for demos in site.data.core-base-demos %}
+    <div class="c-demo-block" id="{{ demos.id }}">
+      <h5 class="c-demo-block__title">
+        {{ demos.heading }}
+        <a href="#{{ demos.id }}" class="section-anchor">
+          <span class="u-hide-visually">Anchor to section "{{ demos.heading }}"</span>
           <svg aria-hidden="true">
             <use xlink:href="#link-icon" />
           </svg>
         </a>
       </h5>
-      <p class="c-demo-block__intro">{{ example.intro }}</p>
+      <p class="c-demo-block__intro">{{ demos.intro }}</p>
       <div class="c-demo-block__example">
         <div class="c-demo-block__example__result c-demo-block__example__padded">
-          {{ example.demo-rendered }}
+          {{ demos.markup }}
         </div>
         <div class="c-demo-block__example__code">
 {% highlight html %}
-{{ example.demo-html }}
+{{ demos.markup }}
 {% endhighlight %}
         </div>
+      </div>
+      <div class="c-view-source-code">
+        <a href="{{ demos.source-code-url }}" rel="external" class="c-view-source-code__link">
+          <svg>
+            <use xlink:href="#github-icon" />
+          </svg>
+          <span>View source code</span>
+        </a>
       </div>
     </div>
   {% endfor %}

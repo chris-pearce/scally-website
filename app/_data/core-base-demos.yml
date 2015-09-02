@@ -1,0 +1,23 @@
+- id: abbreviation
+  heading: Abbreviation
+  intro: 'Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the attribute.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_abbreviation.scss'
+  markup: !xml |
+          <abbr title="User Interface">UI</abbr>
+
+- id: details
+  heading: Details
+  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code>
+  to the <code class="c-inline-code">summary</code> element with the option to
+  remove the browser default <code class="c-inline-code">summary</code> arrow.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_details.scss'
+  markup: !xml |
+          <details>
+            <summary>Some details</summary>
+            <p>More info about the details.</p>
+          </details>
+
+
+
+
+
