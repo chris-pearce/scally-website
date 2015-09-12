@@ -340,15 +340,17 @@ img {
 
   {% for demos in site.data.core-base-demos %}
     <div class="c-demo-block" id="{{ demos.id }}">
-      <h5 class="c-demo-block__title">
-        {{ demos.heading }}
-        <a href="#{{ demos.id }}" class="section-anchor">
-          <span class="u-hide-visually">Anchor to section "{{ demos.heading }}"</span>
-          <svg aria-hidden="true">
-            <use xlink:href="#link-icon" />
-          </svg>
-        </a>
-      </h5>
+      {% if demos.heading %}
+        <h5 class="c-demo-block__title">
+          {{ demos.heading }}
+          <a href="#{{ demos.id }}" class="section-anchor">
+            <span class="u-hide-visually">Anchor to section "{{ demos.heading }}"</span>
+            <svg aria-hidden="true">
+              <use xlink:href="#link-icon" />
+            </svg>
+          </a>
+        </h5>
+      {% endif %}
       <p class="c-demo-block__intro">{{ demos.intro }}</p>
       <div class="c-demo-block__example">
         <div class="c-demo-block__example__result c-demo-block__example__padded">

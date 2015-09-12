@@ -30,8 +30,8 @@ $heading-anchor-icon-size: 24px;
 }
 
 // Bottom margin
-@include headings(4, 6, true) {
-  @include to-rem(margin-bottom, $spacing-base);
+@include headings(4, 5, true) {
+  margin-bottom: to-rem($spacing-base);
 
   &:last-child {
     margin-bottom: 0;
@@ -44,7 +44,7 @@ $heading-anchor-icon-size: 24px;
 }
 
 @include headings(5, 6, true) {
-  font-weight: bold;
+  font-weight: 900;
 }
 
 
@@ -67,6 +67,21 @@ h2,
   background-image: $color-gradient-tropical;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+
+/**
+ * H6.
+ */
+
+h6,
+.h6 {
+  color: $color-brick-red;
+  margin-bottom: to-rem($spacing-half);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 

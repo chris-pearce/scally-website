@@ -17,7 +17,47 @@
             <p>More info about the details.</p>
           </details>
 
+- id: forms
+  heading: Forms
+  intro: 'Indicate that <code class="c-inline-code">label</code>
+  will shift focus to the associated <code class="c-inline-code">input</code>
+  element.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L71-L78'
+  markup: !xml |
+          <label for="test-input">Label</label>
+          <input type="text" id="test-input" class="text-input">
 
+- id: forms
+  intro: 'Disable <code class="c-inline-code">textarea</code>s
+  from being resized horizontally.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L81-L87'
+  markup: !xml |
+          <textarea rows="4"></textarea>
 
+- id: forms
+  intro: 'Override <code class="c-inline-code">content-box</code>
+  from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a> for search inputs.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
+  markup: !xml |
+          <input type="search" class="text-input">
 
+- id: forms
+  intro: 'Remove rounded corners from iOS search inputs by overriding <code class="c-inline-code">appearance: textfield</code> from
+  <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>, <a href="https://github.com/necolas/normalize.css/issues/360" rel="external">see</a>.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
+  markup: !xml |
+          <input type="search" class="text-input">
 
+- id: forms
+  intro: 'Remove rounded corners that iOS applies to all <code class="c-inline-code">input</code> buttons, <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>. And certain browsers e.g. Chrome, apply rounded corners to <code class="c-inline-code">select</code> lists so if we haven&quot;t opted in for rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code> and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code> settings then turn them off.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
+  markup: !xml |
+          <input type="submit" value="Submit">
+          <input type="button" value="Button">
+          <input type="reset" value="Reset">
+          <input type="image" src="/img/placeholders/100x30.jpg" alt="Bill Murrary placeholder image">
+          <select>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+          </select>
