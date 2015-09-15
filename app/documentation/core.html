@@ -2,7 +2,7 @@
 layout:             default
 title:              "Documentation for the Core section"
 excerpt:            "Documentation for the Core section. Scally core is the
-                    foundation of a project's UI build."
+                    foundation of a project’s UI build."
 exclude_from_nav:   true
 section:            2
 ---
@@ -17,12 +17,7 @@ section:            2
 
 <h3 id="table-of-contents">
   Table of contents
-  <a href="#table-of-contents" class="section-anchor">
-    <span class="u-hide-visually">Anchor to section "Table of contents"</span>
-    <svg aria-hidden="true">
-      <use xlink:href="#link-icon" />
-    </svg>
-  </a>
+  {% include heading-anchor.html id="table-of-contents" heading="Table of contents" %}
 </h3>
 
 <ol class="o-list  u-s-mb-large">
@@ -74,15 +69,10 @@ section:            2
 
   <h3 id="what-is-it">
     What is it?
-    <a href="#what-is-it" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "What is it?"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="what-is-it" heading="What is it?" %}
   </h3>
 
-  <p>Scally Core is the foundation of a project's UI build providing things like:</p>
+  <p>Scally Core is the foundation of a project’s UI build providing things like:</p>
 
   <ul class="o-list">
     <li>Sensible global styles.</li>
@@ -97,18 +87,13 @@ section:            2
       <svg aria-hidden="true" class="c-alert__icon">
         <use xlink:href="#alert-icon" />
       </svg>
-      <p>Without Core Scally won't work. It is the only mandatory part of the framework.</p>
+      <p>Without Core Scally won’t work. It is the only mandatory part of the framework.</p>
     </div>
   </div>
 
   <h3 id="the-breakdown">
     The breakdown
-    <a href="#the-breakdown" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "The breakdown"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="the-breakdown" heading="The breakdown" %}
   </h3>
 
   <p>Core is broken down into the following sections:</p>
@@ -125,26 +110,16 @@ section:            2
 
   <h3 id="normalize">
     normalize.css
-    <a href="#normalize" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "normalize.css"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="normalize" heading="normalize.css" %}
   </h3>
 
-  <p><a href="http://necolas.github.io/normalize.css/">normalize.css</a> is a third party solution. Scally always makes sure it's using the latest version.</p>
+  <p><a href="http://necolas.github.io/normalize.css/">normalize.css</a> is a third party solution. Scally always makes sure it’s using the latest version.</p>
 
   {% include view-source-code-link.html url="https://github.com/chris-pearce/scally/blob/master/core/_normalize.scss" %}
 
   <h3 id="reset">
     Reset
-    <a href="#reset" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Reset"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="reset" heading="Reset" %}
   </h3>
 
   <p>In addition to <a href="http://necolas.github.io/normalize.css/">normalize.css</a> Scally also provides a powerful reset, resetting things like:</p>
@@ -159,16 +134,11 @@ section:            2
 
   <h3 id="specificity">
     Specificity
-    <a href="#specificity" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Specificity"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="specificity" heading="Specificity" %}
   </h3>
 
-  <p>Scally Core is the foundation of the framework therefore it sits right at the bottom when it comes to specificity (CSS' first C; the cascade) as any styles defined in Core need to be easily overridden.</p>
-  <p>That's why Core is declared first when pulling in the Scally framework via your <a href="#">master stylesheet</a> so it's compiled before everything else.</p>
+  <p>Scally Core is the foundation of the framework therefore it sits right at the bottom when it comes to specificity (CSS’ first C; the cascade) as any styles defined in Core need to be easily overridden.</p>
+  <p>That’s why Core is declared first when pulling in the Scally framework via your <a href="#">master stylesheet</a> so it’s compiled before everything else.</p>
 
 </section>
 <!-- //Intro -->
@@ -181,15 +151,10 @@ section:            2
 
   <h3 id="base">
     Base
-    <a href="#base" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Base"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="base" heading="Base" %}
   </h3>
 
-  <p>The Base section provides very basic styling that most UI's will need. These styles are applied at the most global level, with most being applied via element selectors e.g.</p>
+  <p>The Base section provides very basic styling that most UI’s will need. These styles are applied at the most global level, with most being applied via element selectors, e.g.</p>
 
 <div class="u-s-mb-base">
 {% highlight scss %}
@@ -199,7 +164,7 @@ abbr[title] {
 {% endhighlight %}
 </div>
 
-  <p>Everything in Base needs to be easily overridden which is really easy to do as everything in Base sits right at the bottom in terms of Scally's specificity (CSS' first C; the cascade)—<a href="#specificity">see</a>—and any of the more opinionated styles sit behind a toggle setting e.g.</p>
+  <p>Everything in Base needs to be easily overridden which is really easy to do as everything in Base sits right at the bottom in terms of Scally’s specificity (CSS’ first C; the cascade) and any of the more opinionated styles sit behind a toggle setting, e.g.</p>
 
 <div class="u-s-mb-base">
 {% highlight scss %}
@@ -215,15 +180,10 @@ $apply-paragraph-bottom-margin: true !default;
 
   <h4 id="sensible-styles">
     Sensible Styles
-    <a href="#sensible-styles" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Sensible Styles"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="sensible-styles" heading="Sensible Styles" %}
   </h4>
 
-  <p>Base styles try to be as unopinionated as possible—like most things in Scally—with most applying sensible styles that you'd expect to find in a user agent stylesheet, like:</p>
+  <p>Base styles try to be as unopinionated as possible—like most things in Scally—with most applying sensible styles that you’d expect to find in a user agent stylesheet, like:</p>
 
   <ul class="o-list">
     <li>Applying <code class="c-inline-code">cursor: help</code> to abbreviations (<code class="c-inline-code">abbr</code>) that have a <code class="c-inline-code">title</code> attribute.</li>
@@ -234,12 +194,7 @@ $apply-paragraph-bottom-margin: true !default;
 
   <h4 id="normalize-esque-styles">
     Normalize-esque styles
-    <a href="#normalize-esque-styles" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Normalize-esque styles"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="normalize-esque-styles" heading="Normalize-esque styles" %}
   </h4>
 
   <p>Base also provides <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>-esque styles like:</p>
@@ -255,25 +210,15 @@ $apply-paragraph-bottom-margin: true !default;
 
   <h4 id="other-noteworthy-parts-of-base">
     Other noteworthy parts of base
-    <a href="#other-noteworthy-parts-of-base" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Other noteworthy parts of base"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="other-noteworthy-parts-of-base" heading="Other noteworthy parts of base" %}
   </h4>
 
   <h5 id="responsive-images">
     Responsive images
-    <a href="#responsive-images" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Responsive images"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="responsive-images" heading="Responsive images" %}
   </h5>
 
-  <p>Scally—being a responsive ready framework—sets all image elements (<code class="c-inline-code">img</code>) to be responsive by default:</p>
+  <p>Scally—being a responsive-ready framework—sets all image elements (<code class="c-inline-code">img</code>) to be responsive by default, e.g.</p>
 
 <div class="u-s-mb-base">
 {% highlight scss %}
@@ -290,52 +235,32 @@ img {
 
   <h5 id="print">
     Print
-    <a href="#print" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Print"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="print" heading="Print" %}
   </h5>
 
   <p>Scally provides some sensible global print styles, with most taken from the <a href="https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css" rel="external">HTML5 Boilerplate</a> print styles.</p>
 
-  <p>All print styles that aren't defined at this global base level will live in context in their relevant Sass partial.</p>
+  <p>All print styles that aren’t defined at this global base level will live their relevant Sass partial.</p>
 
   <h5 id="root">
     Root
-    <a href="#root" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Root"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="root" heading="Root" %}
   </h5>
 
-  <p>Root defines styles for the <code class="c-inline-code">html</code> element. It mainly focuses on typography styles e.g. setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the <code class="c-inline-code">html</code> element itself.</p>
+  <p>Root defines styles for the <code class="c-inline-code">html</code> element. It mainly focuses on typography styles, e.g., setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the <code class="c-inline-code">html</code> element itself.</p>
 
   <h5 id="forms">
     Forms
-    <a href="#forms" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Forms"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="forms" heading="Forms" %}
   </h5>
 
   <p>Scally provides quite a few Base form styles. Most are concerned with applying <a href="#sensible-styles">sensible styles</a> and <a href="#normalize-esque-styles">normalize-esque styles</a>.</p>
 
-  <p>The other two main parts of forms are concerned with providing styles for text inputs (including <code class="c-inline-code">textarea</code>) and <code class="c-inline-code">select</code> lists, and a disabled state for <strong>ALL</strong> HTML form elements. These styles—being fairly opinionated—are all optional sitting behind toggle settings.</p>
+  <p>The other two main parts of forms are concerned with providing styles for text inputs—including <code class="c-inline-code">textarea</code>—and <code class="c-inline-code">select</code> lists, and a disabled state for <strong>ALL</strong> HTML form elements. These styles—being fairly opinionated—are all optional behind toggle settings.</p>
 
   <h4 id="demos">
     Demos
-    <a href="#demos" class="section-anchor">
-      <span class="u-hide-visually">Anchor to section "Demos"</span>
-      <svg aria-hidden="true">
-        <use xlink:href="#link-icon" />
-      </svg>
-    </a>
+    {% include heading-anchor.html id="demos" heading="Demos" %}
   </h4>
 
   {% for demos in site.data.core-base-demos %}

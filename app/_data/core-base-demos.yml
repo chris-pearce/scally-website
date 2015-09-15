@@ -1,11 +1,11 @@
-- id: abbreviation
+- id: demos-abbreviation
   heading: Abbreviation
-  intro: 'Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the attribute.'
+  intro: 'Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the <code class="c-inline-code">title</code> attribute.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_abbreviation.scss'
   markup: !xml |
           <abbr title="User Interface">UI</abbr>
 
-- id: details
+- id: demos-details
   heading: Details
   intro: 'Apply <code class="c-inline-code">cursor: pointer;</code>
   to the <code class="c-inline-code">summary</code> element with the option to
@@ -17,39 +17,38 @@
             <p>More info about the details.</p>
           </details>
 
-- id: forms
+- id: demos-forms
   heading: Forms
-  intro: 'Indicate that <code class="c-inline-code">label</code>
-  will shift focus to the associated <code class="c-inline-code">input</code>
+  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code>
+  to the <code class="c-inline-code">label</code> element to indicate that it will shift focus to its associated <code class="c-inline-code">input</code>
   element.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L71-L78'
   markup: !xml |
-          <label for="test-input">Label</label>
-          <input type="text" id="test-input" class="text-input">
+          <label for="some-input">Label</label>
+          <input type="text" id="some-input" class="text-input">
 
-- id: forms
-  intro: 'Disable <code class="c-inline-code">textarea</code>s
-  from being resized horizontally.'
+- id: demos-forms
+  intro: 'Disable horizontal resizing of <code class="c-inline-code">textarea</code>s.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L81-L87'
   markup: !xml |
           <textarea rows="4"></textarea>
 
-- id: forms
+- id: demos-forms
   intro: 'Override <code class="c-inline-code">content-box</code>
   from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a> for search inputs.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
   markup: !xml |
           <input type="search" class="text-input">
 
-- id: forms
+- id: demos-forms
   intro: 'Remove rounded corners from iOS search inputs by overriding <code class="c-inline-code">appearance: textfield</code> from
   <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>, <a href="https://github.com/necolas/normalize.css/issues/360" rel="external">see</a>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
   markup: !xml |
           <input type="search" class="text-input">
 
-- id: forms
-  intro: 'Remove rounded corners that iOS applies to all <code class="c-inline-code">input</code> buttons, <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>. And certain browsers e.g. Chrome, apply rounded corners to <code class="c-inline-code">select</code> lists so if we haven&quot;t opted in for rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code> and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code> settings then turn them off.'
+- id: demos-forms
+  intro: 'Remove rounded corners that iOS applies to all <code class="c-inline-code">input</code> buttons, <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>. And certain browsers, e.g. Chrome, apply rounded corners to <code class="c-inline-code">select</code> lists, so if we haven&#8217;t opted in for rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code> and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code> settings then turn them off.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
   markup: !xml |
           <input type="submit" value="Submit">
