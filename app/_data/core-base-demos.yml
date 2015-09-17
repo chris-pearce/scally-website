@@ -2,61 +2,268 @@
   heading: Abbreviation
   intro: 'Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the <code class="c-inline-code">title</code> attribute.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_abbreviation.scss'
-  markup: !xml |
-          <abbr title="User Interface">UI</abbr>
+  markup-1: !xml |
+            <abbr title="User Interface">UI</abbr>
+  markup-2: !xml |
+            <abbr title="User Interface">UI</abbr>
 
 - id: demos-details
   heading: Details
-  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code>
-  to the <code class="c-inline-code">summary</code> element with the option to
-  remove the browser default <code class="c-inline-code">summary</code> arrow.'
+  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code> to the <code class="c-inline-code">summary</code> element with the option to remove the browser default <code class="c-inline-code">summary</code> arrow.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_details.scss'
-  markup: !xml |
-          <details>
-            <summary>Some details</summary>
-            <p>More info about the details.</p>
-          </details>
+  markup-1: !xml |
+            <details>
+              <summary>Some details</summary>
+              <p>More info about the details.</p>
+            </details>
+  markup-2: !xml |
+            <details>
+              <summary>Some details</summary>
+              <p>More info about the details.</p>
+            </details>
 
 - id: demos-forms
   heading: Forms
-  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code>
-  to the <code class="c-inline-code">label</code> element to indicate that it will shift focus to its associated <code class="c-inline-code">input</code>
-  element.'
+  intro: 'Apply <code class="c-inline-code">cursor: pointer;</code> to the <code class="c-inline-code">label</code> element to indicate that it will shift focus to its associated <code class="c-inline-code">input</code> element.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L71-L78'
-  markup: !xml |
-          <label for="some-input">Label</label>
-          <input type="text" id="some-input" class="text-input">
+  markup-1: !xml |
+            <label for="some-input">Label</label>
+            <input type="text" id="some-input" class="text-input">
+  markup-2: !xml |
+            <label for="some-input">Label</label>
+            <input type="text" id="some-input" class="text-input">
 
 - id: demos-forms
+  heading: false
   intro: 'Disable horizontal resizing of <code class="c-inline-code">textarea</code>s.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L81-L87'
-  markup: !xml |
-          <textarea rows="4"></textarea>
+  markup-1: !xml |
+            <textarea rows="4"></textarea>
+  markup-2: !xml |
+            <textarea rows="4"></textarea>
 
 - id: demos-forms
+  heading: false
   intro: 'Override <code class="c-inline-code">content-box</code>
   from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a> for search inputs.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
-  markup: !xml |
-          <input type="search" class="text-input">
+  markup-1: !xml |
+            <input type="search" class="text-input">
+  markup-2: !xml |
+            <input type="search" class="text-input">
 
 - id: demos-forms
-  intro: 'Remove rounded corners from iOS search inputs by overriding <code class="c-inline-code">appearance: textfield</code> from
-  <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>, <a href="https://github.com/necolas/normalize.css/issues/360" rel="external">see</a>.'
-  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
-  markup: !xml |
-          <input type="search" class="text-input">
+  heading: false
+  intro: 'Remove rounded corners from iOS search inputs by overriding <code class="c-inline-code">appearance: textfield</code> from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>, <a href="https://github.com/necolas/normalize.css/issues/360" rel="external">see</a>.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L101-L109'
+  markup-1: !xml |
+            <input type="search" class="text-input">
+  markup-2: !xml |
+            <input type="search" class="text-input">
 
 - id: demos-forms
-  intro: 'Remove rounded corners that iOS applies to all <code class="c-inline-code">input</code> buttons, <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>. And certain browsers, e.g. Chrome, apply rounded corners to <code class="c-inline-code">select</code> lists, so if we haven&#8217;t opted in for rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code> and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code> settings then turn them off.'
-  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L90-L98'
-  markup: !xml |
-          <input type="submit" value="Submit">
-          <input type="button" value="Button">
-          <input type="reset" value="Reset">
-          <input type="image" src="/img/placeholders/100x30.jpg" alt="Bill Murrary placeholder image">
-          <select>
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-          </select>
+  heading: false
+  intro: 'Remove rounded corners that iOS applies to all <code class="c-inline-code">input</code> buttons, <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>. And certain browsers, e.g. Chrome, apply rounded corners to <code class="c-inline-code">select</code> lists, so if we haven’t opted in for rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code> and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code> settings then turn them off.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L112-L126'
+  markup-1: !xml |
+            <input type="submit" value="Submit">
+            <br><br>
+            <input type="button" value="Button">
+            <br><br>
+            <input type="reset" value="Reset">
+            <br><br>
+            <input type="image" src="/img/placeholders/100x30.jpg" alt="Bill Murrary placeholder image">
+            <br><br>
+            <select>
+             <option>Option 1</option>
+             <option>Option 2</option>
+             <option>Option 3</option>
+            </select>
+  markup-2: !xml |
+            <input type="submit" value="Submit">
+            <input type="button" value="Button">
+            <input type="reset" value="Reset">
+            <input type="image" src="/img/placeholders/100x30.jpg" alt="Bill Murrary placeholder image">
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+
+- id: demos-forms
+  heading: false
+  intro: 'Fix for IE and old versions of some other browsers not wrapping text within a <code class="c-inline-code">legend</code>.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L129-L143'
+  markup-1: !xml |
+            <form action="">
+              <legend>Purus pid dignissim ac, nascetur porttitor phasellus aenean.
+              Nisi tristique ac. Placerat porta et scelerisque etiam ac aliquet
+              tristique nunc natoque vel est.</legend>
+            </form>
+  markup-2: !xml |
+            <form action="">
+              <legend>Purus pid dignissim ac, nascetur porttitor phasellus aenean.
+              Nisi tristique ac. Placerat porta et scelerisque etiam ac aliquet
+              tristique nunc natoque vel est.</legend>
+            </form>
+
+- id: demos-forms
+  heading: false
+  intro: 'Set bottom whitespace for <code class="c-inline-code">legend</code>s via a class, we use <code class="c-inline-code">padding</code> over <code class="c-inline-code">margin</code> as <code class="c-inline-code">padding</code> is the most cross-browser compatible.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L146-L153'
+  markup-1: !xml |
+            <form action="">
+              <legend class="form-heading">A form legend</legend>
+            </form>
+  markup-2: !xml |
+            <form action="">
+              <legend class="form-heading">A form legend</legend>
+            </form>
+
+- id: demos-forms
+  heading: false
+  intro: 'Apply a disabled state via the <code class="c-inline-code">disabled</code> attribute and the <code class="c-inline-code">is-disabled</code> class.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L156-L183'
+  markup-1: !xml |
+            <button disabled>Button</button>
+            <br><br>
+            <input disabled type="submit" value="Submit">
+            <br><br>
+            <input disabled type="button" value="Button">
+            <br><br>
+            <input disabled type="reset" value="Reset">
+            <br><br>
+            <input disabled type="image" src="/img/placeholders/100x30.jpg" alt="Bill Murrary placeholder image">
+            <br><br>
+            <input disabled type="checkbox">
+            <br><br>
+            <input disabled type="radio">
+            <br><br>
+            <input disabled type="color">
+            <br><br>
+            <input disabled type="file">
+            <br><br>
+            <input disabled type="range">
+            <br><br>
+            <input disabled type="date" class="text-input">
+            <br><br>
+            <input disabled type="datetime" class="text-input">
+            <br><br>
+            <input disabled type="datetime-local" class="text-input">
+            <br><br>
+            <input disabled type="month" class="text-input">
+            <br><br>
+            <input disabled type="week" class="text-input">
+            <br><br>
+            <input disabled type="number" class="text-input">
+            <br><br>
+            <input disabled type="email" class="text-input">
+            <br><br>
+            <input disabled type="password" class="text-input">
+            <br><br>
+            <input disabled type="search" class="text-input">
+            <br><br>
+            <input disabled type="tel" class="text-input">
+            <br><br>
+            <input disabled type="text" class="text-input">
+            <br><br>
+            <input disabled type="url" class="text-input">
+            <br><br>
+            <textarea disabled rows="4"></textarea>
+            <br><br>
+            <select disabled>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+  markup-2: !xml |
+            <button disabled>Button</button>
+            <input disabled type="submit" value="Submit">
+            <input disabled type="button" value="Button">
+            <input disabled type="reset" value="Reset">
+            <input disabled type="image" src="/img/placeholders/100x30.jpg" alt="Bill Murrary placeholder image">
+            <input disabled type="checkbox">
+            <input disabled type="radio">
+            <input disabled type="color">
+            <input disabled type="file">
+            <input disabled type="range">
+            <input disabled type="date" class="text-input">
+            <input disabled type="datetime" class="text-input">
+            <input disabled type="datetime-local" class="text-input">
+            <input disabled type="month" class="text-input">
+            <input disabled type="week" class="text-input">
+            <input disabled type="number" class="text-input">
+            <input disabled type="email" class="text-input">
+            <input disabled type="password" class="text-input">
+            <input disabled type="search" class="text-input">
+            <input disabled type="tel" class="text-input">
+            <input disabled type="text" class="text-input">
+            <input disabled type="url" class="text-input">
+            <textarea disabled rows="4"></textarea>
+            <select disabled>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+
+- id: demos-forms
+  heading: false
+  intro: 'Required field indicator (asterisk).'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L186-L193'
+  markup-1: !xml |
+            <label for="">A label <em class="required-field">*</em></label>
+  markup-2: !xml |
+            <label for="">A label <em class="required-field">*</em></label>
+
+- id: demos-forms
+  heading: false
+  intro: 'Style text inputs via the <code class="c-inline-code">.text-input</code> class, and apply to <code class="c-inline-code">textarea</code>s and <code class="c-inline-code">select</code> lists.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L196-L233'
+  markup-1: !xml |
+            <input type="text" class="text-input">
+            <br><br>
+            <textarea rows="4"></textarea>
+            <br><br>
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+  markup-2: !xml |
+            <input type="text" class="text-input">
+            <textarea rows="4"></textarea>
+            <select>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+
+- id: demos-forms
+  heading: false
+  intro: 'Text input placeholder colour which uses the <code class="c-inline-code">text-input-placeholder-color()</code> mixin.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L236-L244'
+  markup-1: !xml |
+            <input type="text" class="text-input" placeholder="Some placeholder text">
+  markup-2: !xml |
+            <input type="text" class="text-input" placeholder="Some placeholder text">
+
+- id: demos-forms
+  heading: false
+  intro: 'Remove the top inner shadow from iOS inputs. <strong>N.B.</strong> this needs to be isolated to iOS devices so user-agent sniffing needs to happen and the most robust implementation of this is to apply the hook to the <code class="c-inline-code">html</code> element e.g. <code class="c-inline-code">.ios</code>.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L246-L262'
+  markup-1: !xml |
+            <input type="text" class="text-input">
+            <br><br>
+            <textarea rows="4"></textarea>
+  markup-2: !xml |
+            <input type="text" class="text-input">
+            <textarea rows="4"></textarea>
+
+- id: demos-forms
+  heading: false
+  intro: 'Hide the close button generated by IE 10+ for inputs.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L265-L274'
+  markup-1: !xml |
+            <input type="text" class="text-input">
+  markup-2: !xml |
+            <input type="text" class="text-input">
