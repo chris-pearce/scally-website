@@ -109,7 +109,7 @@
 
 - id: demos-forms
   heading: false
-  intro: 'Set bottom whitespace for <code class="c-inline-code">legend</code>s via a class, we use <code class="c-inline-code">padding</code> over <code class="c-inline-code">margin</code> as <code class="c-inline-code">padding</code> is the most cross-browser compatible.'
+  intro: 'Set bottom spacing for <code class="c-inline-code">legend</code>s via a class, we use <code class="c-inline-code">padding</code> over <code class="c-inline-code">margin</code> as <code class="c-inline-code">padding</code> is the most cross-browser compatible.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L146-L153'
   markup-1: !xml |
             <form action="">
@@ -270,7 +270,7 @@
 
 - id: demos-headings
   heading: Headings
-  intro: 'Set font sizes and bottom margins for all the six heading elements. Double stranded for greater reuse i.e. each heading element selector also comes with a class selector.'
+  intro: 'Set font sizes and bottom spacing for all the six heading elements. Double stranded for greater reuse i.e. each heading element selector also comes with a class selector.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_headings.scss'
   markup-1: !xml |
             <h1>Heading 1</h1>
@@ -286,3 +286,73 @@
             <h4>Heading 4</h4>
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
+
+- id: demos-horizontal-rule
+  heading: Horizontal Rule
+  intro: 'Apply bottom spacing and use <code class="c-inline-code">border-top</code> to apply the horizontal rule, with the <code class="c-inline-code">border-color</code>, <code class="c-inline-code">border-style</code>, and <code class="c-inline-code">border-width</code> configurable .'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_horizontal-rule.scss'
+  markup-1: !xml |
+            <hr>
+  markup-2: !xml |
+            <hr>
+
+- id: demos-links
+  heading: Links
+  intro: 'Base link styles. At the bare minimum a colour is applied for both default and hover states. There is the option to remove the underline for the default state and apply it on the hover state instead, and an option to apply a bottom border as the underline instead of the browser default <code class="c-inline-code">text-decoration: underline</code>. You can also choose to apply a transition to link colour and its underline—if the bottom border option is selected—when hovering the link.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_links.scss'
+  markup-1: !xml |
+            <a href="#">Link</a>
+  markup-2: !xml |
+            <a href="#">Link</a>
+
+- id: demos-media
+  heading: Media
+  intro: 'Remove the gap between media elements and the bottom of their containers by applying <code class="c-inline-code">vertical-align: middle</code>.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_media.scss#L15-L29'
+  markup-1: !xml |
+            <div class="c-demo-block__example__result__box-alt">
+              <audio src="" controls></audio>
+            </div>
+            <br>
+            <div class="c-demo-block__example__result__box-alt">
+              <canvas width="100" height="30" style="background: url(/img/placeholders/200x60.jpg);"></canvas>
+            </div>
+            <br>
+            <div class="c-demo-block__example__result__box-alt">
+              <iframe src="/img/placeholders/200x60.jpg" width="100" height="30"></iframe>
+            </div>
+            <br>
+            <div class="c-demo-block__example__result__box-alt">
+              <img src="/img/placeholders/100x30.jpg" srcset="/img/placeholders/100x30.jpg 1x, /img/placeholders/200x60.jpg 2x" alt="" width="100" height="30">
+            </div>
+            <br>
+            <div class="c-demo-block__example__result__box-alt">
+              <svg viewBox="0 0 251 92" width="125" height="46">
+                <use xlink:href="/img/logo.svg#scally"></use>
+              </svg>
+            </div>
+            <br>
+            <div class="c-demo-block__example__result__box-alt">
+              <video src="" controls style="background: #f2f2f2;"></video>
+            </div>
+  markup-2: !xml |
+            <audio src="" controls></audio>
+            <canvas width="100" height="30" style="background: url(/img/placeholders/200x60.jpg);"></canvas>
+            <iframe src="/img/placeholders/200x60.jpg" width="100" height="30"></iframe>
+            <img src="/img/placeholders/100x30.jpg" srcset="/img/placeholders/100x30.jpg 1x, /img/placeholders/200x60.jpg 2x" alt="" width="100" height="30">
+            <svg viewBox="0 0 251 92" width="125" height="46">
+              <use xlink:href="/img/logo.svg#scally"></use>
+            </svg>
+            <video src="" controls style="background: #f2f2f2;"></video>
+
+- id: demos-media
+  heading: false
+  intro: 'Make images responsive (optional). If responsive images are turned off by default but you need to apply this behaviour to some images then use the <code class="c-inline-code">img-responsive</code> class, the reverse of that situation is to use the <code class="c-inline-code">img-not-responsive</code> class. We also style <code class="c-inline-code">alt</code> text so that it’s visually offset if images don’t load.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_media.scss#L32-L56'
+  markup-1: !xml |
+            <img src="/img/placeholders/700x300.jpg" srcset="/img/placeholders/700x300.jpg 1x, /img/placeholders/1400x600.jpg 2x" alt="">
+            <br><br>
+            <img src="" alt="Some alt text">
+  markup-2: !xml |
+            <img src="/img/placeholders/700x300.jpg" srcset="/img/placeholders/700x300.jpg 1x, /img/placeholders/1400x600.jpg 2x" alt="">
+            <img src="" alt="Some alt text">
