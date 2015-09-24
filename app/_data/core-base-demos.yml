@@ -270,7 +270,7 @@
 
 - id: demos-headings
   heading: Headings
-  intro: 'Set font sizes and bottom spacing for all the six heading elements. Double stranded for greater reuse i.e. each heading element selector also comes with a class selector.'
+  intro: 'Set font sizes and optional bottom spacing for all the six heading elements, the bottom spacing is handled via the <a href="">Bottom Spacing placeholder</a>. And each heading element selector also comes with a class selector e.g. <code class="c-inline-code">h1, .h1 {}</code> allowing say a <code class="c-inline-code"><h2></code> to be styled like a <code class="c-inline-code"><h1></code>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_headings.scss'
   markup-1: !xml |
             <h1>Heading 1</h1>
@@ -289,7 +289,7 @@
 
 - id: demos-horizontal-rule
   heading: Horizontal Rule
-  intro: 'Apply bottom spacing and use <code class="c-inline-code">border-top</code> to apply the horizontal rule, with the <code class="c-inline-code">border-color</code>, <code class="c-inline-code">border-style</code>, and <code class="c-inline-code">border-width</code> configurable .'
+  intro: 'Apply bottom spacing and use <code class="c-inline-code">border-top</code> to apply the horizontal rule, with the <code class="c-inline-code">border-color</code>, <code class="c-inline-code">border-style</code>, and <code class="c-inline-code">border-width</code> all being configurable. The bottom spacing is handled via the <a href="">Bottom Spacing placeholder</a>'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_horizontal-rule.scss'
   markup-1: !xml |
             <hr>
@@ -348,7 +348,7 @@
 - id: demos-media
   heading: false
   intro: 'Make images responsive (optional). If responsive images are turned off by default but you need to apply this behaviour to some images then use the <code class="c-inline-code">img-responsive</code> class, the reverse of that situation is to use the <code class="c-inline-code">img-not-responsive</code> class. We also style <code class="c-inline-code">alt</code> text so that it’s visually offset if images don’t load.'
-  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_media.scss#L32-L56'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_media.scss#L32-L77'
   markup-1: !xml |
             <img src="/img/placeholders/700x300.jpg" srcset="/img/placeholders/700x300.jpg 1x, /img/placeholders/1400x600.jpg 2x" alt="">
             <br><br>
@@ -356,3 +356,12 @@
   markup-2: !xml |
             <img src="/img/placeholders/700x300.jpg" srcset="/img/placeholders/700x300.jpg 1x, /img/placeholders/1400x600.jpg 2x" alt="">
             <img src="" alt="Some alt text">
+
+- id: demos-paragraphs
+  heading: Paragraphs
+  intro: 'Apply optional bottom spacing to all paragraphs via the <a href="">Bottom Spacing placeholder</a>.'
+  source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_paragraphs.scss'
+  markup-1: !xml |
+            <p>Nisi tristique ac. Placerat porta et scelerisque etiam ac aliquet tristique nunc natoque vel est.</p>
+  markup-2: !xml |
+            <p>Nisi tristique ac. Placerat porta et scelerisque etiam ac aliquet tristique nunc natoque vel est.</p>
