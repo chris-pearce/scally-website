@@ -94,9 +94,10 @@
  */
 
 // Settings
-$font-size:          16;
-$line-height:        26;
-$font-family-base:   Georgia, Palatino, "Hoefler Text", Baskerville, serif;
+$font-size:             16;
+$line-height:           26;
+$font-family-base:      Georgia, Palatino, "Hoefler Text", Baskerville, serif;
+$font-family-headings:  $font-family-sans-serif;
 @import "../../../node_modules/scally/core/settings/typography";
 
 @import "../../../node_modules/scally/core/settings/spacing";
@@ -163,14 +164,7 @@ $html-element-background-color: $color-grey-concrete;
 
 @import "../../../node_modules/scally/core/base/details";
 
-$apply-heading-margins: true;
-$font-size-heading-1:   46;
-$font-size-heading-2:   38;
-$font-size-heading-3:   31;
-$font-size-heading-4:   24;
-$font-size-heading-5:   $font-size + 2;
-$font-size-heading-6:   $font-size;
-$font-family-headings:  $font-family-sans-serif;
+$apply-smaller-margin-for-lowest-headings: false;
 @import "../../../node_modules/scally/core/base/headings";
 
 $hr-color: $color-brick-red;

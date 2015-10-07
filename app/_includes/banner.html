@@ -1,7 +1,7 @@
 <!-- Banner -->
 <header class="c-banner{% if page.landing_page %} c-banner--landing{% endif %}">
   <div class="l-container">
-    <h1 class="c-banner__title">
+    <h1 class="hdg-1  c-banner__title">
       {% if page.section == 1 %}
         Getting Started
       {% elsif page.section == 2 %}
@@ -10,19 +10,23 @@
         Demos
       {% elsif page.section == 4 %}
         Blog
+      {% elsif page.section == 5 %}
+        {{ page.title }}
       {% endif %}
     </h1>
-    <p class="c-banner__intro">
-      {% if page.section == 1 %}
-        Getting started into here
-      {% elsif page.section == 2 %}
-        Documentation for all the major sections of Scally, and more.
-      {% elsif page.section == 3 %}
-        Demos for all the major sections of Scally.
-      {% elsif page.section == 4 %}
-        Blog intro here
-      {% endif %}
-    </p>
+    {% unless page.section == 5 %}
+      <p class="c-banner__intro">
+        {% if page.section == 1 %}
+          {{ page.excerpt }}
+        {% elsif page.section == 2 %}
+          {{ page.excerpt }}
+        {% elsif page.section == 3 %}
+          {{ page.excerpt }}
+        {% elsif page.section == 4 %}
+          {{ page.excerpt }}
+        {% endif %}
+      </p>
+    {% endunless %}
   </div>
 </header>
 <!-- //Banner -->

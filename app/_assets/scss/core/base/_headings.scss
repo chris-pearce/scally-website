@@ -4,9 +4,8 @@
 
 
 /**
- * Double stranded for greater reuse.
- *
- * N.B. this builds on top of the Scally headings base styles.
+ * All these base headings are scoped to classes so that the Scally base
+ * heading styles can be seen in the demo's.
  */
 
 
@@ -14,36 +13,54 @@
  * Settings.
  */
 
-$heading-anchor-icon-size: 24px;
+$heading-font-size-1:       46;
+
+$heading-font-size-2:       40;
+
+$heading-font-size-3:       35;
+
+$heading-font-size-4:       28;
+
+$heading-font-size-5:       20;
+
+$heading-font-size-6:       $font-size;
+
+$heading-anchor-icon-size:  24px;
 
 
 /**
  * Apply common treatments.
  */
 
-// Colour
-@include headings(3, 6, true) {
-  color: $color-black;
+// Line height
+.hdg-1,
+.hdg-2,
+.hdg-3,
+.hdg-4,
+.hdg-5,
+.hdg-6 {
   line-height: 1.5;
+}
+
+// Colour and relative positioning
+.hdg-3,
+.hdg-4,
+.hdg-5,
+.hdg-6 {
+  color: $color-black;
   // This is needed to position the anchor element
   position: relative;
 }
 
-// Bottom margin
-@include headings(4, 5, true) {
-  margin-bottom: to-rem($spacing-base);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 // Font weights
-@include headings(2, 4, true) {
+.hdg-2,
+.hdg-3,
+.hdg-4 {
   font-weight: 300;
 }
 
-@include headings(5, 6, true) {
+.hdg-5,
+.hdg-6 {
   font-weight: 900;
 }
 
@@ -52,8 +69,8 @@ $heading-anchor-icon-size: 24px;
  * H1.
  */
 
-h1,
-.h1 {
+.hdg-1 {
+  font-size: to-rem($heading-font-size-1);
   font-weight: $font-weight-bold;
 }
 
@@ -62,11 +79,38 @@ h1,
  * H2.
  */
 
-h2,
-.h2 {
+.hdg-2 {
   background-image: $color-gradient-tropical;
+  font-size: to-rem($heading-font-size-2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+
+/**
+ * H3.
+ */
+
+.hdg-3 {
+  font-size: to-rem($heading-font-size-3);
+}
+
+
+/**
+ * H4.
+ */
+
+.hdg-4 {
+  font-size: to-rem($heading-font-size-4);
+}
+
+
+/**
+ * H5.
+ */
+
+.hdg-5 {
+  font-size: to-rem($heading-font-size-5);
 }
 
 
@@ -74,14 +118,9 @@ h2,
  * H6.
  */
 
-h6,
-.h6 {
+.hdg-6 {
   color: $color-brick-red;
-  margin-bottom: to-rem($spacing-half);
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  font-size: to-rem($heading-font-size-6);
 }
 
 
@@ -90,7 +129,7 @@ h6,
  */
 
 .section-anchor {
-  bottom: 0;
+  bottom: 2px;
   left: -36px;
   line-height: 0;
   padding: 8px 6px;
@@ -102,11 +141,11 @@ h6,
    * Different positioning for the `h4`–`h6` headings.
    */
 
-  h4 & {
-    bottom: -5px;
+  .hdg-4 & {
+    bottom: -2px;
   }
 
-  h5 & {
+  .hdg-5 & {
     bottom: -9px;
   }
 

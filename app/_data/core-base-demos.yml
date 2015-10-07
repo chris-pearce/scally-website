@@ -270,22 +270,34 @@
 
 - id: demos-headings
   heading: Headings
-  intro: 'Set font sizes and optional bottom spacing for all the six heading elements, the bottom spacing is handled via the <a href="">Bottom Spacing placeholder</a>. And each heading element selector also comes with a class selector e.g. <code class="c-inline-code">h1, .h1 {}</code> allowing say a <code class="c-inline-code"><h2></code> to be styled like a <code class="c-inline-code"><h1></code>.'
+  intro: 'Set font sizes and optional bottom spacing for all the six heading elements, the bottom spacing is handled via the <a href="">Bottom Spacing placeholder</a>. And each heading element selector also comes with a class selector e.g. <code class="c-inline-code">h1, .h1 {}</code> allowing say a <code class="c-inline-code">&#12296;h2&#12297;</code> to be styled like a <code class="c-inline-code">&#12296;h1&#12297;</code>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_headings.scss'
   markup-1: !xml |
             <h1>Heading 1</h1>
+            <h1 class="h2">Heading 1</h1>
             <h2>Heading 2</h2>
+            <h2 class="h3">Heading 2</h2>
             <h3>Heading 3</h3>
+            <h3 class="h4">Heading 3</h3>
             <h4>Heading 4</h4>
+            <h4 class="h4">Heading 4</h4>
             <h5>Heading 5</h5>
+            <h5 class="h5">Heading 5</h5>
             <h6>Heading 6</h6>
+            <h6 class="h6">Heading 6</h6>
   markup-2: !xml |
             <h1>Heading 1</h1>
+            <h1 class="h2">Heading 1</h1>
             <h2>Heading 2</h2>
+            <h2 class="h3">Heading 2</h2>
             <h3>Heading 3</h3>
+            <h3 class="h4">Heading 3</h3>
             <h4>Heading 4</h4>
+            <h4 class="h4">Heading 4</h4>
             <h5>Heading 5</h5>
+            <h5 class="h5">Heading 5</h5>
             <h6>Heading 6</h6>
+            <h6 class="h6">Heading 6</h6>
 
 - id: demos-horizontal-rule
   heading: Horizontal Rule

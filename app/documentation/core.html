@@ -1,7 +1,7 @@
 ---
 layout:             default
 title:              "Documentation for the Core section"
-excerpt:            "Documentation for the Core section. Scally core is the
+excerpt:            "Documentation for the Core section, Scally core is the
                     foundation of a project’s UI build."
 exclude_from_nav:   true
 section:            2
@@ -13,9 +13,9 @@ section:            2
 <!-- //Section Nav -->
 
 
-<h2 id="core">Core</h2>
+<h2 id="core" class="hdg-2">Core</h2>
 
-<h3 id="table-of-contents">
+<h3 id="table-of-contents" class="hdg-3">
   Table of contents
   {% include heading-anchor.html id="table-of-contents" heading="Table of contents" %}
 </h3>
@@ -43,21 +43,19 @@ section:            2
       <li>
         <a href="#demos">Demos</a>
         <ol>
-          <li><a href="#abbreviation">Abbreviation</a></li>
-          <li><a href="#details">Details</a></li>
-          <li><a href="#forms">Forms</a></li>
-          <li><a href="#headings">Headings</a></li>
-          <li><a href="#horizontal-rule">Horizontal rule</a></li>
-          <li><a href="#links">Links</a></li>
-          <li><a href="#media">Media</a></li>
-          <li><a href="#paragraphs">Paragraphs</a></li>
-          <li><a href="#print">Print</a></li>
-          <li><a href="#root">Root</a></li>
-          <li><a href="#viewport">Viewport</a></li>
+          <li><a href="#demos-abbreviation">Abbreviation</a></li>
+          <li><a href="#demos-details">Details</a></li>
+          <li><a href="#demos-forms">Forms</a></li>
+          <li><a href="#demos-headings">Headings</a></li>
+          <li><a href="#demos-horizontal-rule">Horizontal rule</a></li>
+          <li><a href="#demos-links">Links</a></li>
+          <li><a href="#demos-media">Media</a></li>
+          <li><a href="#demos-paragraphs">Paragraphs</a></li>
         </ol>
       </li>
     </ol>
   </li>
+  <li><a href="#functions">Functions</a></li>
 </ol>
 
 
@@ -67,7 +65,7 @@ section:            2
 <!-- Intro -->
 <section class="c-content-section">
 
-  <h3 id="what-is-it">
+  <h3 id="what-is-it" class="hdg-3">
     What is it?
     {% include heading-anchor.html id="what-is-it" heading="What is it?" %}
   </h3>
@@ -91,7 +89,7 @@ section:            2
     </div>
   </div>
 
-  <h3 id="the-breakdown">
+  <h3 id="the-breakdown" class="hdg-3">
     The breakdown
     {% include heading-anchor.html id="the-breakdown" heading="The breakdown" %}
   </h3>
@@ -108,7 +106,7 @@ section:            2
 
   <p>And a few things not sectioned:</p>
 
-  <h3 id="normalize">
+  <h3 id="normalize" class="hdg-3">
     normalize.css
     {% include heading-anchor.html id="normalize" heading="normalize.css" %}
   </h3>
@@ -117,7 +115,7 @@ section:            2
 
   {% include view-source-code-link.html url="https://github.com/chris-pearce/scally/blob/master/core/_normalize.scss" %}
 
-  <h3 id="reset">
+  <h3 id="reset" class="hdg-3">
     Reset
     {% include heading-anchor.html id="reset" heading="Reset" %}
   </h3>
@@ -132,7 +130,7 @@ section:            2
 
   {% include view-source-code-link.html url="https://github.com/chris-pearce/scally/blob/master/core/_reset.scss" %}
 
-  <h3 id="specificity">
+  <h3 id="specificity" class="hdg-3">
     Specificity
     {% include heading-anchor.html id="specificity" heading="Specificity" %}
   </h3>
@@ -149,7 +147,7 @@ section:            2
 <!-- Base -->
 <section class="c-content-section">
 
-  <h3 id="base">
+  <h3 id="base" class="hdg-3">
     Base
     {% include heading-anchor.html id="base" heading="Base" %}
   </h3>
@@ -178,7 +176,7 @@ $apply-paragraph-bottom-margin: true !default;
 {% endhighlight %}
 </div>
 
-  <h4 id="sensible-styles">
+  <h4 id="sensible-styles" class="hdg-4">
     Sensible Styles
     {% include heading-anchor.html id="sensible-styles" heading="Sensible Styles" %}
   </h4>
@@ -192,7 +190,7 @@ $apply-paragraph-bottom-margin: true !default;
     <li>Applying a bottom margin to all paragraphs (<code class="c-inline-code">p</code>) of text.</li>
   </ul>
 
-  <h4 id="normalize-esque-styles">
+  <h4 id="normalize-esque-styles" class="hdg-4">
     Normalize-esque styles
     {% include heading-anchor.html id="normalize-esque-styles" heading="Normalize-esque styles" %}
   </h4>
@@ -208,12 +206,12 @@ $apply-paragraph-bottom-margin: true !default;
 
   <p>Some of the above are optional via a toggle setting.</p>
 
-  <h4 id="other-noteworthy-parts-of-base">
+  <h4 id="other-noteworthy-parts-of-base" class="hdg-4">
     Other noteworthy parts of base
     {% include heading-anchor.html id="other-noteworthy-parts-of-base" heading="Other noteworthy parts of base" %}
   </h4>
 
-  <h5 id="responsive-images">
+  <h5 id="responsive-images" class="hdg-5">
     Responsive images
     {% include heading-anchor.html id="responsive-images" heading="Responsive images" %}
   </h5>
@@ -233,23 +231,23 @@ img {
 
   <p>However this is optional via a toggle setting.</p>
 
-  <h5 id="print">
+  <h5 id="print" class="hdg-5">
     Print
     {% include heading-anchor.html id="print" heading="Print" %}
   </h5>
 
   <p>Scally provides some sensible global print styles, with most taken from the <a href="https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css" rel="external">HTML5 Boilerplate</a> print styles.</p>
 
-  <p>All print styles that aren’t defined at this global base level will live their relevant Sass partial.</p>
+  <p>All print styles that aren’t defined at this global base level will live in their relevant Sass partial.</p>
 
-  <h5 id="root">
+  <h5 id="root" class="hdg-5">
     Root
     {% include heading-anchor.html id="root" heading="Root" %}
   </h5>
 
   <p>Root defines styles for the <code class="c-inline-code">html</code> element. It mainly focuses on typography styles, e.g., setting font size, font family, line height, etc. Root also defines the global foreground colour which is inherited by all HTML elements, and the background colour of the <code class="c-inline-code">html</code> element itself.</p>
 
-  <h5 id="forms">
+  <h5 id="forms" class="hdg-5">
     Forms
     {% include heading-anchor.html id="forms" heading="Forms" %}
   </h5>
@@ -258,7 +256,7 @@ img {
 
   <p>The other two main parts of forms are concerned with providing styles for text inputs—including <code class="c-inline-code">textarea</code>—and <code class="c-inline-code">select</code> lists, and a disabled state for <strong>ALL</strong> HTML form elements. These styles—being fairly opinionated—are all optional behind toggle settings.</p>
 
-  <h4 id="demos">
+  <h4 id="demos" class="hdg-4">
     Demos
     {% include heading-anchor.html id="demos" heading="Demos" %}
   </h4>
@@ -266,7 +264,7 @@ img {
   {% for demos in site.data.core-base-demos %}
     <div class="c-demo-block" id="{{ demos.id }}">
       {% if demos.heading %}
-        <h5 class="c-demo-block__title">
+        <h5 class="hdg-5  c-demo-block__title">
           {{ demos.heading }}
           <a href="#{{ demos.id }}" class="section-anchor">
             <span class="u-hide-visually">Anchor to section "{{ demos.heading }}"</span>
@@ -298,12 +296,28 @@ img {
     </div>
   {% endfor %}
 
-  <p>The following Base items cannot be demo’d so follow their links to see their source code:</p>
+  <p>The following Base items cannot be demo’d, follow their links to see the source code:</p>
 
   <ul class="o-list">
     <li><a href="https://github.com/chris-pearce/scally/blob/master/core/base/_print.scss" rel="external">Print</a></li>
+    <li><a href="https://github.com/chris-pearce/scally/blob/master/core/base/_root.scss" rel="external">Root</a></li>
     <li><a href="https://github.com/chris-pearce/scally/blob/master/core/base/_viewport.scss" rel="external">Viewport</a></li>
   </ul>
 
 </section>
 <!-- //Base -->
+
+
+<!-- Functions -->
+<section class="c-content-section">
+
+  <h3 id="functions" class="hdg-3">
+    Functions
+    {% include heading-anchor.html id="functions" heading="Functions" %}
+  </h3>
+
+  <p>Scally features a bunch of handy Sass functions, some of which are used in Scally’s <a href="#mixins">mixins</a>—without them Scally won’t work.</p>
+
+  <p>The <strong>convert-px-to-em-rem()</strong> function is the most used and powerful function and does what it says on the tin: converts pixels to either <code class="c-inline-code">em</code> or <code class="c-inline-code">rem</code> units. There is also a <strong>convert-px-to-em-rem()</strong> mixin which is dependant on this function.</p>
+</section>
+<!-- //Functions -->
