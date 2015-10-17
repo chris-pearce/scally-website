@@ -16,13 +16,13 @@ section:            2
 <h2 id="core" class="hdg-2">Core</h2>
 
 <h3 id="table-of-contents" class="hdg-3">
-  Table of contents
+  Table Of Contents
   {% include heading-anchor.html id="table-of-contents" heading="Table of contents" %}
 </h3>
 
 <ol class="o-list  u-s-mb-large">
-  <li><a href="#what-is-it">What is it?</a></li>
-  <li><a href="#the-breakdown">The breakdown</a></li>
+  <li><a href="#what-is-it">What Is It?</a></li>
+  <li><a href="#the-breakdown">The Breakdown</a></li>
   <li><a href="#normalize">normalize.css</a></li>
   <li><a href="#reset">Reset</a></li>
   <li><a href="#specificity">Specificity</a></li>
@@ -30,11 +30,11 @@ section:            2
     <a href="#base">Base</a>
     <ol>
       <li><a href="#sensible-styles">Sensible Styles</a></li>
-      <li><a href="#normalize-esque-styles">Normalize-esque styles</a></li>
+      <li><a href="#normalize-esque-styles">Normalize-esque Styles</a></li>
       <li>
-        <a href="#other-noteworthy-parts-of-base">Other noteworthy parts of base</a>
+        <a href="#other-noteworthy-parts-of-base">Other Noteworthy Parts Of Base</a>
         <ol>
-          <li><a href="#responsive-images">Responsive images</a></li>
+          <li><a href="#responsive-images">Responsive Images</a></li>
           <li><a href="#print">Print</a></li>
           <li><a href="#root">Root</a></li>
           <li><a href="#forms">Forms</a></li>
@@ -47,7 +47,7 @@ section:            2
           <li><a href="#demos-details">Details</a></li>
           <li><a href="#demos-forms">Forms</a></li>
           <li><a href="#demos-headings">Headings</a></li>
-          <li><a href="#demos-horizontal-rule">Horizontal rule</a></li>
+          <li><a href="#demos-horizontal-rule">Horizontal Rule</a></li>
           <li><a href="#demos-links">Links</a></li>
           <li><a href="#demos-media">Media</a></li>
           <li><a href="#demos-paragraphs">Paragraphs</a></li>
@@ -55,7 +55,15 @@ section:            2
       </li>
     </ol>
   </li>
-  <li><a href="#functions">Functions</a></li>
+  <li><a href="#functions">Functions</a>
+    <ol>
+      <li><a href="#demos-convert-px-to-em-rem">Convert Pixels To <code class="c-inline-code">em</code> Or <code class="c-inline-code">rem</code> Units</a></li>
+      <li><a href="#demos-maths-helpers">Maths Helpers</a></li>
+      <li><a href="#demos-string-replace">String Replace</a></li>
+      <li><a href="#demos-strip-unit">Strip Unit</a></li>
+      <li><a href="#demos-tint-shade">Tint &amp; Shade</a></li>
+    </ol>
+  </li>
 </ol>
 
 
@@ -66,8 +74,8 @@ section:            2
 <section class="c-content-section">
 
   <h3 id="what-is-it" class="hdg-3">
-    What is it?
-    {% include heading-anchor.html id="what-is-it" heading="What is it?" %}
+    What Is It?
+    {% include heading-anchor.html id="what-is-it" heading="What Is It?" %}
   </h3>
 
   <p>Scally Core is the foundation of a project’s UI build providing things like:</p>
@@ -90,8 +98,8 @@ section:            2
   </div>
 
   <h3 id="the-breakdown" class="hdg-3">
-    The breakdown
-    {% include heading-anchor.html id="the-breakdown" heading="The breakdown" %}
+    The Breakdown
+    {% include heading-anchor.html id="the-breakdown" heading="The Breakdown" %}
   </h3>
 
   <p>Core is broken down into the following sections:</p>
@@ -191,8 +199,8 @@ $apply-paragraph-bottom-margin: true !default;
   </ul>
 
   <h4 id="normalize-esque-styles" class="hdg-4">
-    Normalize-esque styles
-    {% include heading-anchor.html id="normalize-esque-styles" heading="Normalize-esque styles" %}
+    Normalize-esque Styles
+    {% include heading-anchor.html id="normalize-esque-styles" heading="Normalize-esque Styles" %}
   </h4>
 
   <p>Base also provides <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>-esque styles like:</p>
@@ -207,13 +215,13 @@ $apply-paragraph-bottom-margin: true !default;
   <p>Some of the above are optional via a toggle setting.</p>
 
   <h4 id="other-noteworthy-parts-of-base" class="hdg-4">
-    Other noteworthy parts of base
-    {% include heading-anchor.html id="other-noteworthy-parts-of-base" heading="Other noteworthy parts of base" %}
+    Other Noteworthy Parts Of Base
+    {% include heading-anchor.html id="other-noteworthy-parts-of-base" heading="Other Noteworthy Parts Of Base" %}
   </h4>
 
   <h5 id="responsive-images" class="hdg-5">
-    Responsive images
-    {% include heading-anchor.html id="responsive-images" heading="Responsive images" %}
+    Responsive Images
+    {% include heading-anchor.html id="responsive-images" heading="Responsive Images" %}
   </h5>
 
   <p>Scally—being a responsive-ready framework—sets all image elements (<code class="c-inline-code">img</code>) to be responsive by default, e.g.</p>
@@ -316,8 +324,34 @@ img {
     {% include heading-anchor.html id="functions" heading="Functions" %}
   </h3>
 
-  <p>Scally features a bunch of handy Sass functions, some of which are used in Scally’s <a href="#mixins">mixins</a>—without them Scally won’t work.</p>
+  <p>Scally features a bunch of handy Sass functions, some of which are used in Scally’s mixins—without them Scally won’t work.</p>
 
-  <p>The <strong>convert-px-to-em-rem()</strong> function is the most used and powerful function and does what it says on the tin: converts pixels to either <code class="c-inline-code">em</code> or <code class="c-inline-code">rem</code> units. There is also a <strong>convert-px-to-em-rem()</strong> mixin which is dependant on this function.</p>
+  {% for demos in site.data.core-functions-demos %}
+    <div class="c-demo-block" id="{{ demos.id }}">
+      {% if demos.heading %}
+        <h4 class="hdg-5  c-demo-block__title">
+          {{ demos.heading }}
+          <a href="#{{ demos.id }}" class="section-anchor">
+            <span class="u-hide-visually">Anchor to section "{{ demos.heading }}"</span>
+            <svg aria-hidden="true">
+              <use xlink:href="#link-icon" />
+            </svg>
+          </a>
+        </h4>
+      {% endif %}
+      <p class="c-demo-block__intro">{{ demos.intro }}</p>
+{% highlight scss %}
+{{ demos.scss }}
+{% endhighlight %}
+      <div class="c-view-source-code">
+        <a href="{{ demos.source-code-url }}" rel="external" class="c-view-source-code__link">
+          <svg>
+            <use xlink:href="#github-icon" />
+          </svg>
+          <span>View source code</span>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
 </section>
 <!-- //Functions -->
