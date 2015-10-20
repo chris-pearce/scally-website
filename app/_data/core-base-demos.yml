@@ -1,4 +1,4 @@
-- id: demos-abbreviation
+- id: demos-base-abbreviation
   heading: Abbreviation
   intro: 'Apply <code class="c-inline-code">cursor: help;</code> when an abbreviation is expanded via the <code class="c-inline-code">title</code> attribute.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_abbreviation.scss'
@@ -7,7 +7,7 @@
   markup-2: !xml |
             <abbr title="User Interface">UI</abbr>
 
-- id: demos-details
+- id: demos-base-details
   heading: Details
   intro: 'Apply <code class="c-inline-code">cursor: pointer;</code> to the <code class="c-inline-code">summary</code> element with the option to remove the browser default <code class="c-inline-code">summary</code> arrow.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_details.scss'
@@ -22,7 +22,7 @@
               <p>More info about the details.</p>
             </details>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: Forms
   intro: 'Apply <code class="c-inline-code">cursor: pointer;</code> to the <code class="c-inline-code">label</code> element to indicate that it will shift focus to its associated <code class="c-inline-code">input</code> element.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L71-L78'
@@ -33,7 +33,7 @@
             <label for="some-input">Label</label>
             <input type="text" id="some-input" class="text-input">
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Disable horizontal resizing of <code class="c-inline-code">textarea</code>s.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L81-L87'
@@ -42,7 +42,7 @@
   markup-2: !xml |
             <textarea rows="4"></textarea>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Override <code class="c-inline-code">content-box</code>
   from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a> for search inputs.'
@@ -52,7 +52,7 @@
   markup-2: !xml |
             <input type="search" class="text-input">
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Remove rounded corners from iOS search inputs by overriding <code class="c-inline-code">appearance: textfield</code> from <a href="http://necolas.github.io/normalize.css/" rel="external">normalize.css</a>, <a href="https://github.com/necolas/normalize.css/issues/360" rel="external">see</a>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L101-L109'
@@ -61,7 +61,7 @@
   markup-2: !xml |
             <input type="search" class="text-input">
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Remove rounded corners that iOS applies to all <code class="c-inline-code">input</code> buttons, <a href="https://github.com/necolas/normalize.css/issues/178" rel="external">see</a>. And certain browsers, e.g. Chrome, apply rounded corners to <code class="c-inline-code">select</code> lists, so if we haven’t opted in for rounded corners via the <code class="c-inline-code">$apply-text-input-and-select-styles</code> and <code class="c-inline-code">$apply-text-input-and-select-rounded-corners</code> settings then turn them off.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L112-L126'
@@ -90,7 +90,7 @@
               <option>Option 3</option>
             </select>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Fix for IE and old versions of some other browsers not wrapping text within a <code class="c-inline-code">legend</code>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L129-L143'
@@ -107,7 +107,7 @@
               tristique nunc natoque vel est.</legend>
             </form>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Set bottom spacing for <code class="c-inline-code">legend</code>s via a class, we use <code class="c-inline-code">padding</code> over <code class="c-inline-code">margin</code> as <code class="c-inline-code">padding</code> is the most cross-browser compatible.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L146-L153'
@@ -120,7 +120,7 @@
               <legend class="form-heading">A form legend</legend>
             </form>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Apply a disabled state via the <code class="c-inline-code">disabled</code> attribute and the <code class="c-inline-code">is-disabled</code> class.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L156-L183'
@@ -206,7 +206,7 @@
               <option>Option 3</option>
             </select>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Required field indicator (asterisk).'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L186-L193'
@@ -215,7 +215,7 @@
   markup-2: !xml |
             <label for="">A label <em class="required-field">*</em></label>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Style text inputs via the <code class="c-inline-code">.text-input</code> class, and apply to <code class="c-inline-code">textarea</code>s and <code class="c-inline-code">select</code> lists.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L196-L233'
@@ -238,7 +238,7 @@
               <option>Option 3</option>
             </select>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Text input placeholder colour which uses the <code class="c-inline-code">text-input-placeholder-color()</code> mixin.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L236-L244'
@@ -247,7 +247,7 @@
   markup-2: !xml |
             <input type="text" class="text-input" placeholder="Some placeholder text">
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Remove the top inner shadow from iOS inputs. <strong>N.B.</strong> this needs to be isolated to iOS devices so user-agent sniffing needs to happen and the most robust implementation of this is to apply the hook to the <code class="c-inline-code">html</code> element e.g. <code class="c-inline-code">.ios</code>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L246-L262'
@@ -259,7 +259,7 @@
             <input type="text" class="text-input">
             <textarea rows="4"></textarea>
 
-- id: demos-forms
+- id: demos-base-forms
   heading: false
   intro: 'Hide the close button generated by IE 10+ for inputs.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_forms.scss#L265-L274'
@@ -268,7 +268,7 @@
   markup-2: !xml |
             <input type="text" class="text-input">
 
-- id: demos-headings
+- id: demos-base-headings
   heading: Headings
   intro: 'Set font sizes and optional bottom spacing for all the six heading elements, the bottom spacing is handled via the <a href="">Bottom Spacing placeholder</a>. And each heading element selector also comes with a class selector e.g. <code class="c-inline-code">h1, .h1 {}</code> allowing say a <code class="c-inline-code">&#12296;h2&#12297;</code> to be styled like a <code class="c-inline-code">&#12296;h1&#12297;</code>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_headings.scss'
@@ -299,7 +299,7 @@
             <h6>Heading 6</h6>
             <h6 class="h6">Heading 6</h6>
 
-- id: demos-horizontal-rule
+- id: demos-base-horizontal-rule
   heading: Horizontal Rule
   intro: 'Apply bottom spacing and use <code class="c-inline-code">border-top</code> to apply the horizontal rule, with the <code class="c-inline-code">border-color</code>, <code class="c-inline-code">border-style</code>, and <code class="c-inline-code">border-width</code> all being configurable. The bottom spacing is handled via the <a href="">Bottom Spacing placeholder</a>'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_horizontal-rule.scss'
@@ -308,7 +308,7 @@
   markup-2: !xml |
             <hr>
 
-- id: demos-links
+- id: demos-base-links
   heading: Links
   intro: 'Base link styles. At the bare minimum a colour is applied for both default and hover states. There is the option to remove the underline for the default state and apply it on the hover state instead, and an option to apply a bottom border as the underline instead of the browser default <code class="c-inline-code">text-decoration: underline</code>. You can also choose to apply a transition to link colour and its underline—if the bottom border option is selected—when hovering the link.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_links.scss'
@@ -317,7 +317,7 @@
   markup-2: !xml |
             <a href="#">Link</a>
 
-- id: demos-media
+- id: demos-base-media
   heading: Media
   intro: 'Remove the gap between media elements and the bottom of their containers by applying <code class="c-inline-code">vertical-align: middle</code>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_media.scss#L15-L29'
@@ -357,7 +357,7 @@
             </svg>
             <video src="" controls style="background: #f2f2f2;"></video>
 
-- id: demos-media
+- id: demos-base-media
   heading: false
   intro: 'Make images responsive (optional). If responsive images are turned off by default but you need to apply this behaviour to some images then use the <code class="c-inline-code">img-responsive</code> class, the reverse of that situation is to use the <code class="c-inline-code">img-not-responsive</code> class. We also style <code class="c-inline-code">alt</code> text so that it’s visually offset if images don’t load.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_media.scss#L32-L77'
@@ -369,7 +369,7 @@
             <img src="/img/placeholders/700x300.jpg" srcset="/img/placeholders/700x300.jpg 1x, /img/placeholders/1400x600.jpg 2x" alt="">
             <img src="" alt="Some alt text">
 
-- id: demos-paragraphs
+- id: demos-base-paragraphs
   heading: Paragraphs
   intro: 'Apply optional bottom spacing to all paragraphs via the <a href="">Bottom Spacing placeholder</a>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/base/_paragraphs.scss'

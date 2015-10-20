@@ -324,9 +324,52 @@ img {
     {% include heading-anchor.html id="functions" heading="Functions" %}
   </h3>
 
-  <p>Scally features a bunch of handy Sass functions, some of which are used in Scally’s mixins—without them Scally won’t work.</p>
+  <p>Scally features a bunch of handy Sass functions to keep the framework more readable and DRY, by abstracting any common reusable logic.</p>
 
   {% for demos in site.data.core-functions-demos %}
+    <div class="c-demo-block" id="{{ demos.id }}">
+      {% if demos.heading %}
+        <h4 class="hdg-5  c-demo-block__title">
+          {{ demos.heading }}
+          <a href="#{{ demos.id }}" class="section-anchor">
+            <span class="u-hide-visually">Anchor to section "{{ demos.heading }}"</span>
+            <svg aria-hidden="true">
+              <use xlink:href="#link-icon" />
+            </svg>
+          </a>
+        </h4>
+      {% endif %}
+      <p class="c-demo-block__intro">{{ demos.intro }}</p>
+{% highlight scss %}
+{{ demos.scss }}
+{% endhighlight %}
+      <div class="c-view-source-code">
+        <a href="{{ demos.source-code-url }}" rel="external" class="c-view-source-code__link">
+          <svg>
+            <use xlink:href="#github-icon" />
+          </svg>
+          <span>View source code</span>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+<!-- //Functions -->
+
+
+
+
+<!-- Mixins -->
+<section class="c-content-section">
+
+  <h3 id="mixins" class="hdg-3">
+    Mixins
+    {% include heading-anchor.html id="mixins" heading="Mixins" %}
+  </h3>
+
+  <p>Scally features a bunch of handy Sass mixins. These mixins underpin many parts of the Scally framework and are required for many parts of the framework to work.</p>
+
+  {% for demos in site.data.core-mixins-demos %}
     <div class="c-demo-block" id="{{ demos.id }}">
       {% if demos.heading %}
         <h4 class="hdg-5  c-demo-block__title">

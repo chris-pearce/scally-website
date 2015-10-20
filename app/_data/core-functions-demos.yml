@@ -1,6 +1,6 @@
-- id: demos-convert-px-to-em-rem
+- id: demos-functions-convert-px-to-em-rem
   heading: Convert Pixels To <code class="c-inline-code">em</code> Or <code class="c-inline-code">rem</code> Units
-  intro: 'This is the most used and powerful function and does what it says on the tin: converts pixels to either <code class="c-inline-code">em</code> or <code class="c-inline-code">rem</code> units. There is also a <strong>convert-px-to-em-rem()</strong> mixin which is dependant on this function. The conversion to <code class="c-inline-code">em</code> function accepts an optional 2nd parameter which is the font size of the parent element, if empty it defaults to the root font size set on the <code class="c-inline-code">&#12296;html&#12297;</code> element. You can include the pixel unit if you wish as the function will strip it out.'
+  intro: 'This is the most used and powerful function and does what it says on the tin: converts pixels to either <code class="c-inline-code">em</code> or <code class="c-inline-code">rem</code> units. There is also a <a href="#demos-mixins-convert-px-to-em-rem">Convert Pixels To <code class="c-inline-code">em</code> Or <code class="c-inline-code">rem</code> Units mixin</a>. The conversion to <code class="c-inline-code">em</code> function accepts an optional 2nd parameter which is the font size of the parent element, if empty it defaults to the root font size set on the <code class="c-inline-code">&#12296;html&#12297;</code> element. You can include the pixel unit if you wish as the function will strip it out.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/functions/_convert-px-to-em-rem.scss'
   scss: !xml |
         .selector {
@@ -11,7 +11,7 @@
            padding: to-rem(8px) 0;
          }
 
-- id: demos-maths-helpers
+- id: demos-functions-maths-helpers
   heading: Maths Helpers
   intro: 'A few simple maths helper functions used to decrease or increase a number by a fraction amount e.g. quarter, halve, double—returning rounded integers. You can include the pixel unit if you wish as the function will strip it out.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/functions/_math-helpers.scss'
@@ -24,7 +24,7 @@
           margin: triple(42);
         }
 
-- id: demos-string-replace
+- id: demos-functions-string-replace
   heading: String Replace
   intro: 'A string helper function which replaces a set of characters in a string. Credit goes to <a href="http://hugogiraudel.com/2014/01/13/sass-string-replacement-function/" rel="external">Hugo Giraudel</a>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/functions/_string-replace.scss'
@@ -39,7 +39,7 @@
           content: "Thxoxo answxoxor to lifxoxo thxoxo univxoxorsxoxo and xoxovxoxorything is 42.";
         }
 
-- id: demos-strip-unit
+- id: demos-functions-strip-unit
   heading: Strip Unit
   intro: 'A function that strips a unit from a number. This function is heavily used in Scally’s functions and mixins. Credit goes to <a href="https://css-tricks.com/snippets/sass/strip-unit-function/" rel="external">Hugo Giraudel</a>.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/functions/_strip-unit.scss'
@@ -48,7 +48,7 @@
         $value: strip-unit($length);
         // -> 42
 
-- id: demos-tint-shade
+- id: demos-functions-tint-shade
   heading: Tint &amp; Shade
   intro: 'Two simple functions that slightly lighten or darken a colour by using the <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#mix-instance_method" rel="external"><em>mix</em></a> function. Sass has built in <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#lighten-instance_method" rel="external"><em>lighten</em></a> and <a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#darken-instance_method" rel="external"><em>darken</em></a> functions however these functions often do not provide the expected result. Credit goes to <a href="http://sass-guidelin.es/#lightening-and-darkening-colors" rel="external">Hugo Giraudel</a>—he explains why this function is a better solution compared to Sass’s native lighten and darken functions.'
   source-code-url: 'https://github.com/chris-pearce/scally/blob/master/core/functions/_tint-shade.scss'
